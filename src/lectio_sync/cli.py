@@ -147,6 +147,57 @@ def main() -> int:
             "Do not enable on public CI runs."
         ),
     )
+
+    # ------------------------------------------------------------------
+    # Cookie refresh (Playwright-based)
+    # ------------------------------------------------------------------
+    parser.add_argument(
+        "--refresh-cookie",
+        action="store_true",
+        help=(
+            "Open a Chromium browser window, wait for you to log in to Lectio, "
+            "then capture the session cookie and update LECTIO_COOKIE_HEADER "
+            "in GitHub Actions Secrets via `gh secret set`. "
+            "Requires Playwright: py -m pip install playwright && py -m playwright install chromium"
+        ),
+    )
+    parser.add_argument(
+        "--cookie-profile-dir",
+        type=Path,
+        help=(
+            "Directory for the persistent Playwright browser profile used by --refresh-cookie. "
+            "Defaults to %%LOCALAPPDATA%%\\lectio-sync\\playwright-profile (Windows). "
+            "Must be outside the repo to avoid accidental git-commit."
+        ),
+    )
+    parser.add_argument(
+        "--cookie-login-timeout",
+        type=int,
+        default=300,
+        help="Seconds to wait for the Lectio schedule page to appear (default: 300).",
+    )
+    parser.add_argument(
+        "--cookie-secret-name",
+        type=str,
+        default="LECTIO_COOKIE_HEADER",
+        help="GitHub Secret name to update (default: LECTIO_COOKIE_HEADER).",
+    )
+    parser.add_argument(
+        "--repo",
+        type=str,
+        help="GitHub repository (owner/name) passed to `gh secret set`. Inferred from cwd when omitted.",
+    )
+    parser.add_argument(
+        "--print-cookie",
+        action="store_true",
+        help="Print the captured cookie header value to stdout (off by default for privacy).",
+    )
+    parser.add_argument(
+        "--no-gh",
+        action="store_true",
+        help="Skip `gh secret set`; print the cookie value instead (useful for manual update).",
+    )
+
     args = parser.parse_args()
 
     if args.days_past is not None and args.days_past < 0:
@@ -155,6 +206,29 @@ def main() -> int:
         parser.error("--days-future must be >= 0")
     if args.fetch_timeout_seconds is not None and args.fetch_timeout_seconds <= 0:
         parser.error("--fetch-timeout-seconds must be > 0")
+
+    # ------------------------------------------------------------------
+    # Cookie refresh mode — completely separate from fetch/parse.
+    # ------------------------------------------------------------------
+    if args.refresh_cookie:
+        from lectio_sync.cookie_refresh import refresh_cookie
+
+        schedule_url = args.schedule_url or os.environ.get("LECTIO_SCHEDULE_URL", "").strip()
+        if not schedule_url:
+            parser.error(
+                "--schedule-url is required for --refresh-cookie "
+                "(or set the LECTIO_SCHEDULE_URL environment variable)"
+            )
+
+        return refresh_cookie(
+            schedule_url=schedule_url,
+            profile_dir=args.cookie_profile_dir,
+            login_timeout_seconds=args.cookie_login_timeout,
+            secret_name=args.cookie_secret_name,
+            github_repo=args.repo,
+            print_cookie=args.print_cookie,
+            no_gh=args.no_gh,
+        )
 
     if args.fetch:
         timezone_name = args.tz or os.environ.get("LECTIO_TIMEZONE", "Europe/Copenhagen")

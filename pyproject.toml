@@ -17,6 +17,13 @@ dependencies = [
 [project.scripts]
 lectio-ics = "lectio_sync.cli:main"
 
+[project.optional-dependencies]
+# Needed for the --refresh-cookie CLI flag and scripts/refresh_cookie.ps1.
+# Install once with:
+#   py -m pip install "lectio-sync[cookie-refresh]"
+#   py -m playwright install chromium
+cookie-refresh = ["playwright>=1.40"]
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 

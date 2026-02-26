@@ -8,6 +8,9 @@ __pycache__/
 venv/
 .env
 
+# Local config (contains LECTIO_SCHEDULE_URL; never commit)
+.env.local
+
 # Local inputs
 *.html
 

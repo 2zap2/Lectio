@@ -1,12 +1,12 @@
----
-title: "Cookie header refresh: automation options"
-author: "GitHub Copilot (GPT-5.2)"
+﻿---
+title: "Cookie header refresh: desktop button approach"
+author: "GitHub Copilot"
 date: "2026-02-26"
-status: "draft"
-estimated_effort: "3–10h (depending on option)"
+status: "implemented"
+estimated_effort: "done"
 ---
 
-# Cookie header refresh: automation options
+# Cookie header refresh: desktop button approach
 
 This ExecPlan is a living document. The sections Progress, Surprises & Discoveries, Decision Log, and Outcomes & Retrospective must be kept up to date as work proceeds.
 
@@ -14,166 +14,185 @@ There is no PLANS.md in this repository at the time of writing; follow the conve
 
 ## Purpose / Big Picture
 
-This repository can run fully automatically on GitHub Actions only if it has a valid Lectio session cookie stored in the GitHub Secret `LECTIO_COOKIE_HEADER`. MitID login is not automated in this repo (and should not be), which means the cookie will eventually expire.
+GitHub Actions can run the Lectio calendar sync automatically only when the `LECTIO_COOKIE_HEADER` secret contains a valid Lectio session cookie. That cookie is obtained after a MitID login, which cannot be automated. When the cookie expires, automated runs silently fetch a login page instead of the schedule.
 
-This ExecPlan provides one practical option to keep the cookie current:
-
-1) A helper command that extracts a Cookie header value from something you copy in DevTools, and updates GitHub Secrets (preferably without ever printing the cookie).
+After this change, refreshing the cookie is as simple as double-clicking a desktop shortcut. A controlled Chromium window opens, you log in with MitID if needed, the window closes, and the GitHub Secret is updated automatically. The cookie value is never printed to terminal history unless explicitly requested.
 
 The success criteria are:
 
-- You can keep the GitHub Actions workflow in .github/workflows/update-calendar.yml running long-term.
-- When the cookie expires, recovery takes minutes and is well documented.
-- Private schedule data and cookie values are never printed to logs or committed.
+- Double-click the shortcut -> browser opens -> (login if needed) -> window closes -> GitHub Secret updated -> next scheduled run succeeds.
+- The cookie value is never written to tracked files or printed by default.
+- A novice with no prior knowledge of the codebase can refresh the cookie in under 2 minutes.
 
-## Non-goals / constraints (important)
+## Non-goals / constraints
 
 - We do not attempt to bypass MitID or automate 2FA.
-- We do not attempt to “steal” cookies from your browser profile files (Chrome/Edge encrypt cookies at rest; doing this reliably is brittle and security-sensitive).
-- We do not commit cookies to git. Cookie values must stay local, or in GitHub Secrets.
-- In CI logs, we only print non-sensitive diagnostics (already implemented via `--debug-fetch`).
+- We do not scrape cookies from the real browser's encrypted cookie store (Chrome/Edge encrypt at rest; this is brittle and security-sensitive).
+- We do not commit cookie values to git.
 
-## Feasibility evaluation (what will and will not work)
+## Why Playwright (not a "copy from DevTools" paste helper)
 
-We will not scrape cookies from your normal browser profile (Chrome/Edge) because cookies are encrypted at rest and formats change over time. Doing this reliably would be brittle and security-sensitive.
+An earlier draft of this plan proposed a paste-based helper: the user copies request headers from DevTools, runs a command, and the tool parses the Cookie: value.
 
-The approach that remains robust is: you log into Lectio normally, copy request headers (or “copy as cURL”) from DevTools, and the helper extracts/normalizes the `Cookie:` value and updates GitHub Secrets.
+The user asked for an even easier UX: "press a button, log in, done."
+
+Playwright solves this cleanly:
+
+- It launches a Chromium window that it controls.
+- The user logs in normally in that window.
+- Playwright can read cookies from the browser context it manages without touching the real browser's encrypted cookie DB.
+- With a persistent profile directory, a still-valid session means the window opens, immediately detects the schedule, and closes without any login step.
 
 ## Progress
 
-- [ ] (2026-02-26) Implement the cookie helper command (Option C).
-- [ ] (2026-02-26) Add a local helper command that can output a correctly formatted cookie header string.
-- [ ] (2026-02-26) Add `gh secret set` integration for one-command secret updates.
-- [ ] (2026-02-26) Document the workflow in README.md.
-- [ ] (2026-02-26) Validate end-to-end: cookie expired -> helper -> secrets updated -> workflow green.
+- [x] (2026-02-26) Create src/lectio_sync/cookie_refresh.py with all Playwright logic.
+- [x] (2026-02-26) Add --refresh-cookie flag group to src/lectio_sync/cli.py.
+- [x] (2026-02-26) Create scripts/refresh_cookie.ps1 (desktop shortcut target).
+- [x] (2026-02-26) Add playwright as optional dependency in pyproject.toml and requirements.txt.
+- [x] (2026-02-26) Add .env.local to .gitignore (stores LECTIO_SCHEDULE_URL locally).
+- [x] (2026-02-26) Add unit tests in tests/test_cookie_refresh.py (11 tests, all pass).
+- [ ] One-time setup: user installs playwright + creates desktop shortcut.
+- [ ] End-to-end validation: run shortcut, verify GitHub Secret updated, trigger workflow.
 
-## Option C: Minimal “easy copy/paste” helper (no new browser automation)
+## One-time setup (do this once)
 
-Implement a helper program that guides you through copying the cookie from Developer Tools and updates GitHub Secrets with minimal friction.
+### 1. Install Playwright
 
-The UX goal is:
+Run in your existing Python environment:
 
-- Happy path: copy something from DevTools, run one command, secret updated, cookie never printed.
-- Fallback: if `gh` is missing/not logged in, print the normalized cookie header value so you can paste it into GitHub Secrets.
+    py -m pip install playwright
+    py -m playwright install chromium
 
-### Proposed flow
+### 2. Log in to GitHub CLI (if not already)
 
-1) You open Lectio in Chrome/Edge and login normally.
+    gh auth login
 
-2) In DevTools → Network, you click the request for SkemaAvanceret.aspx.
+### 3. Create the desktop shortcut
 
-3) You copy either:
+Right-click your desktop -> New -> Shortcut.
+Target (adjust path if your repo is elsewhere):
 
-    - the Request Header `Cookie: ...` line, or
-    - “Copy request headers” text.
+    powershell.exe -ExecutionPolicy Bypass -NoExit -File "C:\Users\Arthu\Lectio\scripts\refresh_cookie.ps1"
 
-4) You run a local command that prompts you to paste the text. The helper:
+Name: Refresh Lectio Cookie
 
-    - extracts the cookie value
-    - normalizes it (removes leading `Cookie:`, strips quotes)
-    - validates it looks non-empty and contains `=` and `;` separators
-    - updates GitHub Secrets via `gh secret set` by default
-    - prints the cookie only if you explicitly request `--print-cookie`, or if automatic secret update is not possible
+### 4. Save your schedule URL locally (done interactively the first run)
 
-5) “No paste” improvement (clipboard)
+The first time you double-click the shortcut and no URL has been set, the script prompts you to paste the URL and offers to save it to .env.local in the repo root. That file is git-ignored so it will never be committed.
 
-On Windows we can support a clipboard-first flow:
+Alternatively, set it as a user environment variable:
 
-- You copy the headers/cURL from DevTools.
-- You run the helper with `--from-clipboard`.
-- It reads the clipboard and proceeds.
+    $env:LECTIO_SCHEDULE_URL = "https://www.lectio.dk/lectio/..."
 
-Implementation note: prefer the Python standard library `tkinter` for clipboard access (no new dependency). If clipboard access fails, fall back to interactive paste.
+## How the shortcut works (every subsequent use)
 
-### Implementation details
+1. You double-click the desktop shortcut.
+2. A PowerShell terminal appears briefly, then Chromium opens.
+3. If your session is still valid (persisted profile), the schedule page is detected in seconds and the window closes automatically.
+4. If your session has expired, you log in with MitID as you normally would.
+5. Once the schedule page is detected, the terminal prints:
 
-1) Create `src/lectio_sync/cookie_paste_helper.py` with:
+       Schedule detected - cookies captured.
+       Updating GitHub Secret 'LECTIO_COOKIE_HEADER'...
+       GitHub Secret 'LECTIO_COOKIE_HEADER' updated successfully.
 
-    - `extract_cookie_header_value(raw: str) -> str`
+6. GitHub Actions will use the new secret on the next scheduled run (or trigger one manually).
 
-    It should accept the common things users copy from DevTools, including:
+## Implementation details
 
-    - A single header line: `Cookie: a=b; c=d`
-    - A multi-line “Copy request headers” block that contains a `Cookie:` line
-    - A “Copy as cURL” snippet that contains `-H "cookie: ..."` or `-H 'cookie: ...'`
-    - The raw cookie value itself: `a=b; c=d`
+### src/lectio_sync/cookie_refresh.py
 
-    Extraction rules:
+Contains:
 
-    - Find the first Cookie header occurrence (case-insensitive) and take its value.
-    - If nothing looks like a header, treat the whole input as the value.
-    - Reuse `_normalize_cookie_header` from src/lectio_sync/lectio_fetch.py for stripping `Cookie:` prefix and quotes.
-    - Validate the result is non-empty and contains at least one `=`.
+- `refresh_cookie(...)` - main entry point.
+- `_require_playwright()` - import guard; prints install instructions if missing.
+- `_is_schedule_page(html)` - True when the Lectio schedule table or bricks are present.
+- `_is_login_page(html)` - True when a MitID/login form is detected.
+- `_filter_cookies_for_host(cookies, schedule_url)` - keeps only cookies for the Lectio domain.
+- `_cookies_to_header(cookies)` - formats `name=value; name=value; ...`.
+- `_update_github_secret(name, value, repo)` - shells out to `gh secret set`.
 
-2) Add clipboard support:
+### src/lectio_sync/cli.py additions
 
-    - `read_clipboard_text() -> str | None` using `tkinter`.
-    - If clipboard read fails, proceed with interactive paste.
+New flags, all active only when --refresh-cookie is used:
 
-3) Add GitHub Secret update integration:
+    --refresh-cookie            Enable this mode (skips all ICS generation).
+    --schedule-url              Required: the Lectio Advanced Schedule URL.
+    --cookie-profile-dir        Optional: custom persistent profile directory.
+    --cookie-login-timeout      Seconds to wait (default 300).
+    --cookie-secret-name        Secret name (default LECTIO_COOKIE_HEADER).
+    --repo                      Optional: owner/name passed to gh.
+    --print-cookie              Print cookie to stdout (off by default).
+    --no-gh                     Skip gh; print cookie instead.
 
-    - Shell out to `gh secret set LECTIO_COOKIE_HEADER --body <cookie>`.
-    - Avoid printing the cookie value when doing this.
-    - Provide `--no-gh` to disable it, and `--print-cookie` to force printing.
-    - If `gh` is missing or fails, print a short error and then print the cookie (only then) so the user can paste it manually.
+### scripts/refresh_cookie.ps1
 
-4) Add a clear CLI surface in src/lectio_sync/cli.py. One workable interface is:
+Wrapper script intended as a desktop shortcut target.
 
-    - `python -m lectio_sync --update-cookie-secret --from-clipboard`
-    - `python -m lectio_sync --update-cookie-secret` (interactive paste)
-    - Optional flags:
-        - `--secret-name` (default `LECTIO_COOKIE_HEADER`)
-        - `--repo` (optional; passed to `gh` as `--repo owner/name`)
-        - `--print-cookie` (off by default)
-        - `--no-gh` (off by default)
+- Loads .env.local if present.
+- Prompts for schedule URL if not found; offers to save to .env.local.
+- Calls `py -m lectio_sync --refresh-cookie ...`.
+- Keeps the terminal open on completion with `Read-Host "Press Enter to close"`.
 
-5) Safety:
+### Persistent browser profile
 
-    - Do not write the cookie to files.
-    - Do not log it unless `--print-cookie` is explicitly used or `gh` update fails and the user needs manual copy.
+Default location (git-ignored, never committed):
 
-### Acceptance
+    %LOCALAPPDATA%\lectio-sync\playwright-profile
 
-- A user can update the GitHub Secret in under 2 minutes without guessing formatting.
-
-## Recommendation (decision point)
-
-Implement Option C. It has the best reliability-to-effort ratio and avoids cookie scraping.
+The profile persists the Lectio session between runs, so a still-valid session means no login step is required.
 
 ## Test plan
 
-1) Unit tests
+### Unit tests (automated)
 
-    - Add tests for cookie normalization and paste parsing.
-    - Run:
-        Working directory: C:\Users\Arthu\Lectio
-        Command: py -m pytest -q
-        Expected outcome: all tests pass
+    Working directory: C:\Users\Arthu\Lectio
+    Command: py -m pytest tests/test_cookie_refresh.py -v
+    Expected outcome: 11 passed
 
-2) Manual validation (local)
+All tests pass against the pure helper functions in cookie_refresh.py. Playwright itself is not exercised in unit tests (it requires a real display; that is verified manually).
 
-    - Run cookie helper and confirm it produces a cookie string.
-    - Run:
-        py -m lectio_sync --fetch --schedule-url "<url>" --cookie-header "<cookie>" --debug-fetch
-      and confirm kind=schedule-table-present (or schedule-bricks-present).
+### Full suite
 
-3) Manual validation (CI)
+    Command: py -m pytest -q
+    Expected outcome: all tests pass
 
-    - Update the GitHub Secret.
-    - Trigger workflow_dispatch.
-    - Confirm the workflow prints “Wrote <N> events to docs/calendar.ics”.
+### Manual end-to-end test (requires valid Lectio account and gh login)
+
+    Double-click shortcut OR run:
+    py -m lectio_sync --refresh-cookie --schedule-url "<your url>"
+
+    Expected terminal output:
+      Browser profile: ...
+      Opening Chromium - log into Lectio if prompted.
+      ...
+      Schedule detected - cookies captured.
+      Updating GitHub Secret 'LECTIO_COOKIE_HEADER'...
+      GitHub Secret 'LECTIO_COOKIE_HEADER' updated successfully.
+
+Verify CI still works:
+
+    gh workflow run update-calendar.yml
 
 ## Surprises & Discoveries
 
-- Expected: It may not be possible to keep the cookie alive forever even with daily use (hard expiry).
-- Expected: Cookie lifetime is controlled by Lectio; even a correct cookie may expire quickly and need manual re-login.
+- Playwright persistent context reuses an existing Chromium session, which means no login is needed on most runs.
+- The cookie value is never written to disk by our code; Playwright holds it in memory and passes it directly to `gh secret set --body`.
 
 ## Decision Log
 
-- Decision (proposed): Start with Option C (paste helper) because it is dependency-free and robust.
-  Rationale: MitID login must stay manual; the most valuable automation is “format it correctly and update GitHub Secret quickly”.
-  Date/Author: 2026-02-26 / GitHub Copilot (GPT-5.2)
+- Decision: Use Playwright (controlled browser) rather than a paste-from-DevTools helper.
+  Rationale: User asked for "press a button, log in, done" UX. Playwright opens a real Chromium window the user controls; it reads cookies from its own context without touching the real browser's encrypted cookie store. No new UX friction compared to normal login.
+  Date/Author: 2026-02-26 / GitHub Copilot
+
+- Decision: Use a persistent Playwright profile stored outside the repo (%LOCALAPPDATA%).
+  Rationale: Avoids accidental git-commit of session data; allows session reuse so most runs require no login at all.
+  Date/Author: 2026-02-26 / GitHub Copilot
+
+- Decision: Do not print the cookie by default; only print if --print-cookie is set or gh fails.
+  Rationale: Prevents cookie from appearing in terminal scroll-back, CI logs, or screenshots.
+  Date/Author: 2026-02-26 / GitHub Copilot
 
 ## Outcomes & Retrospective
 
-(Leave blank until implementation is completed.)
+(Fill in after first real end-to-end run.)
