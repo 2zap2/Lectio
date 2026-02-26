@@ -451,3 +451,116 @@ def parse_lectio_advanced_schedule_html_text(
         print("Window filter: disabled (both sync_days_past and sync_days_future are None)")
 
     return events
+
+
+# ---------------------------------------------------------------------------
+# Assignments parser  (OpgaverElev.aspx)
+# ---------------------------------------------------------------------------
+
+_ASSIGNMENTS_TABLE_ID = "s_m_Content_Content_ExerciseGV"
+_FRIST_DATE_RE = re.compile(r"(?P<day>\d{1,2})/(?P<month>\d{1,2})-(?P<year>\d{4})")
+_EXERCISEID_RE = re.compile(r"[?&]exerciseid=(\d+)")
+
+
+def _parse_frist_date(frist: str) -> Optional[date]:
+    """Parse a Lectio frist string like '26/2-2026 23:59' into a date."""
+    m = _FRIST_DATE_RE.search(frist)
+    if not m:
+        return None
+    return date(int(m.group("year")), int(m.group("month")), int(m.group("day")))
+
+
+def parse_lectio_assignments_html(
+    html_path: Path,
+    timezone_name: str,
+    *,
+    debug: bool = False,
+    today: Optional[date] = None,
+) -> list[LectioEvent]:
+    html = html_path.read_text(encoding="utf-8", errors="replace")
+    return parse_lectio_assignments_html_text(
+        html,
+        timezone_name,
+        debug=debug,
+        today=today,
+    )
+
+
+def parse_lectio_assignments_html_text(
+    html: str,
+    timezone_name: str,
+    *,
+    debug: bool = False,
+    today: Optional[date] = None,
+) -> list[LectioEvent]:
+    """Parse a Lectio OpgaverElev.aspx HTML page and return all-day events
+    for assignments whose deadline is *today or in the future*.
+
+    Raises ``ValueError`` if the expected table is not found.
+    """
+    if today is None:
+        today = date.today()
+
+    soup = BeautifulSoup(html, "html.parser")
+    table = soup.find("table", id=_ASSIGNMENTS_TABLE_ID)
+    if table is None:
+        raise ValueError(
+            f"Assignments table '{_ASSIGNMENTS_TABLE_ID}' not found in HTML."
+        )
+
+    events: list[LectioEvent] = []
+
+    tbody = table.find("tbody")
+    rows = tbody.find_all("tr") if tbody else []
+    for row in rows:
+        cells = row.find_all("td")
+        if len(cells) < 8:
+            continue
+
+        hold = cells[0].get_text(strip=True)
+        title_cell = cells[1]
+        title_text = title_cell.get_text(strip=True)
+        frist_text = cells[2].get_text(strip=True)
+        elev_tid = cells[3].get_text(strip=True)
+        status = cells[4].get_text(strip=True)
+        note = cells[7].get_text(separator="\n", strip=True)
+
+        due_date = _parse_frist_date(frist_text)
+        if due_date is None or due_date < today:
+            continue
+
+        # Derive a stable UID from the exerciseid query parameter when available.
+        link = title_cell.find("a", href=True)
+        if link:
+            m = _EXERCISEID_RE.search(link["href"])
+            uid = (
+                f"{m.group(1)}@lectio.dk"
+                if m
+                else f"{hashlib.md5(title_text.encode()).hexdigest()}@lectio.dk"
+            )
+        else:
+            uid = f"{hashlib.md5(title_text.encode()).hexdigest()}@lectio.dk"
+
+        summary = f"{status} \u2022 {title_text} \u2022 {hold} \u2022 {elev_tid}"
+
+        events.append(
+            LectioEvent(
+                uid=uid,
+                title=summary,
+                start=None,
+                end=None,
+                all_day_date=due_date,
+                location="",
+                description=note,
+                status="CONFIRMED",
+            )
+        )
+
+    events.sort(key=lambda e: e.all_day_date)  # type: ignore[arg-type]
+
+    if debug:
+        print(
+            f"Assignments parsed: {len(events)} events (today={today.isoformat()})"
+        )
+
+    return events
