@@ -47,6 +47,36 @@ def _classify_fetched_page(html: str) -> str:
     return "unknown-html"
 
 
+def _filter_events(events: list) -> list:
+    """Apply relevance filters before writing to the calendar feed.
+
+    Full-day events: keep only if the title contains at least one of the
+    class/group keywords (2.g, 2.G, 3.g, 3.G, Alle, alle).
+
+    Non-full-day events: drop if the title contains any of the club
+    keywords (Armwrestling-klubben, Armwrestling, armwrestling-klubben,
+    armwrestling, LEGO klubben).
+    """
+    ALL_DAY_KEEP = ("2.g", "2.G", "3.g", "3.G", "Alle", "alle")
+    NON_FULL_DAY_DROP = (
+        "Armwrestling-klubben",
+        " Armwrestling",
+        "armwrestling-klubben",
+        " armwrestling",
+        "LEGO klubben",
+    )
+
+    filtered = []
+    for ev in events:
+        if ev.is_all_day:
+            if any(kw in ev.title for kw in ALL_DAY_KEEP):
+                filtered.append(ev)
+        else:
+            if not any(kw in ev.title for kw in NON_FULL_DAY_DROP):
+                filtered.append(ev)
+    return filtered
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Convert Lectio Advanced Schedule HTML to .ics")
     parser.add_argument("--html", type=Path, help="Path to Lectio HTML file (overrides LECTIO_HTML_PATH)")
@@ -311,6 +341,7 @@ def main() -> int:
             return (1, ev.start or datetime.min.replace(tzinfo=tz.UTC), ev.title, ev.uid)
 
         events.sort(key=_sort_key)
+        events = _filter_events(events)
 
         out_path = args.out or Path(os.environ.get("OUTPUT_ICS_PATH", "docs/calendar.ics"))
         out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -381,6 +412,7 @@ def main() -> int:
         print(
             "Delete missing policy: keep-missing requested, but current implementation regenerates a full feed each run."
         )
+    events = _filter_events(events)
     out_path = config.output_ics_path
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_icalendar(events, out_path)
