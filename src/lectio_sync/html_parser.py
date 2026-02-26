@@ -510,20 +510,56 @@ def parse_lectio_assignments_html_text(
 
     events: list[LectioEvent] = []
 
-    tbody = table.find("tbody")
-    rows = tbody.find_all("tr") if tbody else []
-    for row in rows:
+    # Real Lectio HTML has no explicit <tbody>; separate header rows from data rows.
+    all_rows = table.find_all("tr")
+    header_rows = [r for r in all_rows if r.find("th")]
+    data_rows = [r for r in all_rows if not r.find("th")]
+
+    # Detect column indices from the first header row, ignoring OnlyMobile columns.
+    # Default indices match the 8-column test fixture (Hold=0, title=1, ...).
+    hold_idx, title_idx, frist_idx, elevtid_idx, status_idx, note_idx = 0, 1, 2, 3, 4, 7
+
+    if header_rows:
+        desktop_ths = [
+            th for th in header_rows[0].find_all("th")
+            if "OnlyMobile" not in " ".join(th.get("class") or [])
+        ]
+
+        def _find_col(keywords: list[str]) -> Optional[int]:
+            for i, th in enumerate(desktop_ths):
+                text = th.get_text(strip=True).replace("\u00ad", "").lower()
+                if any(kw in text for kw in keywords):
+                    return i
+            return None
+
+        hold_idx = _find_col(["hold"]) if _find_col(["hold"]) is not None else hold_idx
+        title_idx = _find_col(["opgavetitel"]) if _find_col(["opgavetitel"]) is not None else title_idx
+        frist_idx = _find_col(["frist"]) if _find_col(["frist"]) is not None else frist_idx
+        elevtid_idx = _find_col(["elevtid"]) if _find_col(["elevtid"]) is not None else elevtid_idx
+        status_idx = _find_col(["status"]) if _find_col(["status"]) is not None else status_idx
+        note_idx = _find_col(["opgavenote"]) if _find_col(["opgavenote"]) is not None else note_idx
+
+    min_cells = max(hold_idx, title_idx, frist_idx, elevtid_idx, status_idx, note_idx) + 1
+
+    if debug:
+        print(
+            f"Assignments column indices: hold={hold_idx}, title={title_idx}, "
+            f"frist={frist_idx}, elevtid={elevtid_idx}, status={status_idx}, note={note_idx}, "
+            f"data_rows={len(data_rows)}"
+        )
+
+    for row in data_rows:
         cells = row.find_all("td")
-        if len(cells) < 8:
+        if len(cells) < min_cells:
             continue
 
-        hold = cells[0].get_text(strip=True)
-        title_cell = cells[1]
+        hold = cells[hold_idx].get_text(strip=True)
+        title_cell = cells[title_idx]
         title_text = title_cell.get_text(strip=True)
-        frist_text = cells[2].get_text(strip=True)
-        elev_tid = cells[3].get_text(strip=True)
-        status = cells[4].get_text(strip=True)
-        note = cells[7].get_text(separator="\n", strip=True)
+        frist_text = cells[frist_idx].get_text(strip=True)
+        elev_tid = cells[elevtid_idx].get_text(strip=True)
+        status = cells[status_idx].get_text(strip=True)
+        note = cells[note_idx].get_text(separator="\n", strip=True)
 
         due_date = _parse_frist_date(frist_text)
         if due_date is None or due_date < today:

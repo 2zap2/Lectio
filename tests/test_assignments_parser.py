@@ -175,5 +175,103 @@ class AssignmentsParserTests(unittest.TestCase):
             )
 
 
+# ---------------------------------------------------------------------------
+# Real Lectio HTML structure: 13-column table, no <tbody>, "Uge" at col 0
+# ---------------------------------------------------------------------------
+_REAL_STRUCTURE_HTML = dedent("""\
+<!DOCTYPE html>
+<html>
+<body>
+<table id="s_m_Content_Content_ExerciseGV">
+  <tr>
+    <th class="OnlyDesktop">Uge</th>
+    <th class="nowrap OnlyDesktop">Hold</th>
+    <th class="minWidth8em OnlyDesktop">Opgavetitel</th>
+    <th class="nowrap OnlyDesktop">Frist</th>
+    <th class="textRight OnlyDesktop">Elev\u00adtid</th>
+    <th class="textCenter OnlyDesktop">Status</th>
+    <th class="OnlyDesktop">Frav\u00e6r</th>
+    <th class="OnlyDesktop">Afventer</th>
+    <th class="wrap OnlyDesktop">Opgavenote</th>
+    <th class="OnlyDesktop">Karakter</th>
+    <th class="OnlyDesktop">Elevnote</th>
+    <th class="OnlyMobile">Opgaver</th>
+    <th class="textCenter OnlyMobile">Status</th>
+  </tr>
+  <tr>
+    <td class="OnlyDesktop"><span title="Uge 37 2025">37</span></td>
+    <td class="nowrap OnlyDesktop"><span>L2a MA</span></td>
+    <td class="minWidth8em OnlyDesktop"><a href="/lectio/681/ElevAflevering.aspx?elevid=123&amp;exerciseid=10000001&amp;prevurl=OpgaverElev.aspx">Gammel opgave</a></td>
+    <td class="nowrap OnlyDesktop">10/9-2025 22:00</td>
+    <td class="textRight OnlyDesktop">1,00</td>
+    <td class="textCenter OnlyDesktop">Afleveret</td>
+    <td class="OnlyDesktop">0&nbsp;%</td>
+    <td class="OnlyDesktop">L\u00e6rer</td>
+    <td class="wrap OnlyDesktop"></td>
+    <td class="OnlyDesktop"></td>
+    <td class="OnlyDesktop"></td>
+    <td class="OnlyMobile">Gammel opgave</td>
+    <td class="textCenter OnlyMobile">Afleveret</td>
+  </tr>
+  <tr>
+    <td class="OnlyDesktop"><span title="Uge 9 2026">9</span></td>
+    <td class="nowrap OnlyDesktop"><span>L2a DA</span></td>
+    <td class="minWidth8em OnlyDesktop"><a href="/lectio/681/ElevAflevering.aspx?elevid=123&amp;exerciseid=10000002&amp;prevurl=OpgaverElev.aspx">Kronik aflevering</a></td>
+    <td class="nowrap OnlyDesktop">27/2-2026 23:30</td>
+    <td class="textRight OnlyDesktop">3,00</td>
+    <td class="textCenter OnlyDesktop"><span class="exercisewait">Venter</span></td>
+    <td class="OnlyDesktop"></td>
+    <td class="OnlyDesktop">Elev</td>
+    <td class="wrap OnlyDesktop">AFLEVER I WORD</td>
+    <td class="OnlyDesktop"></td>
+    <td class="OnlyDesktop"></td>
+    <td class="OnlyMobile">Kronik aflevering</td>
+    <td class="textCenter OnlyMobile"><span class="exercisewait">Venter</span></td>
+  </tr>
+</table>
+</body>
+</html>
+""")
+
+
+class RealStructureParserTests(unittest.TestCase):
+    """Tests using the real 13-column Lectio HTML structure (no tbody, Uge at col 0)."""
+
+    def setUp(self) -> None:
+        self._today = date(2026, 2, 26)
+
+    def _parse(self) -> list:
+        return parse_lectio_assignments_html_text(
+            _REAL_STRUCTURE_HTML,
+            "Europe/Copenhagen",
+            today=self._today,
+        )
+
+    def test_past_excluded_real_structure(self) -> None:
+        events = self._parse()
+        uids = {ev.uid for ev in events}
+        self.assertNotIn("10000001@lectio.dk", uids)
+
+    def test_future_included_real_structure(self) -> None:
+        events = self._parse()
+        uids = {ev.uid for ev in events}
+        self.assertIn("10000002@lectio.dk", uids)
+
+    def test_count_real_structure(self) -> None:
+        self.assertEqual(len(self._parse()), 1)
+
+    def test_columns_parsed_correctly(self) -> None:
+        events = self._parse()
+        ev = events[0]
+        self.assertEqual(ev.uid, "10000002@lectio.dk")
+        self.assertEqual(ev.all_day_date, date(2026, 2, 27))
+        # Summary order: status • title • hold • elevtid
+        self.assertIn("Venter", ev.title)
+        self.assertIn("Kronik aflevering", ev.title)
+        self.assertIn("L2a DA", ev.title)
+        self.assertIn("3,00", ev.title)
+        self.assertEqual(ev.description, "AFLEVER I WORD")
+
+
 if __name__ == "__main__":
     unittest.main()
