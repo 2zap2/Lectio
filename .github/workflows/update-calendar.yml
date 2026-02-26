@@ -43,17 +43,27 @@ jobs:
           LECTIO_COOKIE_HEADER: ${{ secrets.LECTIO_COOKIE_HEADER }}
           LECTIO_ASSIGNMENTS_URL: ${{ secrets.LECTIO_ASSIGNMENTS_URL }}
         run: |
+          # Build optional assignments arguments only when the URL secret is set.
+          ASSIGNMENTS_ARGS=()
+          if [ -n "$LECTIO_ASSIGNMENTS_URL" ]; then
+            ASSIGNMENTS_ARGS=(
+              --fetch-assignments
+              --assignments-url "$LECTIO_ASSIGNMENTS_URL"
+              --assignments-out "docs/assignments.ics"
+            )
+          else
+            echo "LECTIO_ASSIGNMENTS_URL secret is not set – skipping assignments feed."
+          fi
+
           python -m lectio_sync \
             --fetch \
             --schedule-url "$LECTIO_SCHEDULE_URL" \
             --out "docs/calendar.ics" \
             --tz "Europe/Copenhagen" \
             --days-past 7 \
-              --days-future 90 \
-              --debug-fetch \
-              --fetch-assignments \
-              --assignments-url "$LECTIO_ASSIGNMENTS_URL" \
-              --assignments-out "docs/assignments.ics"
+            --days-future 90 \
+            --debug-fetch \
+            "${ASSIGNMENTS_ARGS[@]}"
 
       - name: Commit and push if changed
         if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'

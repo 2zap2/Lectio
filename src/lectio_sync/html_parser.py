@@ -7,7 +7,6 @@ from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from typing import Optional
-from urllib.parse import parse_qs, urlparse
 
 from bs4 import BeautifulSoup
 from dateutil import tz
@@ -16,10 +15,6 @@ from lectio_sync.event_model import LectioEvent
 
 
 _TABLE_ID = "m_Content_SkemaMedNavigation_skema_skematabel"
-
-_ALL_DAY_KEEP_MARKERS = ("alle:", "2.g:")
-_TIMED_DROP_MARKERS = ("lego klubben", "armwrestling", "armwrestling-klubben")
-
 _DATE_LINE_RE = re.compile(
     r"(?P<day>\d{1,2})/(?P<month>\d{1,2})-(?P<year>\d{4})\s+"
     r"(?:(?P<all_day>Hele\s+dagen|All\s+day)|(?P<start>\d{2}:\d{2})\s+til\s+(?P<end>\d{2}:\d{2}))",
@@ -239,7 +234,7 @@ def _locate_schedule_table(soup: BeautifulSoup):
         )
         if idx >= 10:
             break
-            return False  # Reverting to original state, no custom filter
+
     details = " | ".join(signatures) if signatures else "No <table> elements found"
     raise ValueError(
         f"Could not locate Lectio schedule table. Tried id={_TABLE_ID!r} and fallback selector. Found tables: {details}"
@@ -271,15 +266,6 @@ def _compose_title(base_title: str, tooltip: str, room: str) -> str:
     if room:
         parts.append(room)
     return " - ".join([p for p in parts if p])
-
-
-def _is_filtered_by_custom_rules(*, is_all_day: bool, title: str, description: str) -> bool:
-    haystack = f"{title}\n{description}".lower()
-
-    if is_all_day:
-        return not any(marker in haystack for marker in _ALL_DAY_KEEP_MARKERS)
-
-    return any(marker in haystack for marker in _TIMED_DROP_MARKERS)
 
 
 def parse_lectio_advanced_schedule_html(
@@ -326,7 +312,6 @@ def parse_lectio_advanced_schedule_html_text(
     skipped_missing_date = 0
     skipped_missing_time = 0
     skipped_duplicate_uid = 0
-    skipped_custom_filter = 0
     duplicate_uid_examples: list[str] = []
     cancelled_emitted = 0
 
@@ -385,14 +370,6 @@ def parse_lectio_advanced_schedule_html_text(
         # Description must include full tooltip text (normalized).
         description = parsed.description
 
-        if _is_filtered_by_custom_rules(
-            is_all_day=parsed.all_day_date is not None,
-            title=title,
-            description=description,
-        ):
-            skipped_custom_filter += 1
-            continue
-
         events.append(
             LectioEvent(
                 uid=uid,
@@ -422,8 +399,7 @@ def parse_lectio_advanced_schedule_html_text(
             f"skipped_cancelled={skipped_cancelled}, "
             f"skipped_missing_date={skipped_missing_date}, "
             f"skipped_missing_time={skipped_missing_time}, "
-            f"skipped_duplicate_uid={skipped_duplicate_uid}, "
-            f"skipped_custom_filter={skipped_custom_filter}"
+            f"skipped_duplicate_uid={skipped_duplicate_uid}"
         )
         if duplicate_uid_examples:
             print("Duplicate UID examples (first 5): " + ", ".join(duplicate_uid_examples))
@@ -474,180 +450,4 @@ def parse_lectio_advanced_schedule_html_text(
     elif debug:
         print("Window filter: disabled (both sync_days_past and sync_days_future are None)")
 
-    return events
-
-
-# ---------------------------------------------------------------------------
-# Assignments (OpgaverElev.aspx) parser
-# ---------------------------------------------------------------------------
-
-_ASSIGNMENT_DATE_RE = re.compile(
-    r"(?P<day>\d{1,2})/(?P<month>\d{1,2})-(?P<year>\d{4})\s+(?P<hour>\d{1,2}):(?P<minute>\d{2})"
-)
-
-
-def _locate_assignments_table(soup: BeautifulSoup):
-    """Return the assignments table, or raise ValueError if not found."""
-    # Primary: exact id
-    table = soup.find("table", id="s_m_Content_Content_ExerciseGV")
-    if table is not None:
-        return table
-
-    # Fallback 1: any table whose id ends with _ExerciseGV
-    for t in soup.find_all("table"):
-        tid = (t.get("id") or "")
-        if tid.endswith("_ExerciseGV"):
-            return t
-
-    # Fallback 2: table that contains both "Opgavetitel" and "Frist" header text
-    for t in soup.find_all("table"):
-        text = t.get_text()
-        if "Opgavetitel" in text and "Frist" in text:
-            return t
-
-    ids = [t.get("id") or "(no-id)" for t in soup.find_all("table")][:10]
-    raise ValueError(
-        "Could not locate assignments table. "
-        "Expected <table id='s_m_Content_Content_ExerciseGV'> or a table ending with '_ExerciseGV' "
-        "or containing 'Opgavetitel'+'Frist' headers. "
-        f"Tables found: {ids}"
-    )
-
-
-def parse_lectio_assignments_html(
-    path: Path,
-    timezone_name: str,
-    *,
-    today: Optional[date] = None,
-    debug: bool = False,
-) -> list[LectioEvent]:
-    """Parse an OpgaverElev.aspx HTML file into upcoming assignment LectioEvent objects."""
-    html = path.read_text(encoding="utf-8", errors="replace")
-    return parse_lectio_assignments_html_text(html, timezone_name, today=today, debug=debug)
-
-
-def parse_lectio_assignments_html_text(
-    html: str,
-    timezone_name: str,
-    *,
-    today: Optional[date] = None,
-    debug: bool = False,
-) -> list[LectioEvent]:
-    """Parse an OpgaverElev.aspx HTML string into upcoming assignment LectioEvent objects.
-
-    Column layout (1-based, from the plan):
-      td[1] Hold, td[2] Opgavetitel (with anchor + exerciseid),
-      td[3] Frist, td[4] Elevtid, td[5] Status, td[8] Opgavenote.
-    """
-    soup = BeautifulSoup(html, "html.parser")
-
-    table = _locate_assignments_table(soup)
-
-    local_tz = tz.gettz(timezone_name)
-    if local_tz is None:
-        raise ValueError(f"Unknown timezone: {timezone_name}")
-
-    if today is None:
-        today = datetime.now(local_tz).date()
-
-    events: list[LectioEvent] = []
-    rows_found = 0
-    rows_skipped_parse = 0
-    rows_skipped_past = 0
-
-    for tr in table.find_all("tr"):
-        tds = tr.find_all("td")
-        if len(tds) < 5:
-            # Skip header rows (which use <th>) and any degenerate rows.
-            continue
-
-        rows_found += 1
-
-        # -- Hold (index 0, 1-based td[1]) --
-        hold = tds[0].get_text(separator=" ").strip()
-
-        # -- Opgavetitel + exerciseid (index 1, 1-based td[2]) --
-        anchor = tds[1].find("a")
-        if anchor is None:
-            rows_skipped_parse += 1
-            if debug:
-                print(f"Assignments parser: row {rows_found} skipped — no anchor in Opgavetitel column")
-            continue
-
-        opgavetitel = anchor.get_text(separator=" ").strip()
-        href = anchor.get("href", "")
-        exerciseid: Optional[str] = None
-        try:
-            parsed_url = urlparse(href)
-            qs = parse_qs(parsed_url.query)
-            ids = qs.get("exerciseid", [])
-            if ids:
-                exerciseid = ids[0]
-        except Exception:
-            pass
-
-        if not exerciseid:
-            rows_skipped_parse += 1
-            if debug:
-                print(f"Assignments parser: row {rows_found} skipped — no exerciseid in href {href[:80]!r}")
-            continue
-
-        # -- Frist (index 2, 1-based td[3]) --
-        frist_raw = tds[2].get_text(separator=" ").strip()
-        m = _ASSIGNMENT_DATE_RE.search(frist_raw)
-        if not m:
-            rows_skipped_parse += 1
-            if debug:
-                print(f"Assignments parser: row {rows_found} skipped — could not parse Frist {frist_raw!r}")
-            continue
-
-        try:
-            due_date = date(int(m.group("year")), int(m.group("month")), int(m.group("day")))
-        except ValueError:
-            rows_skipped_parse += 1
-            if debug:
-                print(f"Assignments parser: row {rows_found} skipped — invalid date in Frist {frist_raw!r}")
-            continue
-
-        # Filter: only upcoming (due_date >= today)
-        if due_date < today:
-            rows_skipped_past += 1
-            continue
-
-        # -- Elevtid (index 3, 1-based td[4]) --
-        elevtid = tds[3].get_text(separator=" ").strip()
-
-        # -- Status (index 4, 1-based td[5]) --
-        status_raw = tds[4].get_text(separator=" ").strip()
-
-        # -- Opgavenote (index 7, 1-based td[8]) --
-        opgavenote = ""
-        if len(tds) > 7:
-            opgavenote = _normalize_text(tds[7].get_text(separator="\n"))
-
-        uid = f"{exerciseid}@lectio.dk"
-        title = f"{status_raw} • {opgavetitel} • {hold} • {elevtid}"
-
-        events.append(
-            LectioEvent(
-                uid=uid,
-                title=title,
-                start=None,
-                end=None,
-                all_day_date=due_date,
-                location="",
-                description=opgavenote,
-                status="CONFIRMED",
-            )
-        )
-
-    if debug:
-        print(
-            f"Assignments parser: rows_found={rows_found}, "
-            f"added={len(events)}, "
-            f"skipped_parse={rows_skipped_parse}, "
-            f"skipped_past={rows_skipped_past}"
-        )
-
-    events.sort(key=lambda ev: (ev.all_day_date or date.min, ev.title, ev.uid))
     return events

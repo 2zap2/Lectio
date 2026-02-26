@@ -248,7 +248,11 @@ def main() -> int:
         if args.fetch_assignments:
             assignments_url = args.assignments_url or os.environ.get("LECTIO_ASSIGNMENTS_URL", "")
             if not assignments_url.strip():
-                parser.error("--assignments-url is required for --fetch-assignments (or set LECTIO_ASSIGNMENTS_URL)")
+                print(
+                    "WARNING: --fetch-assignments was requested but --assignments-url is empty and "
+                    "LECTIO_ASSIGNMENTS_URL is not set. Skipping assignments feed."
+                )
+                return 0
 
             assignments_html, assign_diag = fetch_html_with_diagnostics(
                 url=assignments_url,
