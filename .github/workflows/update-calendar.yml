@@ -63,12 +63,13 @@ jobs:
             --days-past 7 \
             --days-future 90 \
             --debug-fetch \
+            --free-classrooms-out "docs/free_classrooms.ics" \
             "${ASSIGNMENTS_ARGS[@]}"
 
       - name: Commit and push if changed
         if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'
         run: |
-          git add docs/calendar.ics docs/assignments.ics
+          git add docs/calendar.ics docs/assignments.ics docs/free_classrooms.ics
           if git diff --cached --quiet; then
             echo "No changes."
             exit 0
