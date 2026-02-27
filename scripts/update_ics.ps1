@@ -7,6 +7,7 @@ $ErrorActionPreference = 'Stop'
 #   -Timezone "Europe/Copenhagen" (default)
 #   -AssignmentsHtmlPath "C:\path\to\opgaver.html"
 #   -AssignmentsOutPath "docs\assignments.ics" (default when AssignmentsHtmlPath is given)
+#   -FreeClassroomsOut "docs\free_classrooms.ics" (when set, generates the free-rooms ICS)
 
 param(
   [Parameter(Mandatory = $true)]
@@ -18,7 +19,9 @@ param(
 
   [string]$AssignmentsHtmlPath = "",
 
-  [string]$AssignmentsOutPath = "docs\\assignments.ics"
+  [string]$AssignmentsOutPath = "docs\\assignments.ics",
+
+  [string]$FreeClassroomsOut = ""
 )
 
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
@@ -28,13 +31,12 @@ Set-Location $repoRoot
 #   py -m pip install -e .
 $pythonLauncher = if (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { "python" }
 
+$extraArgs = @()
 if ($AssignmentsHtmlPath -ne "") {
-  & $pythonLauncher -m lectio_sync `
-    --html $HtmlPath `
-    --out $OutPath `
-    --tz $Timezone `
-    --assignments-html $AssignmentsHtmlPath `
-    --assignments-out $AssignmentsOutPath
-} else {
-  & $pythonLauncher -m lectio_sync --html $HtmlPath --out $OutPath --tz $Timezone
+  $extraArgs += "--assignments-html", $AssignmentsHtmlPath, "--assignments-out", $AssignmentsOutPath
 }
+if ($FreeClassroomsOut -ne "") {
+  $extraArgs += "--free-classrooms-out", $FreeClassroomsOut
+}
+
+& $pythonLauncher -m lectio_sync --html $HtmlPath --out $OutPath --tz $Timezone @extraArgs
