@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from lectio_sync.config import load_config_from_env_with_overrides
+from lectio_sync.free_classrooms import generate_free_classrooms_ics
 from lectio_sync.html_parser import (
     parse_lectio_advanced_schedule_html,
     parse_lectio_advanced_schedule_html_text,
@@ -154,6 +155,15 @@ def main() -> int:
         "--assignments-url",
         type=str,
         help="URL for OpgaverElev.aspx (also LECTIO_ASSIGNMENTS_URL env)",
+    )
+    parser.add_argument(
+        "--free-classrooms-out",
+        type=Path,
+        help=(
+            "Output path for the free-classrooms ICS feed "
+            "(e.g. docs/free_classrooms.ics). "
+            "When set, generates a second feed showing up to 4 free rooms per module slot for today."
+        ),
     )
     parser.add_argument(
         "--fetch-assignments",
@@ -387,6 +397,16 @@ def main() -> int:
             write_icalendar(assignment_events, assign_out, cal_name="lectio opgaver")
             print(f"Wrote {len(assignment_events)} assignments to {assign_out}")
 
+        # -- Free classrooms feed (fetch mode) --
+        if args.free_classrooms_out is not None:
+            free_out = args.free_classrooms_out
+            free_events = generate_free_classrooms_ics(
+                events,
+                free_out,
+                timezone_name,
+            )
+            print(f"Wrote {len(free_events)} events to {free_out}")
+
         return 0
 
     config = load_config_from_env_with_overrides(
@@ -429,6 +449,17 @@ def main() -> int:
         assign_out.parent.mkdir(parents=True, exist_ok=True)
         write_icalendar(assignment_events, assign_out, cal_name="lectio opgaver")
         print(f"Wrote {len(assignment_events)} assignments to {assign_out}")
+
+    # -- Free classrooms feed (file mode) --
+    if args.free_classrooms_out is not None:
+        tz_name = args.tz or os.environ.get("LECTIO_TIMEZONE", "Europe/Copenhagen")
+        free_out = args.free_classrooms_out
+        free_events = generate_free_classrooms_ics(
+            events,
+            free_out,
+            tz_name,
+        )
+        print(f"Wrote {len(free_events)} events to {free_out}")
 
     return 0
 

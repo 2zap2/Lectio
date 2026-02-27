@@ -354,6 +354,78 @@ The `update-calendar.yml` workflow will then fetch and commit both ICS feeds aut
 
 ---
 
+## Free classroom finder (`free_classrooms.ics`)
+
+A third optional feed highlights up to **4 free classrooms** at any time during the school day.
+
+### How it works
+
+1. The existing schedule events for **today** are scanned for room occupation.
+2. Only the six fixed module windows are considered:
+
+   | # | Start | End |
+   |---|-------|-----|
+   | 1 | 08:15 | 09:15 |
+   | 2 | 09:20 | 10:20 |
+   | 3 | 10:30 | 11:30 |
+   | 4 | 12:10 | 13:10 |
+   | 5 | 13:20 | 14:20 |
+   | 6 | 14:30 | 15:30 |
+
+3. For each module slot, all univese rooms that are **not busy** are ranked by how many consecutive modules they remain free (longer = higher rank). The **top 4** are selected.
+4. If the same room stays in the top 4 for adjacent modules it is merged into a single VEVENT.
+5. Multi-room events (`Lokaler: X, Y`) correctly mark **each** listed room as busy.
+
+### Classroom universe
+
+Rooms tracked: `0.75`, `0.76`, `0.77`, `1.02`, `1.03a`, `1.07`, `1.09`, `1.10`,
+`1.59`, `1.60`, `1.61`, `1.62`, `1.64`, `1.65`, `2.01`, `2.03`, `2.04`, `2.05`,
+`2.27`, `2.29`, `2.31`.
+
+### Output
+
+- **Summary**: `Free: <room>` (e.g. `Free: 1.07`)
+- **LOCATION**: room name
+- **DTSTART/DTEND**: start and end of the merged free window
+- **UID**: deterministic (`free-YYYYMMDD-<room>-<HHMM>-<HHMM>@lectio-sync`)
+
+Maximum 4 events overlap at any point in time.
+
+### Building locally (file mode)
+
+```powershell
+py -m lectio_sync `
+  --html path\to\lectio.html `
+  --out docs\calendar.ics `
+  --free-classrooms-out docs\free_classrooms.ics `
+  --tz Europe/Copenhagen
+```
+
+```powershell
+.\scripts\update_ics.ps1 `
+  -HtmlPath path\to\lectio.html `
+  -FreeClassroomsOut docs\free_classrooms.ics
+```
+
+### Fetching via CI
+
+```powershell
+py -m lectio_sync `
+  --fetch `
+  --schedule-url "%LECTIO_SCHEDULE_URL%" `
+  --out docs\calendar.ics `
+  --free-classrooms-out docs\free_classrooms.ics
+```
+
+### Subscribing
+
+Once hosted on GitHub Pages, subscribe to:
+```
+https://<your-github-username>.github.io/<repo-name>/free_classrooms.ics
+```
+
+---
+
 ## Publish on GitHub Pages
 We will write the output to `docs/calendar.ics`. Configure GitHub Pages to serve from the `docs/` folder.
 
