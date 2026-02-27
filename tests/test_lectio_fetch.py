@@ -1,13 +1,8 @@
 from __future__ import annotations
-# pyright: reportMissingImports=false
 
-from pathlib import Path
-import sys
 import unittest
 from unittest.mock import patch
 import gzip
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from lectio_sync.lectio_fetch import fetch_html
 

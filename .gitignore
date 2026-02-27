@@ -14,4 +14,6 @@ venv/
 # Local inputs
 *.html
 
-# Output (we want to COMMIT docs/calendar.ics for GitHub Pages)
+# The three ICS output files are intentionally committed so GitHub Pages can serve them.
+# GitHub Actions overwrites them with live data on each run.
+# Do NOT add docs/*.ics to .gitignore.

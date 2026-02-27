@@ -18,12 +18,12 @@ PARAMETERS
 
 #>
 
-[param(
+param(
     [string]$RepoUrl = '',
     [string]$LocalPath = '',
     [switch]$Symlink,
     [switch]$Force
-)]
+)
 
 $central = Join-Path $env:USERPROFILE '.skills'
 $workspace = (Get-Location).Path

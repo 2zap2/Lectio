@@ -16,46 +16,8 @@ class Config:
 
 
 def load_config_from_env() -> Config:
-    import os
-
-    lectio_html_path = Path(os.environ.get("LECTIO_HTML_PATH", ""))
-    if not str(lectio_html_path):
-        raise ValueError("LECTIO_HTML_PATH is required (or pass --html)")
-
-    output_ics_path = Path(os.environ.get("OUTPUT_ICS_PATH", "docs/calendar.ics"))
-    timezone = os.environ.get("LECTIO_TIMEZONE", "Europe/Copenhagen")
-
-    def _int(name: str, default: int) -> int:
-        raw = os.environ.get(name)
-        if raw is None or raw.strip() == "":
-            return default
-        return int(raw)
-
-    def _bool(name: str, default: bool) -> bool:
-        raw = os.environ.get(name)
-        if raw is None or raw.strip() == "":
-            return default
-        normalized = raw.strip().lower()
-        if normalized in {"1", "true", "yes", "y", "on"}:
-            return True
-        if normalized in {"0", "false", "no", "n", "off"}:
-            return False
-        raise ValueError(f"Invalid boolean for {name}: {raw!r}")
-
-    sync_days_past = _int("SYNC_DAYS_PAST", 7)
-    sync_days_future = _int("SYNC_DAYS_FUTURE", 90)
-    delete_missing = _bool("DELETE_MISSING", True)
-    emit_cancelled_events = _bool("EMIT_CANCELLED_EVENTS", False)
-
-    return Config(
-        lectio_html_path=lectio_html_path,
-        output_ics_path=output_ics_path,
-        timezone=timezone,
-        sync_days_past=sync_days_past,
-        sync_days_future=sync_days_future,
-        delete_missing=delete_missing,
-        emit_cancelled_events=emit_cancelled_events,
-    )
+    """Load configuration from environment variables with default values."""
+    return load_config_from_env_with_overrides()
 
 
 def load_config_from_env_with_overrides(

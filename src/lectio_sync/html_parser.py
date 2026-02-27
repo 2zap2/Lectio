@@ -577,7 +577,7 @@ def parse_lectio_assignments_html_text(
         else:
             uid = f"{hashlib.md5(title_text.encode()).hexdigest()}@lectio.dk"
 
-        summary = f"{title_text} \u2022 {hold} \u2022 {elev_tid} \u2022 {status}"
+        summary = f"{status} \u2022 {title_text} \u2022 {hold} \u2022 {elev_tid}"
 
         events.append(
             LectioEvent(

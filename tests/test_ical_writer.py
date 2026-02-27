@@ -1,14 +1,9 @@
 from __future__ import annotations
-# pyright: reportMissingImports=false
 
 from datetime import date, datetime
-from pathlib import Path
-import sys
 import unittest
 
 from dateutil import tz
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from lectio_sync.event_model import LectioEvent
 from lectio_sync.ical_writer import build_icalendar

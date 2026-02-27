@@ -69,7 +69,7 @@ jobs:
       - name: Commit and push if changed
         if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'
         run: |
-          git add docs/calendar.ics docs/assignments.ics docs/free_classrooms.ics
+          git add docs/*.ics
           if git diff --cached --quiet; then
             echo "No changes."
             exit 0

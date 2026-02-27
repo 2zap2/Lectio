@@ -6,8 +6,6 @@ A small daily sync tool that:
 
 You then **host the `.ics` on GitHub Pages** and subscribe to it from Apple Calendar.
 
-This README is the living spec for what we build in this conversation.
-
 ---
 
 ## Goal
@@ -22,6 +20,36 @@ Non-goals (unless you ask):
 - Building a UI
 - Automating Lectio login / scraping behind 2FA
 - Writing directly into iCloud via CalDAV (subscription feed is simpler)
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Python 3.11+
+- `beautifulsoup4`, `lxml`, `python-dateutil` — installed automatically with the package
+- Optional: `playwright` for automated cookie refresh
+
+### Install
+```powershell
+py -m pip install -e .
+```
+
+### Local run (file mode)
+```powershell
+.\scripts\update_ics.ps1 -HtmlPath path\to\lectio.html
+```
+
+### Subscribe URL
+Once hosted on GitHub Pages:
+```
+https://<your-github-username>.github.io/<repo-name>/calendar.ics
+```
+
+### GitHub Actions setup
+1. Set repository secrets: `LECTIO_SCHEDULE_URL` and `LECTIO_COOKIE_HEADER` (and optionally `LECTIO_ASSIGNMENTS_URL`).
+2. Trigger `update-calendar.yml` via **Actions → Run workflow** to verify.
+3. GitHub Pages serves updated `.ics` files from `docs/` daily at 08:05 Europe/Copenhagen.
 
 ---
 
@@ -46,19 +74,23 @@ Notes:
 
 We will implement iCalendar writing ourselves to meet the strict RFC5545 escaping and line-folding requirements.
 
-## Project structure (planned)
-We’ll add these files as we implement:
+## Project structure
 
 - `src/lectio_sync/__init__.py`
-- `src/lectio_sync/html_parser.py` (Lectio HTML → events)
-- `src/lectio_sync/event_model.py` (dataclass for an event)
-- `src/lectio_sync/cli.py` (HTML → ICS command line tool)
-- `requirements.txt`
- - `docs/calendar.ics` (output for GitHub Pages)
- - `.github/workflows/update-calendar.yml` (scheduled build)
-
-Optional later:
-- `tests/` (if you want automated tests)
+- `src/lectio_sync/html_parser.py` — Lectio HTML → event list
+- `src/lectio_sync/event_model.py` — `LectioEvent` dataclass
+- `src/lectio_sync/ical_writer.py` — events → RFC 5545 iCalendar output
+- `src/lectio_sync/free_classrooms.py` — derives free-classroom events from schedule
+- `src/lectio_sync/cli.py` — argparse CLI; orchestrates fetch + parse + write
+- `src/lectio_sync/config.py` — `Config` dataclass + environment-variable loaders
+- `src/lectio_sync/lectio_fetch.py` — HTTP fetch with session cookie
+- `src/lectio_sync/cookie_refresh.py` — Playwright-based cookie capture
+- `tests/` — pytest unit tests
+- `scripts/` — PowerShell helper scripts
+- `docs/calendar.ics` — schedule feed (GitHub Pages)
+- `docs/assignments.ics` — assignment deadline feed (GitHub Pages)
+- `docs/free_classrooms.ics` — free classroom feed (GitHub Pages)
+- `.github/workflows/update-calendar.yml` — daily CI build
 
 ---
 
@@ -247,55 +279,6 @@ Important:
 - If you keep HTML local only, disable the scheduled workflow and use Task Scheduler + `scripts/update_ics_and_push.ps1`.
 - Fully automatic fetch requires a valid Lectio session cookie stored as a GitHub Secret. Review privacy/security implications.
 
----
-
-## What I need from you to build this
-Please answer these. Once I have them, I can implement the program end-to-end.
-
-### 1) The Lectio HTML format
-- Provide **one real sample HTML file** (or paste a representative snippet) that includes:
-  - at least 2–3 different event types (normal classes, cancellations, homework/notes if present)
-  - at least one event with a room/teacher if that exists
-- Tell me **how you get/export** this HTML:
-  - is it “print/save as HTML”, “save page”, or a built-in export?
-  - does it update automatically, or do you download it each day?
-
-### 2) Date/time rules
-- What timezone should we use? (likely `Europe/Copenhagen`, but confirm)
-- Are there repeating events or week schedules?
-- Can the HTML contain:
-  - cancellations
-  - moved lessons
-  - substitutions
-  - multiple entries with the same title/time
-
-### 3) Apple Calendar destination
-- Do you want events written to:
-  - an existing iCloud calendar (name?)
-  - or should the tool create a new calendar called `Lectio`?
-
-### 4) iCloud / CalDAV access
-- Confirm you use iCloud (Apple Calendar synced via iCloud).
-- Confirm you can create an **app-specific password** for CalDAV.
-- If you already know it: what is your CalDAV server URL?
-  - If not, I’ll guide you to find it safely.
-
-### 5) Sync policy
-- How far ahead should we sync? (e.g. 60–120 days)
-- Should we delete events that disappear from Lectio? (`DELETE_MISSING=true/false`)
-- Should we update event titles/locations if they change? (usually yes)
-
-### 6) Matching rules / event identity
-If Lectio does not provide a stable unique ID per event in the HTML:
-- Is it acceptable to treat (title + start time + end time) as identity?
-- Or do you want additional fields included (room/teacher)?
-
-### 7) Where it runs
-- Will this run on the same Windows machine every day?
-- Do you prefer it to run “headless” (no prompts) once configured?
-
----
-
 ## Assignments feed (Opgaver)
 
 In addition to the schedule feed, this repo generates a second iCalendar feed containing only upcoming
@@ -439,12 +422,3 @@ In Apple Calendar:
 
 Tip: Apple Calendar subscriptions are read-only. This is expected.
 
----
-
-## Next step
-Reply with:
-1) a sample Lectio HTML file (upload it into this workspace, best), and
-2) how we should detect cancellations in the tooltip (exact wording you see),
-3) whether you want to include a `VTIMEZONE` block or keep “floating” local times.
-
-After that, I’ll implement the parser + `.ics` generator and add a GitHub Pages-ready output.

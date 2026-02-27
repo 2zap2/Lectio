@@ -1,19 +1,18 @@
 from __future__ import annotations
-# pyright: reportMissingImports=false
 
 from pathlib import Path
-import sys
 import unittest
+import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+_FIXTURE = Path(__file__).resolve().parents[1] / "Avanceret skema - Lectio - TEC.html"
 
 from lectio_sync.html_parser import parse_lectio_advanced_schedule_html
 
 
+@pytest.mark.skipif(not _FIXTURE.exists(), reason="Local Lectio fixture not present")
 class HtmlParserTests(unittest.TestCase):
     def setUp(self) -> None:
-        repo_root = Path(__file__).resolve().parents[1]
-        self.html_path = repo_root / "Avanceret skema - Lectio - TEC.html"
+        self.html_path = _FIXTURE
 
     def test_parses_fixture_without_window_filter(self) -> None:
         events = parse_lectio_advanced_schedule_html(

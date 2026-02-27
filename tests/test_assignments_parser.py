@@ -1,13 +1,8 @@
 from __future__ import annotations
-# pyright: reportMissingImports=false
 
-import sys
 import unittest
 from datetime import date
-from pathlib import Path
 from textwrap import dedent
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from lectio_sync.html_parser import parse_lectio_assignments_html_text
 
