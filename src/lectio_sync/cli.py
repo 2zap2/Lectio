@@ -237,6 +237,17 @@ def main() -> int:
         action="store_true",
         help="Skip `gh secret set`; print the cookie value instead (useful for manual update).",
     )
+    parser.add_argument(
+        "--headless",
+        action="store_true",
+        help=(
+            "Run the Playwright browser in headless (invisible) mode. "
+            "The persistent profile must already hold an active Lectio session; "
+            "if the session is expired a full MitID login will be required "
+            "(which cannot be completed headlessly). "
+            "Use --headless for automated/scheduled runs."
+        ),
+    )
 
     args = parser.parse_args()
 
@@ -267,6 +278,7 @@ def main() -> int:
             secret_name=args.cookie_secret_name,
             github_repo=args.repo,
             print_cookie=args.print_cookie,
+            headless=args.headless,
             no_gh=args.no_gh,
         )
 

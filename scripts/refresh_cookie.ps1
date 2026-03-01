@@ -35,7 +35,8 @@ param(
     [string]  $Repo          = "",
     [int]     $LoginTimeout  = 300,
     [switch]  $PrintCookie,
-    [switch]  $NoGh
+    [switch]  $NoGh,
+    [switch]  $Headless
 )
 
 $ErrorActionPreference = "Stop"
@@ -100,6 +101,7 @@ $cmdArgs = @(
 if ($Repo)          { $cmdArgs += @("--repo", $Repo) }
 if ($PrintCookie)   { $cmdArgs += "--print-cookie" }
 if ($NoGh)          { $cmdArgs += "--no-gh" }
+if ($Headless)      { $cmdArgs += "--headless" }
 
 # ── Run ───────────────────────────────────────────────────────────────────────
 Write-Host ""

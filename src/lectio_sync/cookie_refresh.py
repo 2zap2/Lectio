@@ -132,6 +132,7 @@ def refresh_cookie(
     secret_name: str = "LECTIO_COOKIE_HEADER",
     github_repo: str | None = None,
     print_cookie: bool = False,
+    headless: bool = False,
     no_gh: bool = False,
 ) -> int:
     """
@@ -158,6 +159,11 @@ def refresh_cookie(
     print_cookie:
         Print the cookie header value to stdout even when `gh` succeeds.
         Off by default — avoids the value appearing in terminal history.
+    headless:
+        When True the Chromium window is hidden (suitable for unattended/scheduled runs).
+        Requires that the persistent profile already holds a valid Lectio session so no
+        login page is shown; if a login page appears the script will time-out.
+        Default False keeps the existing interactive behaviour.
     no_gh:
         Skip the ``gh secret set`` step entirely.  Implies printing the
         cookie so the user can paste it manually.
@@ -172,17 +178,19 @@ def refresh_cookie(
     resolved_profile.mkdir(parents=True, exist_ok=True)
 
     print(f"Browser profile: {resolved_profile}")
-    print("Opening Chromium — log into Lectio if prompted.")
-    print("The window will close automatically once the schedule is detected.")
+    if headless:
+        print("Running headless Chromium — profile must have an active session.")
+    else:
+        print("Opening Chromium — log into Lectio if prompted.")
+        print("The window will close automatically once the schedule is detected.")
 
     cookie_header: str | None = None
 
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
             str(resolved_profile),
-            headless=False,
-            # Suppress the "controlled by automation" banner that can unsettle users.
-            args=["--disable-blink-features=AutomationControlled"],
+            headless=headless,
+            args=([] if headless else ["--disable-blink-features=AutomationControlled"]),
             no_viewport=True,
         )
 
