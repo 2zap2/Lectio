@@ -119,5 +119,4 @@ if ($exitCode -eq 0) {
 }
 
 Write-Host ""
-Read-Host "Press Enter to close"
 Stop-Process -Id $PID
