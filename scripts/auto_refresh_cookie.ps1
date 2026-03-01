@@ -11,7 +11,7 @@
 #   Run scripts\refresh_cookie.ps1 once interactively so the browser
 #   profile has an active Lectio session.
 
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Continue'
 
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $repoRoot
@@ -47,6 +47,9 @@ if (-not $scheduleUrl) {
 }
 
 $python = if (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { "python" }
+
+# Ensure Python can write unicode characters when output is piped/redirected
+$env:PYTHONIOENCODING = 'utf-8'
 
 $cmdArgs = @(
     "-m", "lectio_sync",

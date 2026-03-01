@@ -179,9 +179,9 @@ def refresh_cookie(
 
     print(f"Browser profile: {resolved_profile}")
     if headless:
-        print("Running headless Chromium — profile must have an active session.")
+        print("Running headless Chromium -- profile must have an active session.")
     else:
-        print("Opening Chromium — log into Lectio if prompted.")
+        print("Opening Chromium -- log into Lectio if prompted.")
         print("The window will close automatically once the schedule is detected.")
 
     cookie_header: str | None = None
@@ -242,7 +242,7 @@ def refresh_cookie(
         print("ERROR: No cookies were captured after login.", file=sys.stderr)
         return 1
 
-    print("Schedule detected — cookies captured.")
+    print("Schedule detected -- cookies captured.")
 
     if print_cookie:
         print(f"\nCookie header value:\n{cookie_header}\n")
@@ -254,7 +254,7 @@ def refresh_cookie(
             print(f"\nCookie header value (copy this):\n{cookie_header}")
         return 0
 
-    print(f"Updating GitHub Secret '{secret_name}'…")
+    print(f"Updating GitHub Secret '{secret_name}'...")
     success = _update_github_secret(secret_name, cookie_header, github_repo)
 
     if success:
@@ -262,7 +262,7 @@ def refresh_cookie(
         print(
             "\nTo verify, trigger a manual workflow run:\n"
             "  gh workflow run update-calendar.yml\n"
-            "or visit Actions → Update calendar.ics → Run workflow."
+            "or visit Actions -> Update calendar.ics -> Run workflow."
         )
         return 0
 
