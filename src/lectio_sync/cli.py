@@ -29,6 +29,18 @@ def _redact_url_for_logs(url: str) -> str:
         return "(unparseable-url)"
 
 
+_AUTH_REDIRECT_DOMAINS = (
+    "security-check.stil.dk",
+    "logind.lectio.dk",
+)
+
+
+def _is_auth_redirect(final_url: str) -> bool:
+    """Return True when the final URL is a known Lectio/STIL authentication or security-check page."""
+    low = (final_url or "").lower()
+    return any(domain in low for domain in _AUTH_REDIRECT_DOMAINS)
+
+
 def _classify_fetched_page(html: str) -> str:
     low = (html or "").lower()
     if "m_content_skemamednavigation_skema_skematabel" in low:
@@ -293,6 +305,7 @@ def main() -> int:
 
         events = []
         seen_uids: set[str] = set()
+        auth_redirect_weeks: list[str] = []
         if args.debug_dump_html_dir is not None:
             args.debug_dump_html_dir.mkdir(parents=True, exist_ok=True)
 
@@ -314,6 +327,18 @@ def main() -> int:
                 # WARNING: contains private data. Only for local/manual debugging.
                 dump_path = args.debug_dump_html_dir / f"lectio-week-{wk.week_param}.html"
                 dump_path.write_text(html, encoding="utf-8", errors="replace")
+
+            # Detect auth/security redirects by final URL before attempting to parse.
+            # These happen when the session cookie has expired.
+            if _is_auth_redirect(diag.final_url):
+                print(
+                    f"WARNING: week {wk.week_param} was redirected to "
+                    f"{_redact_url_for_logs(diag.final_url)} — "
+                    "the session cookie appears to be expired. "
+                    "Run scripts/refresh_cookie.ps1 to capture a new cookie."
+                )
+                auth_redirect_weeks.append(wk.week_param)
+                continue
 
             try:
                 week_events = parse_lectio_advanced_schedule_html_text(
@@ -352,6 +377,19 @@ def main() -> int:
 
         events.sort(key=_sort_key)
         events = _filter_events(events)
+
+        # If every week was an auth redirect and we got no events, preserve the
+        # existing ICS files unchanged and exit non-zero so the CI failure is visible.
+        if not events and auth_redirect_weeks:
+            print(
+                f"ERROR: All {len(auth_redirect_weeks)} fetched week(s) returned authentication redirects "
+                f"({', '.join(auth_redirect_weeks)}). "
+                "The session cookie is expired. "
+                "Run scripts/refresh_cookie.ps1 to capture a new cookie and update the GitHub Secret, "
+                "then re-run the workflow. "
+                "The existing ICS files have NOT been changed."
+            )
+            return 1
 
         out_path = args.out or Path(os.environ.get("OUTPUT_ICS_PATH", "docs/calendar.ics"))
         out_path.parent.mkdir(parents=True, exist_ok=True)
