@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# iCalendar files must use CRLF line endings per RFC 5545.
+# Prevent git from normalising \r\n → \n so calendar clients receive
+# standards-compliant files.
+*.ics -text
