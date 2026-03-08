@@ -20,7 +20,7 @@ Algorithm overview
 
 from __future__ import annotations
 
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from typing import Optional
 
@@ -283,20 +283,28 @@ def generate_free_classrooms_ics(
     output_path: Path,
     timezone_name: str,
     today: Optional[date] = None,
+    days_ahead: int = 6,
 ) -> list[LectioEvent]:
     """Build and write the free-classrooms ICS from already-parsed schedule events.
+
+    Generates free-room events for a rolling window of weekdays starting from
+    *today* and covering the next *days_ahead* calendar days (weekends skipped).
+    This ensures the feed remains useful even if the sync misses a day.
 
     Parameters
     ----------
     schedule_events:
         All events from the normal schedule feed (the entire window is fine;
-        only today's events are used internally).
+        only events matching each target date are used internally).
     output_path:
         Where to write the ``free_classrooms.ics``.  Parent dirs are created.
     timezone_name:
         IANA timezone name (e.g. ``"Europe/Copenhagen"``).
     today:
         Override "today" (useful in tests).  Defaults to the current local date.
+    days_ahead:
+        Number of additional calendar days to include after *today* (default 6).
+        Weekends are skipped; free-room events are only generated for Mon–Fri.
 
     Returns
     -------
@@ -310,11 +318,18 @@ def generate_free_classrooms_ics(
     if today is None:
         today = datetime.now(local_tz).date()
 
-    busy_map = build_busy_map(schedule_events, today, timezone_name)
-    free_events = compute_free_room_events(busy_map, today, timezone_name)
+    all_free_events: list[LectioEvent] = []
+    for offset in range(days_ahead + 1):
+        target_date = today + timedelta(days=offset)
+        # School is only open Mon–Fri (isoweekday: 1=Mon … 5=Fri).
+        if target_date.isoweekday() > 5:
+            continue
+        busy_map = build_busy_map(schedule_events, target_date, timezone_name)
+        day_events = compute_free_room_events(busy_map, target_date, timezone_name)
+        all_free_events.extend(day_events)
 
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    write_icalendar(free_events, output_path, cal_name="Ledige lokaler")
+    write_icalendar(all_free_events, output_path, cal_name="Ledige lokaler")
 
-    return free_events
+    return all_free_events

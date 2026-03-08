@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import tempfile
 import unittest
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 
 from dateutil import tz as dateutil_tz
@@ -16,6 +17,7 @@ from lectio_sync.free_classrooms import (
     _overlaps_module,
     build_busy_map,
     compute_free_room_events,
+    generate_free_classrooms_ics,
 )
 
 _TZ = "Europe/Copenhagen"
@@ -333,6 +335,91 @@ class TestIntegrationWithFixture(unittest.TestCase):
                     len(overlapping), 4,
                     f"date={test_date}, module {ms_t}–{me_t}: {len(overlapping)} overlapping",
                 )
+
+
+# ---------------------------------------------------------------------------
+# generate_free_classrooms_ics – rolling window
+# ---------------------------------------------------------------------------
+
+class TestGenerateFreeClassroomsIcs(unittest.TestCase):
+    """Tests for the multi-day rolling-window ICS generator."""
+
+    # Monday 2026-03-09 is the next weekday after today (2026-03-08 Sunday)
+    TODAY_MON = date(2026, 3, 9)   # Monday
+    TODAY_SUN = date(2026, 3, 8)   # Sunday
+
+    def test_skips_weekends(self) -> None:
+        """Events must only be generated for weekdays (Mon–Fri)."""
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[],
+                output_path=out,
+                timezone_name=_TZ,
+                today=self.TODAY_SUN,   # Sunday
+                days_ahead=1,           # window: Sun + Mon → only Mon matters
+            )
+        event_dates = {
+            ev.start.astimezone(dateutil_tz.gettz(_TZ)).date()
+            for ev in evs
+            if ev.start is not None
+        }
+        # Sunday must not appear; Monday must appear (all rooms free = events generated)
+        self.assertNotIn(self.TODAY_SUN, event_dates)
+        self.assertIn(self.TODAY_MON, event_dates)
+
+    def test_covers_multiple_days(self) -> None:
+        """With days_ahead=4 from a Monday, events must span Mon–Fri (5 days)."""
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[],
+                output_path=out,
+                timezone_name=_TZ,
+                today=self.TODAY_MON,
+                days_ahead=4,   # Mon through Fri
+            )
+        event_dates = {
+            ev.start.astimezone(dateutil_tz.gettz(_TZ)).date()
+            for ev in evs
+            if ev.start is not None
+        }
+        expected_weekdays = {self.TODAY_MON + timedelta(days=i) for i in range(5)}
+        self.assertEqual(event_dates, expected_weekdays)
+
+    def test_days_ahead_zero_is_today_only(self) -> None:
+        """days_ahead=0 reproduces the legacy single-day behaviour."""
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[],
+                output_path=out,
+                timezone_name=_TZ,
+                today=self.TODAY_MON,
+                days_ahead=0,
+            )
+        event_dates = {
+            ev.start.astimezone(dateutil_tz.gettz(_TZ)).date()
+            for ev in evs
+            if ev.start is not None
+        }
+        self.assertEqual(event_dates, {self.TODAY_MON})
+
+    def test_writes_ics_file(self) -> None:
+        """Output ICS file must be created and non-empty."""
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            generate_free_classrooms_ics(
+                schedule_events=[],
+                output_path=out,
+                timezone_name=_TZ,
+                today=self.TODAY_MON,
+                days_ahead=0,
+            )
+            self.assertTrue(out.exists())
+            content = out.read_text(encoding="utf-8")
+            self.assertIn("BEGIN:VCALENDAR", content)
+            self.assertIn("BEGIN:VEVENT", content)
 
 
 if __name__ == "__main__":
