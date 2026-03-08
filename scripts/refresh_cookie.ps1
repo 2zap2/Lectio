@@ -19,7 +19,7 @@
 # CREATE DESKTOP SHORTCUT
 # ------------------------
 # Right-click your desktop → New → Shortcut
-# Target:  powershell.exe -ExecutionPolicy Bypass -NoExit -File "C:\Users\Arthu\Lectio\scripts\refresh_cookie.ps1"
+# Target:  powershell.exe -ExecutionPolicy Bypass -File "C:\Users\Arthu\Lectio\scripts\refresh_cookie.ps1"
 # Name:    Refresh Lectio Cookie
 #
 # PARAMETERS (all optional)
@@ -35,7 +35,8 @@ param(
     [string]  $Repo          = "",
     [int]     $LoginTimeout  = 300,
     [switch]  $PrintCookie,
-    [switch]  $NoGh
+    [switch]  $NoGh,
+    [switch]  $Headless
 )
 
 $ErrorActionPreference = "Stop"
@@ -100,6 +101,7 @@ $cmdArgs = @(
 if ($Repo)          { $cmdArgs += @("--repo", $Repo) }
 if ($PrintCookie)   { $cmdArgs += "--print-cookie" }
 if ($NoGh)          { $cmdArgs += "--no-gh" }
+if ($Headless)      { $cmdArgs += "--headless" }
 
 # ── Run ───────────────────────────────────────────────────────────────────────
 Write-Host ""
@@ -117,5 +119,4 @@ if ($exitCode -eq 0) {
 }
 
 Write-Host ""
-Read-Host "Press Enter to close"
-exit $exitCode
+Stop-Process -Id $PID

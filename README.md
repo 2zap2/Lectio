@@ -279,6 +279,95 @@ Important:
 - If you keep HTML local only, disable the scheduled workflow and use Task Scheduler + `scripts/update_ics_and_push.ps1`.
 - Fully automatic fetch requires a valid Lectio session cookie stored as a GitHub Secret. Review privacy/security implications.
 
+## Automatic cookie refresh (Windows Scheduled Task)
+
+Lectio issues **fixed-expiry session cookies** (valid ~24 h). The GitHub Actions workflow
+that fetches the schedule daily therefore needs a fresh cookie on every run. Without
+automation you would have to log in manually every day.
+
+The `scripts/auto_refresh_cookie.ps1` script and a Windows Scheduled Task solve this:
+Playwright reuses the persistent browser profile that already holds your Lectio session and
+silently captures a fresh cookie every 20 hours, pushing it to the GitHub Secret — all
+without displaying any browser window or requiring a MitID login (Lectio only forces a full
+MitID re-auth every few days, not daily).
+
+### Prerequisites (one-time setup)
+
+1. Install Playwright and the Chromium browser:
+   ```powershell
+   py -m pip install playwright
+   py -m playwright install chromium
+   ```
+2. Authenticate the GitHub CLI:
+   ```powershell
+   gh auth login
+   ```
+3. Run the interactive cookie refresh **at least once** so the browser profile has an active
+   Lectio session (this is the only time you need MitID until the session fully expires):
+   ```powershell
+   .\scripts\refresh_cookie.ps1
+   ```
+4. Make sure `LECTIO_SCHEDULE_URL` is set (either in `.env.local` or as an environment
+   variable).
+
+### Register the scheduled task
+
+Run once from any PowerShell window (no Administrator required):
+
+```powershell
+.\scripts\register_scheduled_task.ps1
+```
+
+The task (`LectioCookieRefresh`) runs every 20 hours using a hidden Chromium window. The
+first run fires ~1 minute after registration so you can verify it immediately.
+
+### Verify the task is registered
+
+```powershell
+Get-ScheduledTask -TaskName "LectioCookieRefresh" | Select-Object TaskName, State
+```
+
+Expected output:
+```
+TaskName              State
+--------              -----
+LectioCookieRefresh   Ready
+```
+
+### View the log
+
+```powershell
+notepad "$env:LOCALAPPDATA\lectio-sync\auto-refresh.log"
+```
+
+A successful run ends with:
+```
+[2026-03-01 06:00:45] Auto refresh completed successfully (exit 0).
+```
+
+### Trigger a manual run
+
+```powershell
+Start-ScheduledTask -TaskName "LectioCookieRefresh"
+```
+
+### Remove the task
+
+```powershell
+Unregister-ScheduledTask -TaskName "LectioCookieRefresh" -Confirm:$false
+```
+
+### What to do if the task fails
+
+If the log shows `ERROR: Timed out … waiting for the schedule page`, the Lectio session in
+the browser profile has expired and Lectio is requiring a full MitID re-login.
+
+Fix: run `.\scripts\refresh_cookie.ps1` interactively (the visible browser will open and
+let you log in with MitID). After that succeeds, the profile holds a fresh session and
+headless runs will work again for several more days.
+
+---
+
 ## Assignments feed (Opgaver)
 
 In addition to the schedule feed, this repo generates a second iCalendar feed containing only upcoming
