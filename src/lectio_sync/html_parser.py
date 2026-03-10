@@ -260,11 +260,12 @@ def _compose_title(base_title: str, tooltip: str, room: str) -> str:
             teachers = ln.split(":", 1)[1].strip() if ":" in ln else ""
             break
 
-    parts = [base_title.strip()]
-    if teachers:
-        parts.append(teachers)
+    parts = []
     if room:
         parts.append(room)
+    parts.append(base_title.strip())
+    if teachers:
+        parts.append(teachers)
     return " - ".join([p for p in parts if p])
 
 

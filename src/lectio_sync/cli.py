@@ -51,14 +51,18 @@ def _classify_fetched_page(html: str) -> str:
 def _filter_events(events: list) -> list:
     """Apply relevance filters before writing to the calendar feed.
 
-    Full-day events: keep only if the title contains at least one of the
-    class/group keywords (2.g, 2.G, 3.g, 3.G, Alle, alle).
+    Full-day events: keep only if the title contains at least one of:
+      - "Alle" / "alle" as a whole word (word-boundary match, case-insensitive),
+        so e.g. "Hallen" is NOT matched.
+      - "2.g" / "2.G" (and sub-classes such as "2.ga") as a substring.
+      - "3.g" / "3.G" (and sub-classes such as "3.ga") as a substring.
 
     Non-full-day events: drop if the title contains any of the club
     keywords (Armwrestling-klubben, Armwrestling, armwrestling-klubben,
     armwrestling, LEGO klubben).
     """
-    ALL_DAY_KEEP = ("2.g", "2.G", "3.g", "3.G", "Alle", "alle")
+    import re as _re
+    _ALL_DAY_KEEP_RE = _re.compile(r'\balle\b|2\.[gG]|3\.[gG]', _re.IGNORECASE)
     NON_FULL_DAY_DROP = (
         "Armwrestling-klubben",
         " Armwrestling",
@@ -70,7 +74,7 @@ def _filter_events(events: list) -> list:
     filtered = []
     for ev in events:
         if ev.is_all_day:
-            if any(kw in ev.title for kw in ALL_DAY_KEEP):
+            if _ALL_DAY_KEEP_RE.search(ev.title):
                 filtered.append(ev)
         else:
             if not any(kw in ev.title for kw in NON_FULL_DAY_DROP):

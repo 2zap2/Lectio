@@ -6,7 +6,7 @@ import pytest
 
 _FIXTURE = Path(__file__).resolve().parents[1] / "Avanceret skema - Lectio - TEC.html"
 
-from lectio_sync.html_parser import parse_lectio_advanced_schedule_html
+from lectio_sync.html_parser import parse_lectio_advanced_schedule_html, _compose_title
 
 
 @pytest.mark.skipif(not _FIXTURE.exists(), reason="Local Lectio fixture not present")
@@ -45,6 +45,30 @@ class HtmlParserTests(unittest.TestCase):
             debug=False,
         )
         self.assertTrue(any(e.status == "CANCELLED" for e in events))
+
+
+class ComposeTitleTests(unittest.TestCase):
+
+    def _tooltip_with_teacher(self, teacher: str) -> str:
+        return f"Lærer: {teacher}"
+
+    def test_room_teacher_both_present(self) -> None:
+        tooltip = self._tooltip_with_teacher("Kasper Prindal-Nielsen (kpn)")
+        result = _compose_title("L2a MA", tooltip, "1.59")
+        self.assertEqual(result, "1.59 - L2a MA - Kasper Prindal-Nielsen (kpn)")
+
+    def test_room_present_no_teacher(self) -> None:
+        result = _compose_title("L2a MA", "", "1.59")
+        self.assertEqual(result, "1.59 - L2a MA")
+
+    def test_no_room_teacher_present(self) -> None:
+        tooltip = self._tooltip_with_teacher("Kasper Prindal-Nielsen (kpn)")
+        result = _compose_title("L2a MA", tooltip, "")
+        self.assertEqual(result, "L2a MA - Kasper Prindal-Nielsen (kpn)")
+
+    def test_neither_room_nor_teacher(self) -> None:
+        result = _compose_title("L2a MA", "", "")
+        self.assertEqual(result, "L2a MA")
 
 
 if __name__ == "__main__":

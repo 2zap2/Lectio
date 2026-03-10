@@ -1,7 +1,7 @@
 ---
 title: "Lectio Sync — Project Completion Plan"
 date: "2026-02-27T00:00:00Z"
-status: draft
+status: completed
 estimated_effort: "1–2 days"
 ---
 
@@ -21,12 +21,12 @@ After this plan is executed, someone new to the project can clone the repo, read
 
 ## Progress
 
-- [ ] Milestone 1: Remove personal data from git history surface
-- [ ] Milestone 2: Code quality and structural improvements
-- [ ] Milestone 3: GitHub Actions cleanup
-- [ ] Milestone 4: README overhaul
-- [ ] Milestone 5: Project metadata and finishing touches
-- [ ] Milestone 6: Final validation — full test run, smoke test, and ICS spot-check
+- [x] Milestone 1: Remove personal data from git history surface
+- [x] Milestone 2: Code quality and structural improvements
+- [x] Milestone 3: GitHub Actions cleanup
+- [x] Milestone 4: README overhaul
+- [x] Milestone 5: Project metadata and finishing touches
+- [x] Milestone 6: Final validation — full test run, smoke test, and ICS spot-check
 
 
 ## Surprises & Discoveries
@@ -63,7 +63,16 @@ After this plan is executed, someone new to the project can clone the repo, read
 
 ## Outcomes & Retrospective
 
-*(To be filled in after completion.)*
+All 6 milestones completed on 2026-02-27. 60/60 tests pass. One pre-existing bug was discovered and fixed during validation: `html_parser.py` was assembling the assignments SUMMARY in the order `{Opgavetitel} • {Hold} • {Elevtid} • {Status}` instead of the spec order `{Status} • {Opgavetitel} • {Hold} • {Elevtid}`. This was corrected as part of the validation pass.
+
+All acceptance criteria met:
+- Personal student ID `67380947456` removed from tracked files.
+- `docs/execplans and HTML examples/HTML example of calendar for classrooms` deleted.
+- `LICENSE` (MIT) created.
+- README no longer contains development-dialogue sections.
+- `build-ics.yml` deleted.
+- `py -m lectio_sync --help` exits 0 without errors.
+- Committed and pushed to `main` as `45335b8`.
 
 
 ## Context and Orientation

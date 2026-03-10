@@ -30,14 +30,35 @@ $action = New-ScheduledTaskAction `
     -Execute "powershell.exe" `
     -Argument "-ExecutionPolicy Bypass -WindowStyle Hidden -NonInteractive -File `"$scriptPath`""
 
-# ── Build the trigger: repeat every 20 hours, starting in 1 minute ───────
-# Omit -RepetitionDuration so Windows uses its default (indefinite).
-# [TimeSpan]::MaxValue is rejected on some Windows builds (HRESULT 0x80041318).
-$startTime = (Get-Date).AddMinutes(1)
-$trigger = New-ScheduledTaskTrigger `
-    -Once `
-    -At $startTime `
-    -RepetitionInterval (New-TimeSpan -Hours 20)
+# ── Build triggers ────────────────────────────────────────────────────────
+# Trigger 1: fires every time THIS user logs on (after boot / reboot).
+$triggerLogon = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
+
+# Trigger 2: fires every time the PC wakes from sleep or hibernate.
+# Task Scheduler's New-ScheduledTaskTrigger does not expose event triggers
+# directly, so we build one using the CIM (WMI) layer.
+# The subscription below is an XPath query against the Windows System event log.
+# Power-Troubleshooter EventID 1 is written on every successful resume from sleep.
+$resumeXml = @'
+<QueryList>
+  <Query Id="0" Path="System">
+    <Select Path="System">
+      *[System[Provider[@Name='Microsoft-Windows-Power-Troubleshooter']
+        and EventID=1]]
+    </Select>
+  </Query>
+</QueryList>
+'@
+
+$cimClass   = Get-CimClass -ClassName MSFT_TaskEventTrigger `
+                           -Namespace Root/Microsoft/Windows/TaskScheduler
+$triggerResume = $cimClass | New-CimInstance -ClientOnly -Property @{
+    Enabled      = $true
+    Subscription = $resumeXml
+}
+
+# Both triggers are passed as an array to Register-ScheduledTask below.
+$triggers = @($triggerLogon, $triggerResume)
 
 # ── Settings ──────────────────────────────────────────────────────────────
 $settings = New-ScheduledTaskSettingsSet `
@@ -57,7 +78,7 @@ if ($existing) {
 Register-ScheduledTask `
     -TaskName   $taskName `
     -Action     $action `
-    -Trigger    $trigger `
+    -Trigger    $triggers `
     -Settings   $settings `
     -RunLevel   Limited `
     -Force `
@@ -65,8 +86,8 @@ Register-ScheduledTask `
 
 Write-Host ""
 Write-Host "Task '$taskName' registered successfully." -ForegroundColor Green
-Write-Host "First run will occur at $startTime"
+Write-Host "Task will run at next logon and on every resume from sleep."
 Write-Host ""
-Write-Host "To verify: open Task Scheduler, find '$taskName', and check 'Last Run Result'."
+Write-Host "To verify: open Task Scheduler, find '$taskName', and check the Triggers tab for two entries."
 Write-Host "To view the log after the first run:"
 Write-Host "  notepad `"$env:LOCALAPPDATA\lectio-sync\auto-refresh.log`""

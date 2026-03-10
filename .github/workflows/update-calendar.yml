@@ -3,10 +3,11 @@ name: Update calendar.ics
 on:
   workflow_dispatch:
   schedule:
-    # GitHub schedules are UTC-only. We run twice and time-gate
-    # to get exactly ~08:00 Europe/Copenhagen in both winter/summer.
-    - cron: "5 6 * * *"  # 08:05 CEST (summer)
-    - cron: "5 7 * * *"  # 08:05 CET  (winter)
+    # 07:05 UTC = 08:05 CET (winter) / 09:05 CEST (summer).
+    # A single entry avoids the fragile two-cron + time-gate pattern:
+    # GitHub cron jobs can be delayed 30-90+ min, which caused the
+    # hour==8 gate to fail silently and skip the sync entirely.
+    - cron: "5 7 * * *"
 
 permissions:
   contents: write
@@ -22,22 +23,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Time gate (08:xx Copenhagen)
-        id: timegate
-        shell: bash
-        run: |
-          should_run=$(python -c "from datetime import datetime; from zoneinfo import ZoneInfo; now=datetime.now(ZoneInfo('Europe/Copenhagen')); print('true' if now.hour==8 else 'false')")
-          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
-
       - name: Install deps
-        if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
           python -m pip install -e .
 
       - name: Fetch Lectio and build ICS
-        if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'
         env:
           LECTIO_SCHEDULE_URL: ${{ secrets.LECTIO_SCHEDULE_URL }}
           LECTIO_COOKIE_HEADER: ${{ secrets.LECTIO_COOKIE_HEADER }}
@@ -67,7 +59,6 @@ jobs:
             "${ASSIGNMENTS_ARGS[@]}"
 
       - name: Commit and push if changed
-        if: github.event_name == 'workflow_dispatch' || steps.timegate.outputs.should_run == 'true'
         run: |
           git add docs/*.ics
           if git diff --cached --quiet; then
