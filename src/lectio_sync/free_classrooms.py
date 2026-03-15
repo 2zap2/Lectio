@@ -318,11 +318,27 @@ def generate_free_classrooms_ics(
     if today is None:
         today = datetime.now(local_tz).date()
 
+    # Dates that have at least one real scheduled event (so busy data is trustworthy).
+    covered_dates: set[date] = set()
+    for ev in schedule_events:
+        if ev.is_all_day or ev.start is None:
+            continue
+        if (ev.status or "").upper() == "CANCELLED":
+            continue
+        try:
+            ev_local_date = ev.start.astimezone(local_tz).date()
+        except Exception:
+            ev_local_date = ev.start.date()
+        covered_dates.add(ev_local_date)
+
     all_free_events: list[LectioEvent] = []
     for offset in range(days_ahead + 1):
         target_date = today + timedelta(days=offset)
         # School is only open Mon–Fri (isoweekday: 1=Mon … 5=Fri).
         if target_date.isoweekday() > 5:
+            continue
+        # Only emit free-room suggestions for dates the HTML actually covers.
+        if target_date not in covered_dates:
             continue
         busy_map = build_busy_map(schedule_events, target_date, timezone_name)
         day_events = compute_free_room_events(busy_map, target_date, timezone_name)

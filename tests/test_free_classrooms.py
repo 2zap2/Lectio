@@ -284,6 +284,73 @@ class TestComputeFreeRoomEvents(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
+# generate_free_classrooms_ics – covered-dates guard
+# ---------------------------------------------------------------------------
+
+class TestCoveredDatesGuard(unittest.TestCase):
+    def test_stale_html_yields_no_free_events(self) -> None:
+        """When today has no schedule data, no free-room events should be emitted."""
+        ev = _make_event(
+            _dt(8, 15, d=date(2026, 2, 2)),
+            _dt(9, 15, d=date(2026, 2, 2)),
+            room="1.07",
+            description="Lokale: 1.07",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[ev],
+                output_path=out,
+                timezone_name=_TZ,
+                today=date(2026, 3, 16),
+                days_ahead=0,
+            )
+        self.assertEqual(evs, [], "Expected empty output for a date not in the schedule")
+
+    def test_covered_date_emits_free_events(self) -> None:
+        """A date that has schedule data should still produce free-room events."""
+        ev = _make_event(
+            _dt(8, 15, d=date(2026, 2, 2)),
+            _dt(9, 15, d=date(2026, 2, 2)),
+            room="1.07",
+            description="Lokale: 1.07",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[ev],
+                output_path=out,
+                timezone_name=_TZ,
+                today=date(2026, 2, 2),
+                days_ahead=0,
+            )
+        self.assertGreater(len(evs), 0, "Expected free-room events for a covered date")
+
+    def test_only_covered_dates_in_output(self) -> None:
+        """With days_ahead=4, only dates that have schedule data emit events."""
+        ev = _make_event(
+            _dt(8, 15, d=date(2026, 2, 2)),
+            _dt(9, 15, d=date(2026, 2, 2)),
+            room="1.07",
+            description="Lokale: 1.07",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "free.ics"
+            evs = generate_free_classrooms_ics(
+                schedule_events=[ev],
+                output_path=out,
+                timezone_name=_TZ,
+                today=date(2026, 2, 2),
+                days_ahead=4,
+            )
+        output_dates = {
+            e.start.astimezone(dateutil_tz.gettz(_TZ)).date()
+            for e in evs if e.start is not None
+        }
+        self.assertEqual(output_dates, {date(2026, 2, 2)})
+
+
+# ---------------------------------------------------------------------------
 # Integration smoke-test using the real HTML fixture
 # ---------------------------------------------------------------------------
 
@@ -348,12 +415,24 @@ class TestGenerateFreeClassroomsIcs(unittest.TestCase):
     TODAY_MON = date(2026, 3, 9)   # Monday
     TODAY_SUN = date(2026, 3, 8)   # Sunday
 
+    def _dummy_busy_event_for_day(self, d: date) -> LectioEvent:
+        return _make_event(
+            _dt(8, 15, d=d),
+            _dt(9, 15, d=d),
+            room="1.07",
+            description="Lokale: 1.07",
+        )
+
     def test_skips_weekends(self) -> None:
         """Events must only be generated for weekdays (Mon–Fri)."""
+        schedule_events = [
+            self._dummy_busy_event_for_day(self.TODAY_SUN),
+            self._dummy_busy_event_for_day(self.TODAY_MON),
+        ]
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "free.ics"
             evs = generate_free_classrooms_ics(
-                schedule_events=[],
+                schedule_events=schedule_events,
                 output_path=out,
                 timezone_name=_TZ,
                 today=self.TODAY_SUN,   # Sunday
@@ -364,16 +443,20 @@ class TestGenerateFreeClassroomsIcs(unittest.TestCase):
             for ev in evs
             if ev.start is not None
         }
-        # Sunday must not appear; Monday must appear (all rooms free = events generated)
+        # Sunday must not appear; Monday must appear.
         self.assertNotIn(self.TODAY_SUN, event_dates)
         self.assertIn(self.TODAY_MON, event_dates)
 
     def test_covers_multiple_days(self) -> None:
         """With days_ahead=4 from a Monday, events must span Mon–Fri (5 days)."""
+        schedule_events = [
+            self._dummy_busy_event_for_day(self.TODAY_MON + timedelta(days=i))
+            for i in range(5)
+        ]
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "free.ics"
             evs = generate_free_classrooms_ics(
-                schedule_events=[],
+                schedule_events=schedule_events,
                 output_path=out,
                 timezone_name=_TZ,
                 today=self.TODAY_MON,
@@ -389,10 +472,11 @@ class TestGenerateFreeClassroomsIcs(unittest.TestCase):
 
     def test_days_ahead_zero_is_today_only(self) -> None:
         """days_ahead=0 reproduces the legacy single-day behaviour."""
+        schedule_events = [self._dummy_busy_event_for_day(self.TODAY_MON)]
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "free.ics"
             evs = generate_free_classrooms_ics(
-                schedule_events=[],
+                schedule_events=schedule_events,
                 output_path=out,
                 timezone_name=_TZ,
                 today=self.TODAY_MON,
@@ -407,10 +491,11 @@ class TestGenerateFreeClassroomsIcs(unittest.TestCase):
 
     def test_writes_ics_file(self) -> None:
         """Output ICS file must be created and non-empty."""
+        schedule_events = [self._dummy_busy_event_for_day(self.TODAY_MON)]
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "free.ics"
             generate_free_classrooms_ics(
-                schedule_events=[],
+                schedule_events=schedule_events,
                 output_path=out,
                 timezone_name=_TZ,
                 today=self.TODAY_MON,

@@ -170,6 +170,27 @@ def main() -> int:
         ),
     )
     parser.add_argument(
+        "--rooms-url",
+        type=str,
+        help=(
+            "URL of the Lectio classroom-schedule page (SkemaAvanceret.aspx with lokalesel=...). "
+            "Used as the sole event source for --free-classrooms-out in fetch mode, "
+            "keeping room data completely separate from calendar.ics. "
+            "Also read from LECTIO_ROOMS_URL."
+        ),
+    )
+    parser.add_argument(
+        "--rooms-html",
+        type=Path,
+        help=(
+            "Path to a locally saved Lectio classroom-schedule HTML file "
+            "(SkemaAvanceret.aspx with lokalesel=...). "
+            "Used as the sole event source for --free-classrooms-out in file mode, "
+            "keeping room data completely separate from calendar.ics. "
+            "Also read from LECTIO_ROOMS_HTML_PATH."
+        ),
+    )
+    parser.add_argument(
         "--fetch-assignments",
         action="store_true",
         help="Fetch the assignments page using the same cookie header (requires --fetch and --assignments-url)",
@@ -415,12 +436,40 @@ def main() -> int:
 
         # -- Free classrooms feed (fetch mode) --
         if args.free_classrooms_out is not None:
+            rooms_url = args.rooms_url or os.environ.get("LECTIO_ROOMS_URL", "")
+            if rooms_url.strip():
+                # Fetch the room-schedule HTML separately — does not touch calendar.ics events.
+                rooms_fetched = fetch_weeks_html_with_diagnostics(
+                    schedule_url=rooms_url,
+                    cookie_header=cookie_header,
+                    weeks=weeks,
+                    timeout_seconds=args.fetch_timeout_seconds,
+                )
+                rooms_events: list = []
+                rooms_seen_uids: set[str] = set()
+                for wk, rooms_html_text, rooms_diag in rooms_fetched:
+                    try:
+                        week_room_events = parse_lectio_advanced_schedule_html_text(
+                            rooms_html_text,
+                            timezone_name,
+                            sync_days_past=days_past,
+                            sync_days_future=days_future,
+                            emit_cancelled_events=False,
+                        )
+                    except Exception as exc:
+                        raise RuntimeError(
+                            f"Failed to parse fetched rooms HTML (week={wk.week_param}, "
+                            f"status={rooms_diag.status_code})."
+                        ) from exc
+                    for ev in week_room_events:
+                        if ev.uid not in rooms_seen_uids:
+                            rooms_seen_uids.add(ev.uid)
+                            rooms_events.append(ev)
+                free_source_events = rooms_events
+            else:
+                free_source_events = events
             free_out = args.free_classrooms_out
-            free_events = generate_free_classrooms_ics(
-                events,
-                free_out,
-                timezone_name,
-            )
+            free_events = generate_free_classrooms_ics(free_source_events, free_out, timezone_name)
             print(f"Wrote {len(free_events)} events to {free_out}")
 
         return 0
@@ -469,12 +518,23 @@ def main() -> int:
     # -- Free classrooms feed (file mode) --
     if args.free_classrooms_out is not None:
         tz_name = args.tz or os.environ.get("LECTIO_TIMEZONE", "Europe/Copenhagen")
-        free_out = args.free_classrooms_out
-        free_events = generate_free_classrooms_ics(
-            events,
-            free_out,
-            tz_name,
+        rooms_html_arg = args.rooms_html or (
+            Path(os.environ["LECTIO_ROOMS_HTML_PATH"])
+            if os.environ.get("LECTIO_ROOMS_HTML_PATH")
+            else None
         )
+        if rooms_html_arg is not None and Path(rooms_html_arg).exists():
+            # Parse the dedicated classroom-schedule HTML — completely separate from calendar.ics.
+            free_source_events = parse_lectio_advanced_schedule_html(
+                Path(rooms_html_arg),
+                tz_name,
+                sync_days_past=None,
+                sync_days_future=None,
+            )
+        else:
+            free_source_events = events
+        free_out = args.free_classrooms_out
+        free_events = generate_free_classrooms_ics(free_source_events, free_out, tz_name)
         print(f"Wrote {len(free_events)} events to {free_out}")
 
     return 0
