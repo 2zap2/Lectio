@@ -39,6 +39,9 @@ $triggerLogon = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:US
 # directly, so we build one using the CIM (WMI) layer.
 # The subscription below is an XPath query against the Windows System event log.
 # Power-Troubleshooter EventID 1 is written on every successful resume from sleep.
+# A 30-second delay is added so the network adapter has time to reconnect before
+# Playwright tries to reach Lectio (without this, the task starts ~5 s after wake
+# and fails because the network is still down).
 $resumeXml = @'
 <QueryList>
   <Query Id="0" Path="System">
@@ -55,6 +58,7 @@ $cimClass   = Get-CimClass -ClassName MSFT_TaskEventTrigger `
 $triggerResume = $cimClass | New-CimInstance -ClientOnly -Property @{
     Enabled      = $true
     Subscription = $resumeXml
+    Delay        = 'PT30S'   # wait 30 s after wake for the network to reconnect
 }
 
 # Both triggers are passed as an array to Register-ScheduledTask below.
@@ -65,6 +69,8 @@ $settings = New-ScheduledTaskSettingsSet `
     -ExecutionTimeLimit (New-TimeSpan -Minutes 10) `
     -StartWhenAvailable `
     -RunOnlyIfNetworkAvailable `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
     -WakeToRun:$false
 
 # ── Remove pre-existing task with same name if present ────────────────────

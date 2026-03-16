@@ -469,7 +469,7 @@ def main() -> int:
             else:
                 free_source_events = events
             free_out = args.free_classrooms_out
-            free_events = generate_free_classrooms_ics(free_source_events, free_out, timezone_name)
+            free_events = generate_free_classrooms_ics(free_source_events, free_out, timezone_name, days_ahead=0)
             print(f"Wrote {len(free_events)} events to {free_out}")
 
         return 0
@@ -534,7 +534,7 @@ def main() -> int:
         else:
             free_source_events = events
         free_out = args.free_classrooms_out
-        free_events = generate_free_classrooms_ics(free_source_events, free_out, tz_name)
+        free_events = generate_free_classrooms_ics(free_source_events, free_out, tz_name, days_ahead=0)
         print(f"Wrote {len(free_events)} events to {free_out}")
 
     return 0

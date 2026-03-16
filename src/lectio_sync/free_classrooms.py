@@ -51,6 +51,7 @@ CLASSROOM_UNIVERSE: list[str] = [
     "0.77",
     "1.02",
     "1.03a",
+    "1.05a",
     "1.07",
     "1.09",
     "1.10",
@@ -86,16 +87,16 @@ def _extract_rooms(event: LectioEvent) -> list[str]:
     for line in (event.description or "").split("\n"):
         stripped = line.strip()
         lo = stripped.lower()
-        if lo.startswith("lokale:"):
-            room = stripped.split(":", 1)[1].strip()
-            if room:
-                rooms.append(room)
-        elif lo.startswith("lokaler:"):
+        if lo.startswith("lokaler:"):  # plural must be checked before singular
             raw = stripped.split(":", 1)[1].strip()
             for r in raw.split(","):
                 r = r.strip()
                 if r:
                     rooms.append(r)
+        elif lo.startswith("lokale:"):
+            room = stripped.split(":", 1)[1].strip()
+            if room:
+                rooms.append(room)
     # Fallback: use the location field if we found nothing in the description.
     if not rooms and event.location:
         rooms.append(event.location)
