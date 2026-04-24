@@ -2,83 +2,8 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//LectioParser//Custom//EN
 BEGIN:VEVENT
-UID:lectio-74e089a5ae16da8830e6e222@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Aflevering af idéhistorie eksamensprojekt\, kl. 22.00 i Lecti
- o
-DTSTART;VALUE=DATE:20260412
-DTEND;VALUE=DATE:20260413
-DESCRIPTION:3.g: Aflevering af idéhistorie eksamensprojekt\, kl. 22.00 i L
- ectio\n12/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-4cdbae005d6aa6411ab34eb0@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Aflevering af syge-SOP\, ekstratid
-DTSTART;VALUE=DATE:20260412
-DTEND;VALUE=DATE:20260413
-DESCRIPTION:3.g: Aflevering af syge-SOP\, ekstratid\n12/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-bb6b11a1447f404469f78b41@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.g: Eksamensorientering (Denne uge) - Klassevis
-DTSTART;VALUE=DATE:20260413
-DTEND;VALUE=DATE:20260414
-DESCRIPTION:2.g: Eksamensorientering (Denne uge) - Klassevis\n13/4-2026 Hel
- e dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-30ea9c9d35636aef5777d984@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Teknikfagsuge
-DTSTART;VALUE=DATE:20260413
-DTEND;VALUE=DATE:20260414
-DESCRIPTION:3.g: Teknikfagsuge\n13/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-db32adea18f8b3087b82cdaf@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Teknikfagsuge
-DTSTART;VALUE=DATE:20260414
-DTEND;VALUE=DATE:20260415
-DESCRIPTION:3.g: Teknikfagsuge\n14/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-cd1f7f17521950d4f6f980b3@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Teknikfagsuge
-DTSTART;VALUE=DATE:20260415
-DTEND;VALUE=DATE:20260416
-DESCRIPTION:3.g: Teknikfagsuge\n15/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-387d525a0e59356562d9bf27@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.g: Skrivecafé
-DTSTART;VALUE=DATE:20260416
-DTEND;VALUE=DATE:20260417
-DESCRIPTION:2.g: Skrivecafé\n16/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-4478f3f1054a89b76edcaa0c@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Teknikfagsuge
-DTSTART;VALUE=DATE:20260416
-DTEND;VALUE=DATE:20260417
-DESCRIPTION:3.g: Teknikfagsuge\n16/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-824af960942bdd95d65cd3aa@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Alle: Lektiecafé
-DTSTART;VALUE=DATE:20260416
-DTEND;VALUE=DATE:20260417
-DESCRIPTION:Alle: Lektiecafé\n16/4-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
 UID:lectio-d6d012b04e69a30dbc5510a7@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Teknikfagsuge
 DTSTART;VALUE=DATE:20260417
 DTEND;VALUE=DATE:20260418
@@ -86,7 +11,7 @@ DESCRIPTION:3.g: Teknikfagsuge\n17/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-3cbf062566f7c39b6af37cbe@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Værkstedsuge Teknologi\, 6 moduler
 DTSTART;VALUE=DATE:20260420
 DTEND;VALUE=DATE:20260421
@@ -94,7 +19,7 @@ DESCRIPTION:2.g: Værkstedsuge Teknologi\, 6 moduler\n20/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-841d6fde362e7bdf5007a15e@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Værkstedsuge Teknologi\, 6 moduler
 DTSTART;VALUE=DATE:20260421
 DTEND;VALUE=DATE:20260422
@@ -102,7 +27,7 @@ DESCRIPTION:2.g: Værkstedsuge Teknologi\, 6 moduler\n21/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-57b79692a2a169db13badedb@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Værkstedsuge Teknologi\, 5 moduler
 DTSTART;VALUE=DATE:20260422
 DTEND;VALUE=DATE:20260423
@@ -110,7 +35,7 @@ DESCRIPTION:2.g: Værkstedsuge Teknologi\, 5 moduler\n22/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-eff34725495fc98366e741e8@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Værkstedsuge Teknologi\, 5 moduler
 DTSTART;VALUE=DATE:20260423
 DTEND;VALUE=DATE:20260424
@@ -118,7 +43,7 @@ DESCRIPTION:2.g: Værkstedsuge Teknologi\, 5 moduler\n23/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-bb2308cdb8e5c6c16747d6cb@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Lektiecafé\, incl. Kom/IT- og TI-Lærer
 DTSTART;VALUE=DATE:20260423
 DTEND;VALUE=DATE:20260424
@@ -127,7 +52,7 @@ DESCRIPTION:Alle: Lektiecafé\, incl. Kom/IT- og TI-Lærer\n23/4-2026 Hele
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-d03a22222133874cc34b73e9@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Værkstedsuge Teknologi\, 5 moduler
 DTSTART;VALUE=DATE:20260424
 DTEND;VALUE=DATE:20260425
@@ -135,7 +60,7 @@ DESCRIPTION:2.g: Værkstedsuge Teknologi\, 5 moduler\n24/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-d2205086853382abcb805b2d@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Galla kl. 17.00-01.00
 DTSTART;VALUE=DATE:20260424
 DTEND;VALUE=DATE:20260425
@@ -143,7 +68,7 @@ DESCRIPTION:Alle: Galla kl. 17.00-01.00\n24/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-78c39171b96531f712a6a915@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Aflevering af Teknologi B eksamensprojekt\, senest kl. 12.00 p
  å kontoret
 DTSTART;VALUE=DATE:20260430
@@ -153,7 +78,7 @@ DESCRIPTION:2.g: Aflevering af Teknologi B eksamensprojekt\, senest kl. 12.
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-8d2070cd285e4515dd10c794@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Aflevering af Kom/IT A eksamensprojekt\, senest kl. 14.00 på 
  kontoret
 DTSTART;VALUE=DATE:20260430
@@ -163,7 +88,7 @@ DESCRIPTION:3.g: Aflevering af Kom/IT A eksamensprojekt\, senest kl. 14.00
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-eecd646b6b967b9268d61a00@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skrivecafé
 DTSTART;VALUE=DATE:20260430
 DTEND;VALUE=DATE:20260501
@@ -171,7 +96,7 @@ DESCRIPTION:3.g: Skrivecafé\n30/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-9049611e7a37f384d1419d36@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Lektiécafe\, incl. tk-lærer
 DTSTART;VALUE=DATE:20260430
 DTEND;VALUE=DATE:20260501
@@ -179,7 +104,7 @@ DESCRIPTION:Alle: Lektiécafe\, incl. tk-lærer\n30/4-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-8ab65867dfdbe84e43b5837f@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Aflevering af Teknologi A eksamensprojekt\, senest kl. 14.00 p
  å kontoret
 DTSTART;VALUE=DATE:20260501
@@ -189,7 +114,7 @@ DESCRIPTION:3.g: Aflevering af Teknologi A eksamensprojekt\, senest kl. 14.
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-a6c2280219d5f6813c747e39@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Aflevering af Mat B eksamensprojekt\, senest kl. 12.00 på kon
  toret
 DTSTART;VALUE=DATE:20260505
@@ -199,7 +124,7 @@ DESCRIPTION:2.g: Aflevering af Mat B eksamensprojekt\, senest kl. 12.00 på
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-70bf8c6fc464d80fac28bffe@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC)
 DTSTART;VALUE=DATE:20260506
 DTEND;VALUE=DATE:20260507
@@ -207,7 +132,7 @@ DESCRIPTION:2.g: SO2c (SRC)\n6/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-4ef45dc0e8690e85c94f094c@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Aflevering af Teknikfag A\, senest kl. 13.00 på kontoret
 DTSTART;VALUE=DATE:20260506
 DTEND;VALUE=DATE:20260507
@@ -216,7 +141,7 @@ DESCRIPTION:3.g: Aflevering af Teknikfag A\, senest kl. 13.00 på kontoret\
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-c2afb3676cc1bf52ab2b8ced@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Teknikfagsmoduler hele dagen
 DTSTART;VALUE=DATE:20260506
 DTEND;VALUE=DATE:20260507
@@ -224,7 +149,7 @@ DESCRIPTION:3.g: Teknikfagsmoduler hele dagen\n6/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-35f4251d121e5e653bb65a36@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC)
 DTSTART;VALUE=DATE:20260507
 DTEND;VALUE=DATE:20260508
@@ -232,7 +157,7 @@ DESCRIPTION:2.g: SO2c (SRC)\n7/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-c4251f4e791d09da22e99138@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC)
 DTSTART;VALUE=DATE:20260508
 DTEND;VALUE=DATE:20260509
@@ -240,7 +165,7 @@ DESCRIPTION:2.g: SO2c (SRC)\n8/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-91dbb7a21284548d324179c1@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Ansatte: Årskarakter på alle afslutterhold skal være givet senes
  t kl. 16.00
 DTSTART;VALUE=DATE:20260508
@@ -250,7 +175,7 @@ DESCRIPTION:Ansatte: Årskarakter på alle afslutterhold skal være givet s
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-2f88a61392484a6c02f38596@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC)
 DTSTART;VALUE=DATE:20260511
 DTEND;VALUE=DATE:20260512
@@ -258,7 +183,7 @@ DESCRIPTION:2.g: SO2c (SRC)\n11/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-150fe4d7f315b416ab4bff5c@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Delvis offentliggørelse af mundtlige eksaminer før 1. juni 
  samt alle skriftlige eksamener kl. 16.00
 DTSTART;VALUE=DATE:20260511
@@ -268,7 +193,7 @@ DESCRIPTION:Alle: Delvis offentliggørelse af mundtlige eksaminer før 1. j
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-d5ba5506a6555a726d6ebf71@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC) skrivedag
 DTSTART;VALUE=DATE:20260512
 DTEND;VALUE=DATE:20260513
@@ -276,7 +201,7 @@ DESCRIPTION:2.g: SO2c (SRC) skrivedag\n12/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-86e7c71f0b4bca61e04142a3@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Årskarakter på alle afslutterhold offentliggøres kl. 16.00
 DTSTART;VALUE=DATE:20260512
 DTEND;VALUE=DATE:20260513
@@ -285,7 +210,7 @@ DESCRIPTION:Alle: Årskarakter på alle afslutterhold offentliggøres kl. 1
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-8c38faaa0f646791c5011f06@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g:  Aflevering af SRC i Lectio
 DTSTART;VALUE=DATE:20260513
 DTEND;VALUE=DATE:20260514
@@ -293,7 +218,7 @@ DESCRIPTION:2.g:  Aflevering af SRC i Lectio\n13/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-584ae47bcba7c3784c663dc8@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC) skrivedag
 DTSTART;VALUE=DATE:20260513
 DTEND;VALUE=DATE:20260514
@@ -301,7 +226,7 @@ DESCRIPTION:2.g: SO2c (SRC) skrivedag\n13/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-621712ec29b43c6ffd8bc647@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g:  Aflevering af SRC i Lectio\, forlænget tid
 DTSTART;VALUE=DATE:20260515
 DTEND;VALUE=DATE:20260516
@@ -310,7 +235,7 @@ DESCRIPTION:2.g:  Aflevering af SRC i Lectio\, forlænget tid\n15/5-2026 He
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-1c3cf3b10bef060870f7a670@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Sidste skoledag\, aften arrangement med eksamensoffentliggøre
  lse efter midnat
 DTSTART;VALUE=DATE:20260518
@@ -320,7 +245,7 @@ DESCRIPTION:3.g: Sidste skoledag\, aften arrangement med eksamensoffentligg
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-49231b01fb7459f144f35968@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Ansatte: Årskarakter på alle forsætter hold skal være givet sen
  est kl. 16.00
 DTSTART;VALUE=DATE:20260518
@@ -330,7 +255,7 @@ DESCRIPTION:Ansatte: Årskarakter på alle forsætter hold skal være givet
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-242758bb99434d50dfceee96@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: SO2c (SRC) - Forberedelse til mundtlig prøve
 DTSTART;VALUE=DATE:20260519
 DTEND;VALUE=DATE:20260520
@@ -338,18 +263,8 @@ DESCRIPTION:2.g: SO2c (SRC) - Forberedelse til mundtlig prøve\n19/5-2026 H
  ele dagen
 END:VEVENT
 BEGIN:VEVENT
-UID:lectio-7c3f751c991dd3386ee951bd@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:3.g: Aflevering af syge-SOP-opgaveformulering på kontoret\, senest
-  kl. 12.00
-DTSTART;VALUE=DATE:20260519
-DTEND;VALUE=DATE:20260520
-DESCRIPTION:3.g: Aflevering af syge-SOP-opgaveformulering på kontoret\, se
- nest kl. 12.00\n19/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
 UID:lectio-5845945c3069473089040835@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Sidste skoledag
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
@@ -357,7 +272,7 @@ DESCRIPTION:2.g: Sidste skoledag\n20/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-5ccd56de39eee02582a26c1c@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Dansk A
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
@@ -365,7 +280,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Dansk A\n20/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-1c468fa9a40d11282bd7eb03@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Årskarakter på alle forsætter hold offentliggøres kl. 16.
  00
 DTSTART;VALUE=DATE:20260520
@@ -375,7 +290,7 @@ DESCRIPTION:Alle: Årskarakter på alle forsætter hold offentliggøres kl.
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-05288735209d9a4c2dfcbc3c@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Kemi A
 DTSTART;VALUE=DATE:20260521
 DTEND;VALUE=DATE:20260522
@@ -383,7 +298,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Kemi A\n21/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-e30441a7c4f15624f3967cf0@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.g: Skriftlig eksamen - Engelsk B
 DTSTART;VALUE=DATE:20260522
 DTEND;VALUE=DATE:20260523
@@ -391,7 +306,7 @@ DESCRIPTION:2.g: Skriftlig eksamen - Engelsk B\n22/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-a12ba0cd65bd71f28e0ec1b5@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Engelsk A
 DTSTART;VALUE=DATE:20260522
 DTEND;VALUE=DATE:20260523
@@ -399,7 +314,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Engelsk A\n22/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-ea2f2826d4b49bd93669bb31@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Udlevering af forberedelses materiale til skriftlig eksamen i 
  Matematik A
 DTSTART;VALUE=DATE:20260526
@@ -409,7 +324,7 @@ DESCRIPTION:3.g: Udlevering af forberedelses materiale til skriftlig eksame
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-6edac3b35f67766a0ea8f847@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Matematik A
 DTSTART;VALUE=DATE:20260528
 DTEND;VALUE=DATE:20260529
@@ -417,7 +332,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Matematik A\n28/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-c2d3909f9d29f66d368de8f6@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Bioteknologi A og Geovidenskab A
 DTSTART;VALUE=DATE:20260529
 DTEND;VALUE=DATE:20260530
@@ -426,7 +341,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Bioteknologi A og Geovidenskab A\n29/5
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-a316c18c68252145e87f75cd@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Skriftlig eksamen - Fysik A
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260602
@@ -434,7 +349,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Fysik A\n1/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-06ec5f202089eea0bd0d2a79@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Huemiddag kl. 18.00-22.00
 DTSTART;VALUE=DATE:20260624
 DTEND;VALUE=DATE:20260625
@@ -442,7 +357,7 @@ DESCRIPTION:3.g: Huemiddag kl. 18.00-22.00\n24/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-aca64702fca473ea5fcf5b1a@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Alle: Sidste mulige eksamensdag
 DTSTART;VALUE=DATE:20260624
 DTEND;VALUE=DATE:20260625
@@ -450,7 +365,7 @@ DESCRIPTION:Alle: Sidste mulige eksamensdag\n24/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-e63ba28073fcf49f8996ec83@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Studenterfoto fra kl. 12.15
 DTSTART;VALUE=DATE:20260625
 DTEND;VALUE=DATE:20260626
@@ -458,7 +373,7 @@ DESCRIPTION:3.g: Studenterfoto fra kl. 12.15\n25/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-dcaf57c05964e21ced76a737@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:3.g: Dimission
 DTSTART;VALUE=DATE:20260626
 DTEND;VALUE=DATE:20260627
@@ -466,227 +381,8 @@ DESCRIPTION:3.g: Dimission\nHold 1 - kl. 9.00-10.00\n3ak\n3b2\n3ei\n3h\n\nH
  old 2 - kl. 11.00-12.00\n3ac\n3b1\n3b3\n3d\n26/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
-UID:ABS78721340695@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.03a - Det Moderne Gennembrud - bew\, csp\, erbc\, lmk
-DTSTART:20260413T092000
-DTEND:20260413T102000
-LOCATION:1.03a
-DESCRIPTION:Ændret!\nDet Moderne Gennembrud\n13/4-2026 09:20 til 10:20\nHo
- ld: L2a DA\nLærere: bew\, csp\, erbc\, lmk\nLokale: 1.03a\n\nLektier:\nHa
- vfruens Sang Af Henrik Pontoppidan.docx [...]\n\nØvrigt indhold:\n"Havfru
- ens Sang" fortolkningshypoteser - Mentimeter [...]\n\nNote:\nVi får besø
- g i undervisningen.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310487813@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.31 - Brexit and the troubles - Frederik Ruth (fr)
-DTSTART:20260413T103000
-DTEND:20260413T113000
-LOCATION:2.31
-DESCRIPTION:Brexit and the troubles\n13/4-2026 10:30 til 11:30\nHold: L2a E
- n\nLærer: Frederik Ruth (fr)\nLokale: 2.31\n\nLektier:\nhttps://ireland.s
- ystime.dk/?id=155 [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75311162279@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.31 - L2a En - Frederik Ruth (fr)
-DTSTART:20260413T121000
-DTEND:20260413T131000
-LOCATION:2.31
-DESCRIPTION:13/4-2026 12:10 til 13:10\nHold: L2a En\nLærer: Frederik Ruth 
- (fr)\nLokale: 2.31\n\nLektier:\nBrexit &amp\; the troubles.pptx [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310449726@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.03a - L2a Ti - Peter Ibæk (pi)
-DTSTART:20260413T132000
-DTEND:20260413T142000
-LOCATION:1.03a
-DESCRIPTION:13/4-2026 13:20 til 14:20\nHold: L2a Ti\nLærer: Peter Ibæk (p
- i)\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310488869@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.03a - L2a Ti - Peter Ibæk (pi)
-DTSTART:20260413T143000
-DTEND:20260413T153000
-LOCATION:1.03a
-DESCRIPTION:13/4-2026 14:30 til 15:30\nHold: L2a Ti\nLærer: Peter Ibæk (p
- i)\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS77126580975@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - Diff. koefficient for invers - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260414T081500
-DTEND:20260414T091500
-LOCATION:2.29
-DESCRIPTION:Ændret!\nDiff. koefficient for invers\n14/4-2026 08:15 til 09:
- 15\nHold: L2a MA\nLærer: Kasper Prindal-Nielsen (kpn)\nLokale: 2.29\n\nLe
- ktier:\nJens Carstensen m.fl.: MAT 2A (papirbog\, stx 1999)\, SYSTIME (pap
- ir)\, 60-62\n(Læs inden modulet)\n\nNote:\nProgram:\nDagens differentialk
- votient\nGrafen for den afledede funktion\nOpgaver: 343\, 344 og 345\nDiff
- erentialkvotienten for en funktions invers\nOpgave 375
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS77126580978@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - Transcendente diff. kvot. 1 - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260414T092000
-DTEND:20260414T102000
-LOCATION:2.29
-DESCRIPTION:Ændret!\nTranscendente diff. kvot. 1\n14/4-2026 09:20 til 10:2
- 0\nHold: L2a MA\nLærer: Kasper Prindal-Nielsen (kpn)\nLokale: 2.29\n\nØv
- rigt indhold:\nJens Carstensen m.fl.: MAT 2A (papirbog\, stx 1999)\, SYSTI
- ME (papir)\, 64-71\,286-289\n(Trigonometriske funktioner)\nOplæg [...]\nJ
- ens Carstensen m.fl.: MAT 2A (papirbog\, stx 1999)\, SYSTIME (papir)\, 144
- -158\n(Logaritme og eksponentialfunktioner)\nGrupper [...]\n\nNote:\nProgr
- am:\nI skal arbejde i grupper med differentialkvotient for enten de trigon
- ometriske funktioner eller logaritme og eksponentiel funktioner. Arbejdet 
- munder ud i en række oplæg i skal afholde for hinanden.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310466673@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.04 - L2a Ti - Peter Ibæk (pi)
-DTSTART:20260414T103000
-DTEND:20260414T113000
-LOCATION:2.04
-DESCRIPTION:14/4-2026 10:30 til 11:30\nHold: L2a Ti\nLærer: Peter Ibæk (p
- i)\nLokale: 2.04
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310469457@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.04 - L2a Ti - Peter Ibæk (pi)
-DTSTART:20260414T121000
-DTEND:20260414T131000
-LOCATION:2.04
-DESCRIPTION:14/4-2026 12:10 til 13:10\nHold: L2a Ti\nLærer: Peter Ibæk (p
- i)\nLokale: 2.04
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS76854896176@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.60 - Mat bag lineær regression - Jonas Olden Kromann (jokr)
-DTSTART:20260414T153500
-DTEND:20260414T173000
-LOCATION:1.60
-DESCRIPTION:Ændret!\nMat bag lineær regression\n14/4-2026 15:35 til 17:30
- \nHold: L InterMat 2026\nLærer: Jonas Olden Kromann (jokr)\nLokale: 1.60\
- n\nLektier:\nProgram [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310964480@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.25 - Det skrå kast - Anja Lea Olsen (alo)
-DTSTART:20260415T092000
-DTEND:20260415T102000
-LOCATION:2.25
-DESCRIPTION:Det skrå kast\n15/4-2026 09:20 til 10:20\nHold: L2a FY\nLærer
- : Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nFremlæggelser af poster
-  - medbring jeres boldkaster-opfindelse [...]\nHalfdan kommer på besøg i
-  dag [...]\nUdfyld spørgeskema [...]\nRettebotten - ret din opgave [...]\
- n\nØvrigt indhold:\nProgram - vi afslutter forløbet om det skrå kast [.
- ..]\nSpørgeskema [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310484380@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.25 - L2a FY - Anja Lea Olsen (alo)
-DTSTART:20260415T103000
-DTEND:20260415T113000
-LOCATION:2.25
-DESCRIPTION:15/4-2026 10:30 til 11:30\nHold: L2a FY\nLærer: Anja Lea Olsen
-  (alo)\nLokale: 2.25
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310485323@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - Transcendente diff. kvot. 2+3 - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260415T121000
-DTEND:20260415T131000
-LOCATION:2.29
-DESCRIPTION:Transcendente diff. kvot. 2+3\n15/4-2026 12:10 til 13:10\nHold:
-  L2a MA\nLærer: Kasper Prindal-Nielsen (kpn)\nLokale: 2.29\n\nNote:\nProg
- ram:\nDagens differentialkvotient\nVidere arbejde med jeres oplæg som vi 
- satte i søen i tirsdag. I skal gerne være færdige i slutningen af dagen
- s moduler.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75312165165@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260415T132000
-DTEND:20260415T142000
-LOCATION:2.29
-DESCRIPTION:15/4-2026 13:20 til 14:20\nHold: L2a MA\nLærer: Kasper Prindal
- -Nielsen (kpn)\nLokale: 2.29
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310459881@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - Oplæg om diff. kvotienter - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260416T092000
-DTEND:20260416T102000
-LOCATION:2.29
-DESCRIPTION:Ændret!\nOplæg om diff. kvotienter\n16/4-2026 09:20 til 10:20
- \nHold: L2a MA\nLærer: Kasper Prindal-Nielsen (kpn)\nLokale: 2.29\n\nNote
- :\nProgram:\nOplæg for makker og efterfølgende opgaveregning.\nTrænings
- opgaver
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310462016@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.29 - Maple + Træning - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260416T103000
-DTEND:20260416T113000
-LOCATION:2.29
-DESCRIPTION:Ændret!\nMaple + Træning\n16/4-2026 10:30 til 11:30\nHold: L2
- a MA\nLærer: Kasper Prindal-Nielsen (kpn)\nLokale: 2.29\n\nNote:\nProgram
- :\nVi taler om hvordan man arbejder med differentialkvotienter i Maple og 
- laver vores egne træningsopgaver.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75310463261@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.05 - My son the fanatic - Frederik Ruth (fr)
-DTSTART:20260416T121000
-DTEND:20260416T131000
-LOCATION:2.05
-DESCRIPTION:My son the fanatic\n16/4-2026 12:10 til 13:10\nHold: L2a En\nL
- ærer: Frederik Ruth (fr)\nLokale: 2.05\n\nLektier:\nmy-son-the-fanatic-by
- -hanif-kureishi.pdf [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS75311185295@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.05 - L2a En - Frederik Ruth (fr)
-DTSTART:20260416T132000
-DTEND:20260416T142000
-LOCATION:2.05
-DESCRIPTION:16/4-2026 13:20 til 14:20\nHold: L2a En\nLærer: Frederik Ruth 
- (fr)\nLokale: 2.05
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79271013614@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:X Forhal - Lektiecafé - atj\, fr\, kal\, skj
-DTSTART:20260416T143000
-DTEND:20260416T153000
-LOCATION:X Forhal
-DESCRIPTION:Lektiecafé\n16/4-2026 14:30 til 15:30\nHold: Alle 1. HTX-eleve
- r (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: at
- j\, fr\, kal\, skj\nLokale: X Forhal
-END:VEVENT
-BEGIN:VEVENT
 UID:ABS75311323885@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - Teknologihistorie - Lene Thodsen (lt)
 DTSTART:20260417T081500
 DTEND:20260417T091500
@@ -698,7 +394,7 @@ DESCRIPTION:Ændret!\nTeknologihistorie\n17/4-2026 08:15 til 09:15\nHold: L
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311340380@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260417T092000
 DTEND:20260417T102000
@@ -708,7 +404,7 @@ DESCRIPTION:Ændret!\n17/4-2026 09:20 til 10:20\nHold: L2a Ih\nLærer: Lene
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310477878@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - Funktionsundersøgelser - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260417T103000
 DTEND:20260417T113000
@@ -724,7 +420,7 @@ DESCRIPTION:Funktionsundersøgelser\n17/4-2026 10:30 til 11:30\nHold: L2a M
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79981554667@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:33 GMK diplomer ved storeskærm - Jonas Olden Kromann (jokr)
 DTSTART:20260417T113500
 DTEND:20260417T120500
@@ -735,7 +431,7 @@ DESCRIPTION:Ændret!\n33 GMK diplomer ved storeskærm\n17/4-2026 11:35 til
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310478787@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260417T121000
 DTEND:20260417T131000
@@ -745,7 +441,7 @@ DESCRIPTION:17/4-2026 12:10 til 13:10\nHold: L2a MA\nLærer: Kasper Prindal
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310486279@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.60 - L2a En - Frederik Ruth (fr)
 DTSTART:20260417T132000
 DTEND:20260417T142000
@@ -755,7 +451,7 @@ DESCRIPTION:17/4-2026 13:20 til 14:20\nHold: L2a En\nLærer: Frederik Ruth
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310487078@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.60 - L2a En - Frederik Ruth (fr)
 DTSTART:20260417T143000
 DTEND:20260417T153000
@@ -765,7 +461,7 @@ DESCRIPTION:17/4-2026 14:30 til 15:30\nHold: L2a En\nLærer: Frederik Ruth
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79725189207@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:BYG Hold 1 - Trine Pipi Kræmer (tpk)
 DTSTART:20260420T081500
 DTEND:20260420T113000
@@ -774,117 +470,126 @@ DESCRIPTION:BYG Hold 1\n20/4-2026 08:15 til 11:30\nHold: L2a Ti\, L2ak Ti\,
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79728990364@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologi B - Skrivelokale - Mikkel Christensen Lund (mclu)
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologi B - Skrivelokale
 DTSTART:20260420T081500
 DTEND:20260420T153000
 DESCRIPTION:Teknologi B - Skrivelokale\n20/4-2026 08:15 til 15:30\nHold: L2
- a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærer: Mi
- kkel Christensen Lund (mclu)\nLokaler: 2.27\, 2.29\n\nNote:\nSkrivelokale
+ a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLokaler: 2
+ .27\, 2.29\n\nNote:\nSkrivelokale
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930940@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ajrp\, albm\, khh\, kj\, mban\, tpk
 DTSTART:20260420T081500
 DTEND:20260420T091500
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 08:15 til 09:15\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ajr
- p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.59\, 1.
+ 63a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930950@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ajrp\, albm\, khh\, kj\, mban\, tpk
 DTSTART:20260420T092000
 DTEND:20260420T102000
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 09:20 til 10:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ajr
- p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.59\, 1.
+ 63a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930948@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ajrp\, albm\, khh\, kj\, mban\, tpk
 DTSTART:20260420T103000
 DTEND:20260420T113000
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 10:30 til 11:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ajr
- p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ p\, albm\, khh\, kj\, mban\, tpk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.02\, 1.
+ 63a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930946@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lhkr\, lrm\, mban\, stk
 DTSTART:20260420T121000
 DTEND:20260420T131000
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 12:10 til 13:10\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lhkr\, lrm\, mban\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lhkr\, lrm\, mban\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.02\, 1.
+ 63a\n\nNote:\nddu : 1.02
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930944@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lhkr\, lrm\, pi\, stk
 DTSTART:20260420T132000
 DTEND:20260420T142000
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 13:20 til 14:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lhkr\, lrm\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lhkr\, lrm\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 0.77\, 1.63
+ a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930942@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lhkr\, lrm\, pi\, stk
 DTSTART:20260420T143000
 DTEND:20260420T153000
 DESCRIPTION:Teknologiværksted - 2.g\n20/4-2026 14:30 til 15:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lhkr\, lrm\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lhkr\, lrm\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 0.77\, 1.63
+ a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79728990381@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologi B - Skrivelokale - Mikkel Christensen Lund (mclu)
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologi B - Skrivelokale
 DTSTART:20260421T081500
 DTEND:20260421T153000
 DESCRIPTION:Teknologi B - Skrivelokale\n21/4-2026 08:15 til 15:30\nHold: L2
- a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærer: Mi
- kkel Christensen Lund (mclu)\nLokaler: 2.27\, 2.29\n\nNote:\nSkrivelokale
+ a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLokaler: 2
+ .27\, 2.29\n\nNote:\nSkrivelokale
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930960@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - albm\, kkm\, lrm\, mbbe\, nbs
 DTSTART:20260421T081500
 DTEND:20260421T091500
 DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 08:15 til 09:15\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: alb
- m\, kkm\, lrm\, mbbe\, nbs\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ m\, kkm\, lrm\, mbbe\, nbs\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1.63a\n
+ \nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930958@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - albm\, kkm\, lrm\, mbbe\, nbs
 DTSTART:20260421T092000
 DTEND:20260421T102000
 DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 09:20 til 10:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: alb
- m\, kkm\, lrm\, mbbe\, nbs\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ m\, kkm\, lrm\, mbbe\, nbs\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1.63a\n
+ \nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930956@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - albm\, kkm\, lrm\, mbbe\, pi\, stk
 DTSTART:20260421T103000
 DTEND:20260421T113000
 DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 10:30 til 11:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: alb
- m\, kkm\, lrm\, mbbe\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ m\, kkm\, lrm\, mbbe\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1.
+ 63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79725192752@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:BYG Hold 1 - Trine Pipi Kræmer (tpk)
 DTSTART:20260421T121000
 DTEND:20260421T153000
@@ -893,77 +598,83 @@ DESCRIPTION:BYG Hold 1\n21/4-2026 12:10 til 15:30\nHold: L2a Ti\, L2ak Ti\,
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930954@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologiværksted - 2.g - cbr\, ckr\, kj\, mbbe\, pi\, stk
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologiværksted - 2.g - albm\, cbr\, kj\, mbbe\, pi\, stk
 DTSTART:20260421T121000
 DTEND:20260421T131000
-DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 12:10 til 13:10\nHold: L2a 
- Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, ckr\, kj\, mbbe\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+DESCRIPTION:Ændret!\nTeknologiværksted - 2.g\n21/4-2026 12:10 til 13:10\n
+ Hold: L2a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nL
+ ærere: albm\, cbr\, kj\, mbbe\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 
+ 1.03a\, 1.63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930962@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologiværksted - 2.g - cbr\, ckr\, khh\, kj\, nbs\, stk
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologiværksted - 2.g - albm\, cbr\, khh\, kj\, nbs\, stk
 DTSTART:20260421T132000
 DTEND:20260421T142000
-DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 13:20 til 14:20\nHold: L2a 
- Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, ckr\, khh\, kj\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+DESCRIPTION:Ændret!\nTeknologiværksted - 2.g\n21/4-2026 13:20 til 14:20\n
+ Hold: L2a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nL
+ ærere: albm\, cbr\, khh\, kj\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 
+ 1.03a\, 1.63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930952@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologiværksted - 2.g - cbr\, ckr\, khh\, kj\, nbs\, stk
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologiværksted - 2.g - albm\, cbr\, khh\, kj\, nbs\, stk
 DTSTART:20260421T143000
 DTEND:20260421T153000
-DESCRIPTION:Teknologiværksted - 2.g\n21/4-2026 14:30 til 15:30\nHold: L2a 
- Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, ckr\, khh\, kj\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+DESCRIPTION:Ændret!\nTeknologiværksted - 2.g\n21/4-2026 14:30 til 15:30\n
+ Hold: L2a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nL
+ ærere: albm\, cbr\, khh\, kj\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 
+ 1.03a\, 1.63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79728990386@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologi B - Skrivelokale - Mikkel Christensen Lund (mclu)
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologi B - Skrivelokale
 DTSTART:20260422T081500
 DTEND:20260422T153000
 DESCRIPTION:Teknologi B - Skrivelokale\n22/4-2026 08:15 til 15:30\nHold: L2
- a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærer: Mi
- kkel Christensen Lund (mclu)\nLokaler: 2.27\, 2.29\n\nNote:\nSkrivelokale
+ a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLokaler: 2
+ .27\, 2.29\n\nNote:\nSkrivelokale
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930968@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, lrm\, mbbe\, mmd\, pi\, stk
 DTSTART:20260422T081500
 DTEND:20260422T091500
 DESCRIPTION:Teknologiværksted - 2.g\n22/4-2026 08:15 til 09:15\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, lrm\, mbbe\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, lrm\, mbbe\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a\, 2.0
+ 1\n\nNote:\nDDU: 2.01
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930970@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khk\, lrm\, mmd\, pi\, stk
 DTSTART:20260422T092000
 DTEND:20260422T102000
 DESCRIPTION:Teknologiværksted - 2.g\n22/4-2026 09:20 til 10:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khk\, lrm\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khk\, lrm\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a\, 2.01
+ \n\nNote:\nDDU: 2.01
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930972@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khk\, lrm\, mmd\, pi\, stk
 DTSTART:20260422T103000
 DTEND:20260422T113000
 DESCRIPTION:Teknologiværksted - 2.g\n22/4-2026 10:30 til 11:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khk\, lrm\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khk\, lrm\, mmd\, pi\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a\, 2.01
+ \n\nNote:\nDDU: 2.01
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS78516757917@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Pop-up café
 DTSTART:20260422T113000
 DTEND:20260422T121000
@@ -973,148 +684,148 @@ DESCRIPTION:Pop-up café\n22/4-2026 11:30 til 12:10\nHold: Alle 1. HTX-elev
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930966@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ajrp\, cbo\, khh\, kj\, mban
 DTSTART:20260422T121000
 DTEND:20260422T131000
 DESCRIPTION:Teknologiværksted - 2.g\n22/4-2026 12:10 til 13:10\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ajr
- p\, cbo\, khh\, kj\, mban\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ p\, cbo\, khh\, kj\, mban\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a\, 2.01\n\n
+ Note:\nDDU: 2.01
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930964@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ajrp\, cbo\, khh\, kj\, mban
 DTSTART:20260422T132000
 DTEND:20260422T142000
 DESCRIPTION:Teknologiværksted - 2.g\n22/4-2026 13:20 til 14:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ajr
- p\, cbo\, khh\, kj\, mban\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ p\, cbo\, khh\, kj\, mban\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a\, 2.01\n\n
+ Note:\nDDU: 2.01
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79728990391@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologi B - Skrivelokale - Mikkel Christensen Lund (mclu)
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologi B - Skrivelokale
 DTSTART:20260423T081500
 DTEND:20260423T143000
 DESCRIPTION:Teknologi B - Skrivelokale\n23/4-2026 08:15 til 14:30\nHold: L2
- a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærer: Mi
- kkel Christensen Lund (mclu)\nLokaler: 2.27\, 2.29\n\nNote:\nSkrivelokale
+ a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLokaler: 2
+ .27\, 2.29\n\nNote:\nSkrivelokale
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930980@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lrm\, mmd\, nbs\, stk
 DTSTART:20260423T081500
 DTEND:20260423T091500
 DESCRIPTION:Teknologiværksted - 2.g\n23/4-2026 08:15 til 09:15\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lrm\, mmd\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lrm\, mmd\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.61\, 1.63
+ a\n\nNote:\nDDU: 1.61
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930976@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lrm\, mmd\, nbs\, stk
 DTSTART:20260423T092000
 DTEND:20260423T102000
 DESCRIPTION:Teknologiværksted - 2.g\n23/4-2026 09:20 til 10:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lrm\, mmd\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lrm\, mmd\, nbs\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.61\, 1.63
+ a\n\nNote:\nDDU: 1.61
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930974@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - cbr\, khh\, lrm\, mban\, mmd\, stk
 DTSTART:20260423T103000
 DTEND:20260423T113000
 DESCRIPTION:Teknologiværksted - 2.g\n23/4-2026 10:30 til 11:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: cbr
- \, khh\, lrm\, mban\, mmd\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, khh\, lrm\, mban\, mmd\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.61\, 1.6
+ 3a\n\nNote:\nDDU: 1.61
 END:VEVENT
 BEGIN:VEVENT
-UID:ABS79282017912@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.26 - Ansøgningsfrist Science Talent - Nicolai Bogø Stabell (nbs
- )
+UID:ABS79282009535@lectio.dk
+DTSTAMP:20260424T074501Z
+SUMMARY:2.26 - Info møde Science Talenter - Nicolai Bogø Stabell (nbs)
 DTSTART:20260423T114000
 DTEND:20260423T120000
 LOCATION:2.26
-DESCRIPTION:Ansøgningsfrist Science Talent\n23/4-2026 11:40 til 12:00\nHol
- d: Alle 1. HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\nLærer: Nicolai Bo
- gø Stabell (nbs)\nLokale: 2.26
+DESCRIPTION:Info møde Science Talenter\n23/4-2026 11:40 til 12:00\nHold: A
+ lle 1. HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\nLærer: Nicolai Bogø 
+ Stabell (nbs)\nLokale: 2.26
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930982@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ckr\, kj\, kkm\, mban\, mbbe\, stk
 DTSTART:20260423T121000
 DTEND:20260423T131000
 DESCRIPTION:Teknologiværksted - 2.g\n23/4-2026 12:10 til 13:10\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ckr
- \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.61\, 1.6
+ 3a\n\nNote:\nDDU: 1.61
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930978@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ckr\, kj\, kkm\, mban\, mbbe\, stk
 DTSTART:20260423T132000
 DTEND:20260423T142000
 DESCRIPTION:Teknologiværksted - 2.g\n23/4-2026 13:20 til 14:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ckr
- \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.61\, 1.6
+ 3a\n\nNote:\nDDU: 1.61
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79728990396@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:Teknologi B - Skrivelokale - Mikkel Christensen Lund (mclu)
+DTSTAMP:20260424T074501Z
+SUMMARY:Teknologi B - Skrivelokale
 DTSTART:20260424T081500
 DTEND:20260424T153000
 DESCRIPTION:Teknologi B - Skrivelokale\n24/4-2026 08:15 til 15:30\nHold: L2
- a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærer: Mi
- kkel Christensen Lund (mclu)\nLokaler: 2.27\, 2.29\n\nNote:\nSkrivelokale
+ a Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLokaler: 2
+ .27\, 2.29\n\nNote:\nSkrivelokale
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930992@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ckr\, kkm\, lrm\, mban\, mbbe\, stk
 DTSTART:20260424T081500
 DTEND:20260424T091500
 DESCRIPTION:Teknologiværksted - 2.g\n24/4-2026 08:15 til 09:15\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ckr
- \, kkm\, lrm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, kkm\, lrm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1
+ .63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930984@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ckr\, kkm\, lrm\, mban\, mbbe\, stk
 DTSTART:20260424T092000
 DTEND:20260424T102000
 DESCRIPTION:Teknologiværksted - 2.g\n24/4-2026 09:20 til 10:20\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ckr
- \, kkm\, lrm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79228316973@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:DTU Projektdag om AI - jokr\, kpn
-DTSTART:20260424T093000
-DTEND:20260424T150000
-DESCRIPTION:DTU Projektdag om AI\n24/4-2026 09:30 til 15:00\nHold: L InterM
- at 2026\nLærere: jokr\, kpn\n\nLektier:\nimage.png [...]
+ \, kkm\, lrm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1
+ .63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930990@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - ckr\, kj\, kkm\, mban\, mbbe\, stk
 DTSTART:20260424T103000
 DTEND:20260424T113000
 DESCRIPTION:Teknologiværksted - 2.g\n24/4-2026 10:30 til 11:30\nHold: L2a 
  Ti\, L2ak Ti\, L2b Ti\, L2ci Ti\, L2d Ti\, L2e1 Ti\, L2e2 Ti\nLærere: ckr
- \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.63a
+ \, kj\, kkm\, mban\, mbbe\, stk\nLokaler: 0.01\, 0.04\, 0.07a\, 1.03a\, 1.
+ 63a\n\nNote:\nDDU: 1.03a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930986@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - khh\, kj\, mban\, msa\, tpk
 DTSTART:20260424T121000
 DTEND:20260424T131000
@@ -1124,7 +835,7 @@ DESCRIPTION:Ændret!\nTeknologiværksted - 2.g\n24/4-2026 12:10 til 13:10\n
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75351930988@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Teknologiværksted - 2.g - khh\, kj\, msa\, pi\, tpk
 DTSTART:20260424T132000
 DTEND:20260424T142000
@@ -1134,7 +845,7 @@ DESCRIPTION:Teknologiværksted - 2.g\n24/4-2026 13:20 til 14:20\nHold: L2a
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311162284@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.31 - Repetition - Frederik Ruth (fr)
 DTSTART:20260427T092000
 DTEND:20260427T102000
@@ -1144,7 +855,7 @@ DESCRIPTION:Repetition\n27/4-2026 09:20 til 10:20\nHold: L2a En\nLærer: Fr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310487816@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.31 - L2a En - Frederik Ruth (fr)
 DTSTART:20260427T103000
 DTEND:20260427T113000
@@ -1154,7 +865,7 @@ DESCRIPTION:27/4-2026 10:30 til 11:30\nHold: L2a En\nLærer: Frederik Ruth
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310488872@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a Ti - Peter Ibæk (pi)
 DTSTART:20260427T121000
 DTEND:20260427T131000
@@ -1164,7 +875,7 @@ DESCRIPTION:27/4-2026 12:10 til 13:10\nHold: L2a Ti\nLærer: Peter Ibæk (p
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310449731@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a Ti - Peter Ibæk (pi)
 DTSTART:20260427T132000
 DTEND:20260427T142000
@@ -1174,7 +885,7 @@ DESCRIPTION:27/4-2026 13:20 til 14:20\nHold: L2a Ti\nLærer: Peter Ibæk (p
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310435453@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.07 - L23g as - Teddy Bruno Fjeldgaard-Frederiksen (tf)
 DTSTART:20260428T081500
 DTEND:20260428T091500
@@ -1184,7 +895,7 @@ DESCRIPTION:28/4-2026 08:15 til 09:15\nHold: L23g as\nLærer: Teddy Bruno F
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310437496@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.07 - L23g as - Teddy Bruno Fjeldgaard-Frederiksen (tf)
 DTSTART:20260428T092000
 DTEND:20260428T102000
@@ -1193,8 +904,18 @@ DESCRIPTION:28/4-2026 09:20 til 10:20\nHold: L23g as\nLærer: Teddy Bruno F
  jeldgaard-Frederiksen (tf)\nLokale: 1.07
 END:VEVENT
 BEGIN:VEVENT
+UID:ABS79282017912@lectio.dk
+DTSTAMP:20260424T074501Z
+SUMMARY:Ansøgningsfrist Science Talent - Nicolai Bogø Stabell (nbs)
+DTSTART:20260428T120000
+DTEND:20260428T120100
+DESCRIPTION:Ændret!\nAnsøgningsfrist Science Talent\n28/4-2026 12:00 til 
+ 12:01\nHold: Alle 1. HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\nLærer: 
+ Nicolai Bogø Stabell (nbs)
+END:VEVENT
+BEGIN:VEVENT
 UID:ABS79232093822@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.31 - LTS fortsat og SCOT - Lene Thodsen (lt)
 DTSTART:20260428T132000
 DTEND:20260428T142000
@@ -1209,7 +930,7 @@ DESCRIPTION:LTS fortsat og SCOT\n28/4-2026 13:20 til 14:20\nHold: L2a Ih\nL
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093825@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.31 - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260428T143000
 DTEND:20260428T153000
@@ -1219,17 +940,18 @@ DESCRIPTION:28/4-2026 14:30 til 15:30\nHold: L2a Ih\nLærer: Lene Thodsen (
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310964483@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:2.25 - Prøve - mekanik - Anja Lea Olsen (alo)
+DTSTAMP:20260424T074501Z
+SUMMARY:2.25 - Repetition - Det skrå kast - Anja Lea Olsen (alo)
 DTSTART:20260429T092000
 DTEND:20260429T102000
 LOCATION:2.25
-DESCRIPTION:Prøve - mekanik\n29/4-2026 09:20 til 10:20\nHold: L2a FY\nLær
- er: Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nProgram [...]
+DESCRIPTION:Repetition - Det skrå kast\n29/4-2026 09:20 til 10:20\nHold: L
+ 2a FY\nLærer: Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nProgram [..
+ .]
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310484383@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.25 - L2a FY - Anja Lea Olsen (alo)
 DTSTART:20260429T103000
 DTEND:20260429T113000
@@ -1239,7 +961,7 @@ DESCRIPTION:29/4-2026 10:30 til 11:30\nHold: L2a FY\nLærer: Anja Lea Olsen
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310485326@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.62 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260429T121000
 DTEND:20260429T131000
@@ -1249,7 +971,7 @@ DESCRIPTION:29/4-2026 12:10 til 13:10\nHold: L2a MA\nLærer: Kasper Prindal
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75312165168@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.62 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260429T132000
 DTEND:20260429T142000
@@ -1259,7 +981,7 @@ DESCRIPTION:29/4-2026 13:20 til 14:20\nHold: L2a MA\nLærer: Kasper Prindal
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS76713283779@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Titel
 DTSTART:20260430T081500
 DTEND:20260430T113000
@@ -1268,7 +990,7 @@ DESCRIPTION:Titel\n30/4-2026 08:15 til 11:30\nHold: L2a Ti\, L2ak Ti\, L2b
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310463264@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.05 - Presentation - Frederik Ruth (fr)
 DTSTART:20260430T121000
 DTEND:20260430T131000
@@ -1278,7 +1000,7 @@ DESCRIPTION:Presentation\n30/4-2026 12:10 til 13:10\nHold: L2a En\nLærer:
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311185298@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.05 - Eksamen - Frederik Ruth (fr)
 DTSTART:20260430T132000
 DTEND:20260430T142000
@@ -1288,7 +1010,7 @@ DESCRIPTION:Eksamen\n30/4-2026 13:20 til 14:20\nHold: L2a En\nLærer: Frede
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79271014517@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:X Forhal - Lektiecafé - atj\, fr\, kal\, skj
 DTSTART:20260430T143000
 DTEND:20260430T153000
@@ -1299,7 +1021,7 @@ DESCRIPTION:Lektiecafé\n30/4-2026 14:30 til 15:30\nHold: Alle 1. HTX-eleve
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311323888@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.62 - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260501T081500
 DTEND:20260501T091500
@@ -1309,7 +1031,7 @@ DESCRIPTION:1/5-2026 08:15 til 09:15\nHold: L2a Ih\nLærer: Lene Thodsen (l
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311340383@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.62 - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260501T092000
 DTEND:20260501T102000
@@ -1319,7 +1041,7 @@ DESCRIPTION:1/5-2026 09:20 til 10:20\nHold: L2a Ih\nLærer: Lene Thodsen (l
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310477881@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260501T103000
 DTEND:20260501T113000
@@ -1329,7 +1051,7 @@ DESCRIPTION:1/5-2026 10:30 til 11:30\nHold: L2a MA\nLærer: Kasper Prindal-
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310478790@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260501T121000
 DTEND:20260501T131000
@@ -1339,7 +1061,7 @@ DESCRIPTION:1/5-2026 12:10 til 13:10\nHold: L2a MA\nLærer: Kasper Prindal-
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310486282@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.05 - Sidste timer - Frederik Ruth (fr)
 DTSTART:20260501T132000
 DTEND:20260501T142000
@@ -1349,7 +1071,7 @@ DESCRIPTION:Sidste timer\n1/5-2026 13:20 til 14:20\nHold: L2a En\nLærer: F
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310487081@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.05 - L2a En - Frederik Ruth (fr)
 DTSTART:20260501T143000
 DTEND:20260501T153000
@@ -1359,7 +1081,7 @@ DESCRIPTION:1/5-2026 14:30 til 15:30\nHold: L2a En\nLærer: Frederik Ruth (
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS77126580990@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260504T103000
 DTEND:20260504T113000
@@ -1369,7 +1091,7 @@ DESCRIPTION:4/5-2026 10:30 til 11:30\nHold: L2a Ih\nLærer: Lene Thodsen (l
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS76300264335@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Pop-up café
 DTSTART:20260504T113000
 DTEND:20260504T121000
@@ -1378,7 +1100,7 @@ DESCRIPTION:Pop-up café\n4/5-2026 11:30 til 12:10\nHold: Alle 1. HTX-eleve
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS77126580987@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260504T121000
 DTEND:20260504T131000
@@ -1388,27 +1110,30 @@ DESCRIPTION:4/5-2026 12:10 til 13:10\nHold: L2a Ih\nLærer: Lene Thodsen (l
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS77126580981@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.07 - L2a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTAMP:20260424T074501Z
+SUMMARY:1.07 - Det Moderne Gennembrud - Emilie Rose Bang Brønnum-Carlsen (
+ erbc)
 DTSTART:20260504T132000
 DTEND:20260504T142000
 LOCATION:1.07
-DESCRIPTION:4/5-2026 13:20 til 14:20\nHold: L2a DA\nLærer: Emilie Rose Ban
- g Brønnum-Carlsen (erbc)\nLokale: 1.07
+DESCRIPTION:Det Moderne Gennembrud\n4/5-2026 13:20 til 14:20\nHold: L2a DA\
+ nLærer: Emilie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07\n\nNote:\n
+ Sidste gang inden sommer!
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS77126580984@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.07 - L2a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTAMP:20260424T074501Z
+SUMMARY:1.07 - Det Moderne Gennembrud - Emilie Rose Bang Brønnum-Carlsen (
+ erbc)
 DTSTART:20260504T143000
 DTEND:20260504T153000
 LOCATION:1.07
-DESCRIPTION:4/5-2026 14:30 til 15:30\nHold: L2a DA\nLærer: Emilie Rose Ban
- g Brønnum-Carlsen (erbc)\nLokale: 1.07
+DESCRIPTION:Det Moderne Gennembrud\n4/5-2026 14:30 til 15:30\nHold: L2a DA\
+ nLærer: Emilie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311547113@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.01 - L23g as - Teddy Bruno Fjeldgaard-Frederiksen (tf)
 DTSTART:20260505T081500
 DTEND:20260505T091500
@@ -1418,7 +1143,7 @@ DESCRIPTION:5/5-2026 08:15 til 09:15\nHold: L23g as\nLærer: Teddy Bruno Fj
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75311912789@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.01 - L23g as - Teddy Bruno Fjeldgaard-Frederiksen (tf)
 DTSTART:20260505T092000
 DTEND:20260505T102000
@@ -1428,7 +1153,7 @@ DESCRIPTION:5/5-2026 09:20 til 10:20\nHold: L23g as\nLærer: Teddy Bruno Fj
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310451797@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260505T132000
 DTEND:20260505T142000
@@ -1438,7 +1163,7 @@ DESCRIPTION:5/5-2026 13:20 til 14:20\nHold: L2a MA\nLærer: Kasper Prindal-
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310453951@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260505T143000
 DTEND:20260505T153000
@@ -1448,7 +1173,7 @@ DESCRIPTION:5/5-2026 14:30 til 15:30\nHold: L2a MA\nLærer: Kasper Prindal-
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367367@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260506T081500
 DTEND:20260506T091500
@@ -1458,7 +1183,7 @@ DESCRIPTION:6/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367370@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260506T092000
 DTEND:20260506T102000
@@ -1468,7 +1193,7 @@ DESCRIPTION:6/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367374@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260506T103000
 DTEND:20260506T113000
@@ -1478,7 +1203,7 @@ DESCRIPTION:6/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS78516761845@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Pop-up café - Laura Maria Kjær (lmk)
 DTSTART:20260506T113000
 DTEND:20260506T121000
@@ -1488,7 +1213,7 @@ DESCRIPTION:Pop-up café\n6/5-2026 11:30 til 12:10\nHold: Alle 1. HTX-eleve
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367377@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260506T121000
 DTEND:20260506T131000
@@ -1498,7 +1223,7 @@ DESCRIPTION:6/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367380@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260506T132000
 DTEND:20260506T142000
@@ -1508,7 +1233,7 @@ DESCRIPTION:6/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367383@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260506T143000
 DTEND:20260506T153000
@@ -1518,7 +1243,7 @@ DESCRIPTION:6/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367386@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260507T081500
 DTEND:20260507T091500
@@ -1528,7 +1253,7 @@ DESCRIPTION:7/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367389@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260507T092000
 DTEND:20260507T102000
@@ -1538,7 +1263,7 @@ DESCRIPTION:7/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367392@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260507T103000
 DTEND:20260507T113000
@@ -1548,7 +1273,7 @@ DESCRIPTION:7/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367395@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260507T121000
 DTEND:20260507T131000
@@ -1558,7 +1283,7 @@ DESCRIPTION:7/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367398@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260507T132000
 DTEND:20260507T142000
@@ -1568,7 +1293,7 @@ DESCRIPTION:7/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367401@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260507T143000
 DTEND:20260507T153000
@@ -1578,7 +1303,7 @@ DESCRIPTION:7/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367404@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.30 - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260508T081500
 DTEND:20260508T091500
@@ -1588,7 +1313,7 @@ DESCRIPTION:8/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367407@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.30 - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260508T092000
 DTEND:20260508T102000
@@ -1598,7 +1323,7 @@ DESCRIPTION:8/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367410@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.30 - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260508T103000
 DTEND:20260508T113000
@@ -1608,7 +1333,7 @@ DESCRIPTION:8/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367413@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260508T121000
 DTEND:20260508T131000
@@ -1618,7 +1343,7 @@ DESCRIPTION:8/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367416@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260508T132000
 DTEND:20260508T142000
@@ -1628,7 +1353,7 @@ DESCRIPTION:8/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367420@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260508T143000
 DTEND:20260508T153000
@@ -1638,7 +1363,7 @@ DESCRIPTION:8/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærer: Kasper Pr
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367424@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260511T081500
 DTEND:20260511T091500
@@ -1648,7 +1373,7 @@ DESCRIPTION:11/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367427@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260511T092000
 DTEND:20260511T102000
@@ -1658,7 +1383,7 @@ DESCRIPTION:11/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367430@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
 DTSTART:20260511T103000
 DTEND:20260511T113000
@@ -1668,7 +1393,7 @@ DESCRIPTION:11/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærer: Anja Lea
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367433@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260511T121000
 DTEND:20260511T131000
@@ -1678,7 +1403,7 @@ DESCRIPTION:11/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærer: Kasper P
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367436@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260511T132000
 DTEND:20260511T142000
@@ -1688,7 +1413,7 @@ DESCRIPTION:11/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærer: Kasper P
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367439@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260511T143000
 DTEND:20260511T153000
@@ -1698,7 +1423,7 @@ DESCRIPTION:11/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærer: Kasper P
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79270712115@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Skrivedag
 DTSTART:20260512T081500
 DTEND:20260512T153000
@@ -1708,7 +1433,7 @@ DESCRIPTION:Skrivedag\n12/5-2026 08:15 til 15:30\nHold: L2a SO2c SRC\n\nNot
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79270712117@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:Skrivedag
 DTSTART:20260513T081500
 DTEND:20260513T153000
@@ -1718,7 +1443,7 @@ DESCRIPTION:Skrivedag\n13/5-2026 08:15 til 15:30\nHold: L2a SO2c SRC\n\nNot
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232089978@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260518T103000
 DTEND:20260518T113000
@@ -1728,7 +1453,7 @@ DESCRIPTION:18/5-2026 10:30 til 11:30\nHold: L2a Ih\nLærer: Lene Thodsen (
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232089981@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.29 - L2a Ih - Lene Thodsen (lt)
 DTSTART:20260518T121000
 DTEND:20260518T131000
@@ -1738,7 +1463,7 @@ DESCRIPTION:18/5-2026 12:10 til 13:10\nHold: L2a Ih\nLærer: Lene Thodsen (
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367466@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T081500
 DTEND:20260519T091500
@@ -1748,7 +1473,7 @@ DESCRIPTION:19/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367471@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T092000
 DTEND:20260519T102000
@@ -1758,7 +1483,7 @@ DESCRIPTION:19/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367475@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T103000
 DTEND:20260519T113000
@@ -1768,7 +1493,7 @@ DESCRIPTION:19/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367479@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T121000
 DTEND:20260519T131000
@@ -1778,7 +1503,7 @@ DESCRIPTION:19/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367483@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T132000
 DTEND:20260519T142000
@@ -1788,7 +1513,7 @@ DESCRIPTION:19/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79062367487@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
 DTSTART:20260519T143000
 DTEND:20260519T153000
@@ -1798,17 +1523,17 @@ DESCRIPTION:19/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærere: alo\, k
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093828@lectio.dk
-DTSTAMP:20260419T073841Z
-SUMMARY:1.07 - L2a En - Frederik Ruth (fr)
+DTSTAMP:20260424T074501Z
+SUMMARY:1.07 - L2a st - alo\, kpn
 DTSTART:20260520T081500
 DTEND:20260520T091500
 LOCATION:1.07
-DESCRIPTION:20/5-2026 08:15 til 09:15\nHold: L2a En\nLærer: Frederik Ruth 
- (fr)\nLokale: 1.07
+DESCRIPTION:20/5-2026 08:15 til 09:15\nHold: L2a st\nLærere: alo\, kpn\nLo
+ kale: 1.07
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093831@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.07 - L2a En - Frederik Ruth (fr)
 DTSTART:20260520T092000
 DTEND:20260520T102000
@@ -1818,7 +1543,7 @@ DESCRIPTION:20/5-2026 09:20 til 10:20\nHold: L2a En\nLærer: Frederik Ruth
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310431124@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.25 - Repetition - Anja Lea Olsen (alo)
 DTSTART:20260520T103000
 DTEND:20260520T113000
@@ -1828,7 +1553,7 @@ DESCRIPTION:Repetition\n20/5-2026 10:30 til 11:30\nHold: L2a FY\nLærer: An
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310433319@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:2.25 - L2a FY - Anja Lea Olsen (alo)
 DTSTART:20260520T121000
 DTEND:20260520T131000
@@ -1838,7 +1563,7 @@ DESCRIPTION:20/5-2026 12:10 til 13:10\nHold: L2a FY\nLærer: Anja Lea Olsen
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093834@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260520T132000
 DTEND:20260520T142000
@@ -1848,7 +1573,7 @@ DESCRIPTION:20/5-2026 13:20 til 14:20\nHold: L2a MA\nLærer: Kasper Prindal
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093837@lectio.dk
-DTSTAMP:20260419T073841Z
+DTSTAMP:20260424T074501Z
 SUMMARY:1.03a - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260520T143000
 DTEND:20260520T153000
