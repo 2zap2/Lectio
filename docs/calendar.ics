@@ -2,99 +2,8 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//LectioParser//Custom//EN
 BEGIN:VEVENT
-UID:lectio-2f88a61392484a6c02f38596@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g: SO2c (SRC)
-DTSTART;VALUE=DATE:20260511
-DTEND;VALUE=DATE:20260512
-DESCRIPTION:2.g: SO2c (SRC)\n11/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-814752fcd67c0890c3dceb00@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:Alle: Delvis offentliggørelse af mundtlige eksaminer før 1. juni 
- samt alle skriftlige eksamener.
-DTSTART;VALUE=DATE:20260511
-DTEND;VALUE=DATE:20260512
-DESCRIPTION:Alle: Delvis offentliggørelse af mundtlige eksaminer før 1. j
- uni samt alle skriftlige eksamener.\n11/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-d5ba5506a6555a726d6ebf71@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g: SO2c (SRC) skrivedag
-DTSTART;VALUE=DATE:20260512
-DTEND;VALUE=DATE:20260513
-DESCRIPTION:2.g: SO2c (SRC) skrivedag\n12/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-86e7c71f0b4bca61e04142a3@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:Alle: Årskarakter på alle afslutterhold offentliggøres kl. 16.00
-DTSTART;VALUE=DATE:20260512
-DTEND;VALUE=DATE:20260513
-DESCRIPTION:Alle: Årskarakter på alle afslutterhold offentliggøres kl. 1
- 6.00\n12/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-5ce02caaa32acb98d9ac885a@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g:  Aflevering af SRC i Lectio\, senest kl. 14.00
-DTSTART;VALUE=DATE:20260513
-DTEND;VALUE=DATE:20260514
-DESCRIPTION:2.g:  Aflevering af SRC i Lectio\, senest kl. 14.00\n13/5-2026 
- Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-584ae47bcba7c3784c663dc8@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g: SO2c (SRC) skrivedag
-DTSTART;VALUE=DATE:20260513
-DTEND;VALUE=DATE:20260514
-DESCRIPTION:2.g: SO2c (SRC) skrivedag\n13/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-b001b1f514a3daae24993c53@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g:  Aflevering af SRC i Lectio\, forlænget tid\, senest kl. 14.0
- 0
-DTSTART;VALUE=DATE:20260515
-DTEND;VALUE=DATE:20260516
-DESCRIPTION:2.g:  Aflevering af SRC i Lectio\, forlænget tid\, senest kl. 
- 14.00\n15/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-eedb615b93cd6be0ec74b7c1@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:3.g: Sidste skoledag\, aften arrangement med eksamensoffentliggøre
- lse lige efter midnat
-DTSTART;VALUE=DATE:20260518
-DTEND;VALUE=DATE:20260519
-DESCRIPTION:3.g: Sidste skoledag\, aften arrangement med eksamensoffentligg
- ørelse lige efter midnat\n18/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-6f8f34c8db30c58cd8c3374f@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:Ansatte: Årskarakter på alle forsætterhold skal være givet sene
- st kl. 16.00
-DTSTART;VALUE=DATE:20260518
-DTEND;VALUE=DATE:20260519
-DESCRIPTION:Ansatte: Årskarakter på alle forsætterhold skal være givet 
- senest kl. 16.00\n18/5-2026 Hele dagen
-END:VEVENT
-BEGIN:VEVENT
-UID:lectio-242758bb99434d50dfceee96@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.g: SO2c (SRC) - Forberedelse til mundtlig prøve
-DTSTART;VALUE=DATE:20260519
-DTEND;VALUE=DATE:20260520
-DESCRIPTION:2.g: SO2c (SRC) - Forberedelse til mundtlig prøve\n19/5-2026 H
- ele dagen
-END:VEVENT
-BEGIN:VEVENT
 UID:lectio-5845945c3069473089040835@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:2.g: Sidste skoledag
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
@@ -102,7 +11,7 @@ DESCRIPTION:2.g: Sidste skoledag\n20/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-5ccd56de39eee02582a26c1c@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Dansk A
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
@@ -110,7 +19,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Dansk A\n20/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-d6174f101b965469cadf80bb@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:Årskarakter på alle forsætterhold offentliggøres kl. 16.00
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
@@ -119,7 +28,7 @@ DESCRIPTION:Årskarakter på alle forsætterhold offentliggøres kl. 16.00\
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-05288735209d9a4c2dfcbc3c@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Kemi A
 DTSTART;VALUE=DATE:20260521
 DTEND;VALUE=DATE:20260522
@@ -127,7 +36,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Kemi A\n21/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-e30441a7c4f15624f3967cf0@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:2.g: Skriftlig eksamen - Engelsk B
 DTSTART;VALUE=DATE:20260522
 DTEND;VALUE=DATE:20260523
@@ -135,25 +44,25 @@ DESCRIPTION:2.g: Skriftlig eksamen - Engelsk B\n22/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-a12ba0cd65bd71f28e0ec1b5@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Engelsk A
 DTSTART;VALUE=DATE:20260522
 DTEND;VALUE=DATE:20260523
 DESCRIPTION:3.g: Skriftlig eksamen - Engelsk A\n22/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
-UID:lectio-ea2f2826d4b49bd93669bb31@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:3.g: Udlevering af forberedelses materiale til skriftlig eksamen i 
- Matematik A
+UID:lectio-c14328193fd8e3d37716f372@lectio.dk
+DTSTAMP:20260527T082423Z
+SUMMARY:3.g: Udlevering af forberedelsesmateriale til skriftlig eksamen i M
+ atematik A
 DTSTART;VALUE=DATE:20260526
 DTEND;VALUE=DATE:20260527
-DESCRIPTION:3.g: Udlevering af forberedelses materiale til skriftlig eksame
- n i Matematik A\n26/5-2026 Hele dagen
+DESCRIPTION:3.g: Udlevering af forberedelsesmateriale til skriftlig eksamen
+  i Matematik A\n26/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-6edac3b35f67766a0ea8f847@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Matematik A
 DTSTART;VALUE=DATE:20260528
 DTEND;VALUE=DATE:20260529
@@ -161,7 +70,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Matematik A\n28/5-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-c2d3909f9d29f66d368de8f6@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Bioteknologi A og Geovidenskab A
 DTSTART;VALUE=DATE:20260529
 DTEND;VALUE=DATE:20260530
@@ -170,7 +79,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Bioteknologi A og Geovidenskab A\n29/5
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-a316c18c68252145e87f75cd@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Skriftlig eksamen - Fysik A
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260602
@@ -178,7 +87,7 @@ DESCRIPTION:3.g: Skriftlig eksamen - Fysik A\n1/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-06ec5f202089eea0bd0d2a79@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Huemiddag kl. 18.00-22.00
 DTSTART;VALUE=DATE:20260624
 DTEND;VALUE=DATE:20260625
@@ -186,7 +95,7 @@ DESCRIPTION:3.g: Huemiddag kl. 18.00-22.00\n24/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-aca64702fca473ea5fcf5b1a@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:Alle: Sidste mulige eksamensdag
 DTSTART;VALUE=DATE:20260624
 DTEND;VALUE=DATE:20260625
@@ -194,7 +103,7 @@ DESCRIPTION:Alle: Sidste mulige eksamensdag\n24/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-e63ba28073fcf49f8996ec83@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Studenterfoto fra kl. 12.15
 DTSTART;VALUE=DATE:20260625
 DTEND;VALUE=DATE:20260626
@@ -202,7 +111,7 @@ DESCRIPTION:3.g: Studenterfoto fra kl. 12.15\n25/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
 UID:lectio-dcaf57c05964e21ced76a737@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:3.g: Dimission
 DTSTART;VALUE=DATE:20260626
 DTEND;VALUE=DATE:20260627
@@ -210,171 +119,8 @@ DESCRIPTION:3.g: Dimission\nHold 1 - kl. 9.00-10.00\n3ak\n3b2\n3ei\n3h\n\nH
  old 2 - kl. 11.00-12.00\n3ac\n3b1\n3b3\n3d\n26/6-2026 Hele dagen
 END:VEVENT
 BEGIN:VEVENT
-UID:ABS79062367424@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
-DTSTART:20260511T081500
-DTEND:20260511T091500
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærer: Anja Lea
-  Olsen (alo)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367427@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
-DTSTART:20260511T092000
-DTEND:20260511T102000
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærer: Anja Lea
-  Olsen (alo)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367430@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Anja Lea Olsen (alo)
-DTSTART:20260511T103000
-DTEND:20260511T113000
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærer: Anja Lea
-  Olsen (alo)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367433@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260511T121000
-DTEND:20260511T131000
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærer: Kasper P
- rindal-Nielsen (kpn)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367436@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260511T132000
-DTEND:20260511T142000
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærer: Kasper P
- rindal-Nielsen (kpn)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367439@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.05a - L2a SO2c SRC - Kasper Prindal-Nielsen (kpn)
-DTSTART:20260511T143000
-DTEND:20260511T153000
-LOCATION:1.05a
-DESCRIPTION:11/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærer: Kasper P
- rindal-Nielsen (kpn)\nLokale: 1.05a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS80194255509@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.60 - McMurry 11+12 - Lasse Johansen (laj)
-DTSTART:20260511T153500
-DTEND:20260511T173500
-LOCATION:1.60
-DESCRIPTION:Ændret!\nMcMurry 11+12\n11/5-2026 15:35 til 17:35\nHold: L Tea
- m Kemi-OL 25/26\, L Turbo Fase II 25/26\nLærer: Lasse Johansen (laj)\nLok
- ale: 1.60\n\nLektier:\nLæs McM kap. 11+12 [...]\n\nNote:\nEfter lang paus
- e ser vi på alfa-C (og kondensationer) og aminer. McM kap 11+12.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79270712115@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:Skrivedag
-DTSTART:20260512T081500
-DTEND:20260512T153000
-DESCRIPTION:Skrivedag\n12/5-2026 08:15 til 15:30\nHold: L2a SO2c SRC\n\nNot
- e:\nI kan benytte lokalerne 1.07 og 1.09 som arbejdsrum under skriveperiod
- en\, hvis I har behov for det.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79270712117@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:Skrivedag
-DTSTART:20260513T081500
-DTEND:20260513T153000
-DESCRIPTION:Skrivedag\n13/5-2026 08:15 til 15:30\nHold: L2a SO2c SRC\n\nNot
- e:\nI kan benytte lokalerne 1.07 og 1.09 som arbejdsrum under skriveperiod
- en\, hvis I har behov for det.
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS80281492472@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.29 - L2a En - Frederik Ruth (fr)
-DTSTART:20260518T103000
-DTEND:20260518T113000
-LOCATION:2.29
-DESCRIPTION:18/5-2026 10:30 til 11:30\nHold: L2a En\nLærer: Frederik Ruth 
- (fr)\nLokale: 2.29
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367466@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T081500
-DTEND:20260519T091500
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 08:15 til 09:15\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a\n\nØvrigt indhold:\nSådan forbereder du dig til SRC-pr
- øven [...]
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367471@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T092000
-DTEND:20260519T102000
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 09:20 til 10:20\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367475@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T103000
-DTEND:20260519T113000
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 10:30 til 11:30\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367479@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T121000
-DTEND:20260519T131000
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 12:10 til 13:10\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367483@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T132000
-DTEND:20260519T142000
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 13:20 til 14:20\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
-UID:ABS79062367487@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a SO2c SRC - alo\, kpn
-DTSTART:20260519T143000
-DTEND:20260519T153000
-LOCATION:1.03a
-DESCRIPTION:19/5-2026 14:30 til 15:30\nHold: L2a SO2c SRC\nLærere: alo\, k
- pn\nLokale: 1.03a
-END:VEVENT
-BEGIN:VEVENT
 UID:ABS79232093828@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:1.07 - L2a st - alo\, kpn
 DTSTART:20260520T081500
 DTEND:20260520T091500
@@ -384,7 +130,7 @@ DESCRIPTION:20/5-2026 08:15 til 09:15\nHold: L2a st\nLærere: alo\, kpn\nLo
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093831@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:1.07 - L2a En - Frederik Ruth (fr)
 DTSTART:20260520T092000
 DTEND:20260520T102000
@@ -394,17 +140,18 @@ DESCRIPTION:20/5-2026 09:20 til 10:20\nHold: L2a En\nLærer: Frederik Ruth
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310431124@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:2.25 - Repetition - Anja Lea Olsen (alo)
+DTSTAMP:20260527T082423Z
+SUMMARY:2.25 - Repetition og hygge - Anja Lea Olsen (alo)
 DTSTART:20260520T103000
 DTEND:20260520T113000
 LOCATION:2.25
-DESCRIPTION:Repetition\n20/5-2026 10:30 til 11:30\nHold: L2a FY\nLærer: An
- ja Lea Olsen (alo)\nLokale: 2.25
+DESCRIPTION:Repetition og hygge\n20/5-2026 10:30 til 11:30\nHold: L2a FY\nL
+ ærer: Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nMedbring farveblyan
+ ter eller tusser [...]
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS75310433319@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:2.25 - L2a FY - Anja Lea Olsen (alo)
 DTSTART:20260520T121000
 DTEND:20260520T131000
@@ -414,17 +161,24 @@ DESCRIPTION:20/5-2026 12:10 til 13:10\nHold: L2a FY\nLærer: Anja Lea Olsen
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093834@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:1.03a - L2a MA - Kasper Prindal-Nielsen (kpn)
+DTSTAMP:20260527T082423Z
+SUMMARY:1.03a - The big feedback - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260520T132000
 DTEND:20260520T142000
 LOCATION:1.03a
-DESCRIPTION:20/5-2026 13:20 til 14:20\nHold: L2a MA\nLærer: Kasper Prindal
- -Nielsen (kpn)\nLokale: 1.03a
+DESCRIPTION:The big feedback\n20/5-2026 13:20 til 14:20\nHold: L2a MA\nLær
+ er: Kasper Prindal-Nielsen (kpn)\nLokale: 1.03a\n\nNote:\nOBS! Der stod ti
+ dligere at vi havde prøve. Efter at have talt med nogle af jer\, og efter
+  det står klart at jeg ikke kan få lov at udskyde jeres karakterer\, har
+  jeg besluttet at det giver bedre mening I får feedback på noget af det 
+ I allerede har afleveret. Jeg medbringer stadig lidt snacks.\n\nProgram:\n
+ I får både mundtlig og skriftlig feedback på afleveringer fra foråret\
+ , og vi gennemgår nogle af de mere interessante opgaver i plenum og i min
+ dre grupper.
 END:VEVENT
 BEGIN:VEVENT
 UID:ABS79232093837@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:1.03a - L2a MA - Kasper Prindal-Nielsen (kpn)
 DTSTART:20260520T143000
 DTEND:20260520T153000
@@ -434,19 +188,18 @@ DESCRIPTION:20/5-2026 14:30 til 15:30\nHold: L2a MA\nLærer: Kasper Prindal
 END:VEVENT
 BEGIN:VEVENT
 UID:PRH78671654680@lectio.dk
-DTSTAMP:20260518T082841Z
-SUMMARY:0.68 - L2a En skr. eks. - Frederik Ruth (fr)
+DTSTAMP:20260527T082423Z
+SUMMARY:0.68 - L2a En skr. eks.
 DTSTART:20260522T090000
 DTEND:20260522T140000
 LOCATION:0.68
-DESCRIPTION:L2a En skr. eks.\n22/5-2026 09:00 til 14:00\nLærer: Frederik R
- uth (fr)\nLokaler: 0.68 (0.28\, 0.75)\n\nNote:\nSkriftlig eksamen i L2a En
- \nLokale: 0.68\nElever: Arthur Dahlgaard Lou (L2a 08)\nd. 22/5-2026 09:00 
- til 14:00
+DESCRIPTION:L2a En skr. eks.\n22/5-2026 09:00 til 14:00\nLokaler: 0.68 (0.2
+ 8\, 0.75)\n\nNote:\nSkriftlig eksamen i L2a En\nLokale: 0.68\nElever: Arth
+ ur Dahlgaard Lou (L2a 08)\nd. 22/5-2026 09:00 til 14:00
 END:VEVENT
 BEGIN:VEVENT
 UID:PRH78885973911@lectio.dk
-DTSTAMP:20260518T082841Z
+DTSTAMP:20260527T082423Z
 SUMMARY:1.59 - L2a st mdt. prv. - alo\, kpn
 DTSTART:20260526T083000
 DTEND:20260526T085000
@@ -455,5 +208,30 @@ DESCRIPTION:L2a st mdt. prv.\n26/5-2026 08:30 til 08:50\nLærere: alo\, kpn
  \nLokale: 1.59\n\nNote:\nMundtlig prøve i L2a st\nEksamen lokale: 1.59\n\
  nLokale: 1.59\nElever: Arthur Dahlgaard Lou (L2a 08)\nd. 26/5-2026 08:30 t
  il 08:50
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80403730183@lectio.dk
+DTSTAMP:20260527T082423Z
+SUMMARY:1.61 - Eksamenssæt/spørgetime - 26400 - Lasse Johansen (laj)
+DTSTART:20260526T150000
+DTEND:20260526T170000
+LOCATION:1.61
+DESCRIPTION:Eksamenssæt/spørgetime - 26400\n26/5-2026 15:00 til 17:00\nHo
+ ld: L DTU F26 - 26400\, L Turbo Fase II 25/26\nLærer: Lasse Johansen (laj
+ )\nLokale: 1.61\n\nLektier:\nLøs dette eksamenssæt - så gennemgår vi d
+ et og tager en snak om hvad der ellers måtte være op til eksamen [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:PRH78671654682@lectio.dk
+DTSTAMP:20260527T082423Z
+SUMMARY:1.07 - L2a En mdt. eks. - Frederik Ruth (fr)
+DTSTART:20260602T110000
+DTEND:20260602T123000
+LOCATION:1.07
+DESCRIPTION:L2a En mdt. eks.\n2/6-2026 11:00 til 12:30\nLærer: Frederik Ru
+ th (fr)\nLokaler: 1.07 (1.03a)\n\nNote:\nMundtlig eksamen i L2a En\nEksame
+ ns Lokale: 1.07\nFælles Forberedelses Lokale: 1.03a\nLokale: 1.07\nElever
+ : Arthur Dahlgaard Lou (L2a 08)\n\nMøde til forb.: 2/6-2026 11:00. Eks.: 
+ 12:00 til 12:30
 END:VEVENT
 END:VCALENDAR
