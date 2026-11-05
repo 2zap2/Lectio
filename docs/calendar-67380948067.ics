@@ -1,0 +1,1889 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LectioParser//Custom//EN
+X-WR-CALNAME:Lectio - elev 67380948067
+BEGIN:VEVENT
+UID:lectio-7cc34d6b94b7c861bff6c93e@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+DESCRIPTION:Alle: Lektiecafé\n29/10-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-61a895887d54d6adcd476e01@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Aflevering af SOP-problemformulering til vejledere. kl. 12.00
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+DESCRIPTION:3.g: Aflevering af SOP-problemformulering til vejledere. kl. 12
+ .00\n30/10-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-e11262cae5f88021ba87468f@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Halloweenfest\, kl. 19.00-01.00
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+DESCRIPTION:Alle: Halloweenfest\, kl. 19.00-01.00\n30/10-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-ea2ecb7b4d5d64cfdd0a11b1@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.g og 3.g: Karakterer skal være givet kl. 12.00 - offentliggøres
+  kl. 12.01
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+DESCRIPTION:2.g og 3.g: Karakterer skal være givet kl. 12.00 - offentligg
+ øres kl. 12.01\n4/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-b422cff15285e3aef3cd9393@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+DESCRIPTION:Alle: Lektiecafé\n5/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-abbf5b53d7615be03e5003c9@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle elever: Asynkron undervisning
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+DESCRIPTION:Alle elever: Asynkron undervisning\n6/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-3f6e9f20e98fab51e619024e@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: LAN fra fredag kl. 19.00 til søndag kl. 10.00
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+DESCRIPTION:Alle: LAN fra fredag kl. 19.00 til søndag kl. 10.00\n6/11-2026
+  Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-7d3409973ca56519413cb807@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: LAN fra fredag kl. 18.00 til søndag kl. 10.00
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+DESCRIPTION:Alle: LAN fra fredag kl. 18.00 til søndag kl. 10.00\n7/11-2026
+  Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-0641c5423ef50151995646ff@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: LAN fra fredag kl. 18.00 til søndag kl. 10.00
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+DESCRIPTION:Alle: LAN fra fredag kl. 18.00 til søndag kl. 10.00\n8/11-2026
+  Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-b64f8251bf30521889c60630@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolefoto
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+DESCRIPTION:Alle: Skolefoto\n9/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-45c1edce23e4c35f35f763cb@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolefoto
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+DESCRIPTION:Alle: Skolefoto\n10/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-46215841da88d3feca1373ab@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolefoto
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+DESCRIPTION:Alle: Skolefoto\n11/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-bd6507b1ed3d8b58f11bfe07@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Skrivecafé
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+DESCRIPTION:3.g: Skrivecafé\n12/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-93e14c542828f5c973eddf0f@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolefoto
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+DESCRIPTION:Alle: Skolefoto\n12/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-71b024aaa56ff1b5ecad8be8@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolefoto
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+DESCRIPTION:Alle: Skolefoto\n13/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-2b9f3139eb88de75598af5e8@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+DESCRIPTION:Alle: Lektiecafé\n19/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-a9a3bdf8298bb69f69d51199@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Lærere afleverer SOP-opgaveformuleringer\, senest kl. 12.00
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+DESCRIPTION:3.g: Lærere afleverer SOP-opgaveformuleringer\, senest kl. 12.
+ 00\n20/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-7713754cc18b0b807bd73f3a@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Fjollebilleder
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+DESCRIPTION:3.g: Fjollebilleder\n25/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-92bcd895fb84eab022523dfe@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Syge-/omfoto
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+DESCRIPTION:Alle: Syge-/omfoto\n25/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-e08cfb36f1ea03b42eba13e3@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+DESCRIPTION:Alle: Lektiecafé\n26/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-21e372d13228174414afa193@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.g\, 2.g og 3.g: Juleklip SKUM modul 1 og 2
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+DESCRIPTION:1.g\, 2.g og 3.g: Juleklip SKUM modul 1 og 2\n27/11-2026 Hele d
+ agen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-c46a20ca644a2c480cfcf741@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Udlevering af SOP-opgaveformuleringer. kl. 14.30
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+DESCRIPTION:3.g: Udlevering af SOP-opgaveformuleringer. kl. 14.30\n27/11-20
+ 26 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-3d0d44d73ee6684b01bc2eae@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 1
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+DESCRIPTION:3.g: SOP-skrivning dag 1\n30/11-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-4d9000d4ff71b8617c36a601@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 2
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+DESCRIPTION:3.g: SOP-skrivning dag 2\n1/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-6d85ef167bec5ad44ce7297b@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 3
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+DESCRIPTION:3.g: SOP-skrivning dag 3\n2/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-412bd65fe3c3f20465eb68ea@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 4
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+DESCRIPTION:3.g: SOP-skrivning dag 4\n3/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-490d35702c402d1eb65c2a46@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+DESCRIPTION:Alle: Lektiecafé\n3/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-ffbacb69f62f4176f2faef3e@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 5
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+DESCRIPTION:3.g: SOP-skrivning dag 5\n4/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-2cf8c99bd905df26ffef94ab@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 6
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+DESCRIPTION:3.g: SOP-skrivning dag 6\n7/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-75b6d8f3e58c86d383105629@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 7
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+DESCRIPTION:3.g: SOP-skrivning dag 7\n8/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-0e2cc5da549bb70c1ee7c5cb@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 8
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+DESCRIPTION:3.g: SOP-skrivning dag 8\n9/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-823b42c75ebe4426d2c804cf@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 9
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+DESCRIPTION:3.g: SOP-skrivning dag 9\n10/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-262e7ffbca007074f32b6d53@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+DESCRIPTION:Alle: Lektiecafé\n10/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-84cbe8faa63633bb5c259a0a@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Aflevering af SOP kl. 14.30 i netprøver
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+DESCRIPTION:3.g: Aflevering af SOP kl. 14.30 i netprøver\n11/12-2026 Hele 
+ dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-3ccc05c3b699e39721fffd85@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-skrivning dag 10
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+DESCRIPTION:3.g: SOP-skrivning dag 10\n11/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-ff3a7957f95582642804676d@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SPS-elever med ekstra tid afleverer SOP søndag kl. 14.30 i Ne
+ tprøver
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+DESCRIPTION:3.g: SPS-elever med ekstra tid afleverer SOP søndag kl. 14.30 
+ i Netprøver\n13/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-80426090aaa27cc385f1d514@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Hel teknikfagsdag
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+DESCRIPTION:3.g: Hel teknikfagsdag\n14/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-595f2f1aba8ab3863434121a@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+DESCRIPTION:Alle: Lektiecafé\n17/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-a508563da3d0c3523c6f85ad@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.g\, 2.g\, 2. HTX+ og 3.g: Juleafslutning i  modul 5
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+DESCRIPTION:1.g\, 2.g\, 2. HTX+ og 3.g: Juleafslutning i  modul 5\n18/12-20
+ 26 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-d230844c2ae18b50b8d9332c@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Julecafé fra kl. 14:20 - 19:00
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+DESCRIPTION:Alle: Julecafé fra kl. 14:20 - 19:00\n18/12-2026 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-2e90e2aca1f72a7b97775945@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Opstart TI-A  eksamensprojekt (70t)
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+DESCRIPTION:3.g: Opstart TI-A  eksamensprojekt (70t)\n4/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-a09ee537eafc2c23bddd550c@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Skrivecafé
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+DESCRIPTION:3.g: Skrivecafé\n7/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-49a2c68d7a3b8cd9cd65778b@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+DESCRIPTION:Alle: Lektiecafé\n7/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-5e3e43fc02989f1155915845@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Fredags-klubcafé kl. 14.20-19.00
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+DESCRIPTION:Alle: Fredags-klubcafé kl. 14.20-19.00\n8/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-a64736e48d77595f2136a554@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-eksamen
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270112
+DESCRIPTION:3.g: SOP-eksamen\n11/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-ff9ff6b7aec4042029517e84@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-eksamen
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+DESCRIPTION:3.g: SOP-eksamen\n12/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-06a116dfcf9c999ea1f19603@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: SOP-eksamen
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+DESCRIPTION:3.g: SOP-eksamen\n13/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-afe0de2a362910a470c5cf5d@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Åbent hus kl. 19.00-21.00
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+DESCRIPTION:Alle: Åbent hus kl. 19.00-21.00\n14/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-dfe5fed3456162b75e91ce2f@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Skolens starter først til 2. modul.
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+DESCRIPTION:Alle: Skolens starter først til 2. modul.\n15/1-2027 Hele dage
+ n
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-9150f5815d26c2f5ad12af5d@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:3.g: Fællessamling i modul 3
+DTSTART;VALUE=DATE:20270119
+DTEND;VALUE=DATE:20270120
+DESCRIPTION:3.g: Fællessamling i modul 3\n19/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-8c42581b29c3f63ff51aa43a@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+DESCRIPTION:Alle: Lektiecafé\n21/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-0a9b5e4b3ba0ca110d4b6efb@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Åbent hus lørdag kl. 12.00-14.00
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+DESCRIPTION:Alle: Åbent hus lørdag kl. 12.00-14.00\n23/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:lectio-e41b1df1de77f2f21e6a0ef5@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Alle: Lektiecafé
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+DESCRIPTION:Alle: Lektiecafé\n28/1-2027 Hele dagen
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370683059@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a MA - Victor Bech Sommer (vbs)
+DTSTART:20261029T121000
+DTEND:20261029T131000
+LOCATION:2.28
+DESCRIPTION:Ændret!\n29/10-2026 12:10 til 13:10\nHold: L3a MA\nLærer: Vic
+ tor Bech Sommer (vbs)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370681142@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a MA - Victor Bech Sommer (vbs)
+DTSTART:20261029T132000
+DTEND:20261029T142000
+LOCATION:2.28
+DESCRIPTION:Ændret!\n29/10-2026 13:20 til 14:20\nHold: L3a MA\nLærer: Vic
+ tor Bech Sommer (vbs)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927198675@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Reaktionskinetik - Lasse Johansen (laj)
+DTSTART:20261029T143000
+DTEND:20261029T163000
+DESCRIPTION:Reaktionskinetik\n29/10-2026 14:30 til 16:30\nHold: L Intro Tur
+ bo + Kemi OL\nLærer: Lasse Johansen (laj)\nLokaler: 0.28\, 0.68\n\nLektie
+ r:\nLæs Kap 1. Kemiske reaktioners hastigheder\, side 7-26 i Basiskemi B\
+ , 2. udgave og Kap 2. Reaktionskinetik\, side 57-88 i Basis Kemi A\, 2. ud
+ gave [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80620757736@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - erbc\, hfa\, lt
+DTSTART:20261029T143000
+DTEND:20261029T153000
+LOCATION:X Forhal
+DESCRIPTION:Lektiecafé\n29/10-2026 14:30 til 15:30\nHold: Alle 1. HTX-elev
+ er (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: e
+ rbc\, hfa\, lt\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370659091@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.10 - Afsluttende projekt del 2 / 5 - Kristian Høyland-Kroghsbo (
+ khk)
+DTSTART:20261030T081500
+DTEND:20261030T091500
+LOCATION:1.10
+DESCRIPTION:Afsluttende projekt del 2 / 5\n30/10-2026 08:15 til 09:15\nHold
+ : L3g sty\nLærer: Kristian Høyland-Kroghsbo (khk)\nLokale: 1.10\n\nØvri
+ gt indhold:\nAfsnit [...]\nUndervisning: Statik og Styrke - 02 - Last og 
+ lastkombinationer - 04 - Afsluttende del 2.pptx [...]\nAfsluttende projekt
+  del 2: Afsluttende projektoplæg - Statik og Styrkelærer - 2026 - del 2
+ .pdf [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370659700@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.10 - L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261030T092000
+DTEND:20261030T102000
+LOCATION:1.10
+DESCRIPTION:30/10-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)\nLokale: 1.10
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370686882@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - Rotation - Anja Lea Olsen (alo)
+DTSTART:20261030T103000
+DTEND:20261030T113000
+LOCATION:2.25
+DESCRIPTION:Rotation\n30/10-2026 10:30 til 11:30\nHold: L3a FY\nLærer: Anj
+ a Lea Olsen (alo)\nLokale: 2.25\n\nØvrigt indhold:\nProgram [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370687898@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261030T121000
+DTEND:20261030T131000
+LOCATION:2.25
+DESCRIPTION:30/10-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.25
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370668772@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - Romantikken - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261030T132000
+DTEND:20261030T142000
+LOCATION:1.07
+DESCRIPTION:Romantikken\n30/10-2026 13:20 til 14:20\nHold: L3a DA\nLærer: 
+ Emilie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07\n\nØvrigt indhold:
+ \nTekst og opgaver: [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS80370664405@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - Romantikken - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261030T143000
+DTEND:20261030T153000
+LOCATION:1.07
+DESCRIPTION:Romantikken\n30/10-2026 14:30 til 15:30\nHold: L3a DA\nLærer: 
+ Emilie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261090@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261102T081500
+DTEND:20261102T091500
+LOCATION:1.63a
+DESCRIPTION:2/11-2026 08:15 til 09:15\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261429@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261102T092000
+DTEND:20261102T102000
+LOCATION:1.63a
+DESCRIPTION:2/11-2026 09:20 til 10:20\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480259875@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261102T103000
+DTEND:20261102T113000
+LOCATION:1.63a
+DESCRIPTION:2/11-2026 10:30 til 11:30\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260233@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261102T121000
+DTEND:20261102T131000
+LOCATION:1.63a
+DESCRIPTION:2/11-2026 12:10 til 13:10\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258617@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261102T132000
+DTEND:20261102T142000
+LOCATION:0.05
+DESCRIPTION:2/11-2026 13:20 til 14:20\nHold: L3g KE\nLærer: Kristian Krabb
+ e Møller (kkm)\nLokale: 0.05\n\nLektier:\nVi gør entropi færdig fra sid
+ st og fortsætter med Gibbs energi. [...]\nBasisKemi A\, 32-40\ne-bog\nGib
+ bsEnergiVantHoff.pptx [...]\nEntropi.pptx [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258965@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261102T143000
+DTEND:20261102T153000
+LOCATION:0.05
+DESCRIPTION:2/11-2026 14:30 til 15:30\nHold: L3g KE\nLærer: Kristian Krabb
+ e Møller (kkm)\nLokale: 0.05
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263971@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - Prøve om rotation - Anja Lea Olsen (alo)
+DTSTART:20261103T103000
+DTEND:20261103T113000
+LOCATION:2.25
+DESCRIPTION:Ændret!\nPrøve om rotation\n3/11-2026 10:30 til 11:30\nHold: 
+ L3a FY\nLærer: Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nPrøve om 
+ rotation: sådan forbereder du dig [...]\n\nØvrigt indhold:\nformelsamlin
+ g_rotation.pdf [...]\nrotation_mc_facit_elev.pdf [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264375@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - Prøve om rotation - Anja Lea Olsen (alo)
+DTSTART:20261103T121000
+DTEND:20261103T131000
+LOCATION:2.25
+DESCRIPTION:Ændret!\nPrøve om rotation\n3/11-2026 12:10 til 13:10\nHold: 
+ L3a FY\nLærer: Anja Lea Olsen (alo)\nLokale: 2.25\n\nLektier:\nPrøve om 
+ rotation (inertimomenter). Kapitel 2 i Orbit A. [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269849@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.04 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261104T081500
+DTEND:20261104T091500
+LOCATION:0.04
+DESCRIPTION:4/11-2026 08:15 til 09:15\nHold: L3g KE\nLærer: Kristian Krabb
+ e Møller (kkm)\nLokale: 0.04\n\nLektier:\nVi fortsætter med Gibbs energi
+ . [...]\nBasisKemi A\, 41-48\ne-bog\nGibbsEnergiVantHoff_2026_27.pptx [...
+ ]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270141@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.04 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261104T092000
+DTEND:20261104T102000
+LOCATION:0.04
+DESCRIPTION:4/11-2026 09:20 til 10:20\nHold: L3g KE\nLærer: Kristian Krabb
+ e Møller (kkm)\nLokale: 0.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262266@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - Fremlæggelser af aktører - Lene Thodsen (lt)
+DTSTART:20261104T103000
+DTEND:20261104T113000
+LOCATION:1.07
+DESCRIPTION:Fremlæggelser af aktører\n4/11-2026 10:30 til 11:30\nHold: L3
+ a Ih\nLærer: Lene Thodsen (lt)\nLokale: 1.07\n\nLektier:\nFremlæggelser 
+ af aktører [...]\n\nØvrigt indhold:\nHvor bevæger Palæstinakonflikten 
+ sig hen - tre gammelkendte udfordringer [...]\nHer er syv grafikker\, der 
+ klæder dig på til at forstå situationen i Israel og Palæstina [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262651@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261104T121000
+DTEND:20261104T131000
+LOCATION:1.07
+DESCRIPTION:4/11-2026 12:10 til 13:10\nHold: L3a Ih\nLærer: Lene Thodsen (
+ lt)\nLokale: 1.07
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256505@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261104T132000
+DTEND:20261104T142000
+LOCATION:1.63a
+DESCRIPTION:4/11-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256807@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261104T143000
+DTEND:20261104T153000
+LOCATION:1.63a
+DESCRIPTION:4/11-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927333240@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Lektiecafe Introforløb - Nicolai Bogø Hallundbæk Busch (nbs)
+DTSTART:20261104T153000
+DTEND:20261104T183000
+DESCRIPTION:Lektiecafe Introforløb\n4/11-2026 15:30 til 18:30\nHold: L Int
+ ro Turbo + Kemi OL\nElever: Carl Dittmer Gormsen (L3a 09)\, Carl Eickhoff 
+ Haarmark Nielsen (L2b2 03)\, Willads Tunning (L3ak 26)\nLærer: Nicolai Bo
+ gø Hallundbæk Busch (nbs)\nLokaler: 2.03\, 2.05\n\nNote:\nDet er Bertil 
+ (bfj)\, der vil være ansvarlig for lektiecaféen.
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480255512@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - L3a MA - kpn\, vbs
+DTSTART:20261105T092000
+DTEND:20261105T102000
+LOCATION:1.07
+DESCRIPTION:5/11-2026 09:20 til 10:20\nHold: L3a MA\nLærere: kpn\, vbs\nLo
+ kale: 1.07\n\nNote:\nKasper er tilbage og kører undervisningen i dag\, me
+ ns Victor afholder karaktersamtaler.
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480255902@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - L3a MA - kpn\, vbs
+DTSTART:20261105T103000
+DTEND:20261105T113000
+LOCATION:1.07
+DESCRIPTION:5/11-2026 10:30 til 11:30\nHold: L3a MA\nLærere: kpn\, vbs\nLo
+ kale: 1.07
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83173833757@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.28 - Pop-up café - Sabine Karin Clausen (skc)
+DTSTART:20261105T113000
+DTEND:20261105T121000
+LOCATION:0.28
+DESCRIPTION:Ændret!\nPop-up café\n5/11-2026 11:30 til 12:10\nHold: Alle 1
+ . HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\,
+  Alle Lærere (Lyn)\nLærer: Sabine Karin Clausen (skc)\nLokale: 0.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270790@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - Romantikken - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261105T121000
+DTEND:20261105T131000
+LOCATION:1.07
+DESCRIPTION:Romantikken\n5/11-2026 12:10 til 13:10\nHold: L3a DA\nLærer: E
+ milie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07\n\nØvrigt indhold:\
+ nTil timen: [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480271102@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - Romantikken - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261105T132000
+DTEND:20261105T142000
+LOCATION:1.07
+DESCRIPTION:Romantikken\n5/11-2026 13:20 til 14:20\nHold: L3a DA\nLærer: E
+ milie Rose Bang Brønnum-Carlsen (erbc)\nLokale: 1.07
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927198678@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Generalprøve - Lasse Johansen (laj)
+DTSTART:20261105T143000
+DTEND:20261105T163000
+DESCRIPTION:Generalprøve\n5/11-2026 14:30 til 16:30\nHold: L Intro Turbo +
+  Kemi OL\nLærer: Lasse Johansen (laj)\nLokaler: 0.28\, 0.68
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481911@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - ija\, kal\, sdb
+DTSTART:20261105T143000
+DTEND:20261105T153000
+LOCATION:X Forhal
+DESCRIPTION:Lektiecafé\n5/11-2026 14:30 til 15:30\nHold: Alle 1. HTX-eleve
+ r (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: ij
+ a\, kal\, sdb\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480268770@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Asynkron Virtuel Undervisning - Kristian Høyland-Kroghsbo 
+ (khk)
+DTSTART:20261106T081500
+DTEND:20261106T091500
+LOCATION:X DVR
+DESCRIPTION:Asynkron Virtuel Undervisning\n6/11-2026 08:15 til 09:15\nHold:
+  L3g sty\nLærer: Kristian Høyland-Kroghsbo (khk)\nLokale: X DVR\n\nØvri
+ gt indhold:\nAfsnit [...]\nUndervisning: Statik og Styrke - 02 - Last og 
+ lastkombinationer - 05 - Afsluttende del 2 fortsat.pptx [...]\n\nNote:\nAf
+ sluttende projekt del 2
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269112@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Asynkron Virtuel Undervisning - Kristian Høyland-Kroghsbo 
+ (khk)
+DTSTART:20261106T092000
+DTEND:20261106T102000
+LOCATION:X DVR
+DESCRIPTION:Asynkron Virtuel Undervisning\n6/11-2026 09:20 til 10:20\nHold:
+  L3g sty\nLærer: Kristian Høyland-Kroghsbo (khk)\nLokale: X DVR
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266329@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Asynkron Virtuel Undervisning - Anja Lea Olsen (alo)
+DTSTART:20261106T103000
+DTEND:20261106T113000
+LOCATION:X DVR
+DESCRIPTION:Asynkron Virtuel Undervisning\n6/11-2026 10:30 til 11:30\nHold:
+  L3a FY\nLærer: Anja Lea Olsen (alo)\nLokale: X DVR\n\nLektier:\nDagens o
+ pgave i fysik: Skriv journalen over de to rotationsforsøg færdig og afle
+ ver journalen senest klokken 13.10. [...]\nProgram [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266714@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Asynkron Virtuel Undervisning - Anja Lea Olsen (alo)
+DTSTART:20261106T121000
+DTEND:20261106T131000
+LOCATION:X DVR
+DESCRIPTION:Asynkron Virtuel Undervisning\n6/11-2026 12:10 til 13:10\nHold:
+  L3a FY\nLærer: Anja Lea Olsen (alo)\nLokale: X DVR
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256988@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Linjeelement og løsningskurve - kpn\, vbs
+DTSTART:20261106T132000
+DTEND:20261106T142000
+LOCATION:X DVR
+DESCRIPTION:Linjeelement og løsningskurve\n6/11-2026 13:20 til 14:20\nHold
+ : L3a MA\nLærere: kpn\, vbs\nLokale: X DVR\n\nNote:\nDer kommer her fra d
+ agens begyndelse til at ligge en række træningsopgaver i stoffet fra i g
+ år\, og noget læsestof om numerisk løsning af differentialligninger. Ar
+ bejdet med opgaverne og læsestoffet afleveres under den tilhørende aflev
+ ering\, som vil blive brugt til fraværsregistrering.
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480257247@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X DVR - Asynkron Virtuel Undervisning - kpn\, vbs
+DTSTART:20261106T143000
+DTEND:20261106T153000
+LOCATION:X DVR
+DESCRIPTION:Asynkron Virtuel Undervisning\n6/11-2026 14:30 til 15:30\nHold:
+  L3a MA\nLærere: kpn\, vbs\nLokale: X DVR
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269374@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261109T081500
+DTEND:20261109T091500
+LOCATION:1.63a
+DESCRIPTION:9/11-2026 08:15 til 09:15\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269599@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261109T092000
+DTEND:20261109T102000
+LOCATION:1.63a
+DESCRIPTION:9/11-2026 09:20 til 10:20\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258060@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261109T103000
+DTEND:20261109T113000
+LOCATION:1.63a
+DESCRIPTION:9/11-2026 10:30 til 11:30\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258331@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261109T121000
+DTEND:20261109T131000
+LOCATION:1.63a
+DESCRIPTION:9/11-2026 12:10 til 13:10\nHold: LUP EL TK\nLærer: Lasse Rønb
+ øg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480265552@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - Politik og religion - Lene Thodsen (lt)
+DTSTART:20261109T132000
+DTEND:20261109T142000
+LOCATION:2.04
+DESCRIPTION:Politik og religion\n9/11-2026 13:20 til 14:20\nHold: L3a Ih\nL
+ ærer: Lene Thodsen (lt)\nLokale: 2.04\n\nLektier:\n1. Introduktion - reli
+ gion og politik i Mellemøsten (ca. 2000 f.Kr. - 1900 e-Kr.) [...]\n\nNote
+ :\nLæs hele det første kapitel. Det vil være godt\, hvis I læste det h
+ ele. Hele lektien svarer til 10 normalsider. I kan evt. droppe de to fakta
+ bokse om Jerusalem og zionismen.
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480265796@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261109T143000
+DTEND:20261109T153000
+LOCATION:2.04
+DESCRIPTION:9/11-2026 14:30 til 15:30\nHold: L3a Ih\nLærer: Lene Thodsen (
+ lt)\nLokale: 2.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260512@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.02 - Bjælker - enkelt last - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261110T081500
+DTEND:20261110T091500
+LOCATION:1.02
+DESCRIPTION:Bjælker - enkelt last\n10/11-2026 08:15 til 09:15\nHold: L3g s
+ ty\nLærer: Kristian Høyland-Kroghsbo (khk)\nLokale: 1.02\n\nLektier:\nVa
+ lgfri lektie før eller efter timen [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260778@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.02 - L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261110T092000
+DTEND:20261110T102000
+LOCATION:1.02
+DESCRIPTION:10/11-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)\nLokale: 1.02
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480267032@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.05a - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261110T103000
+DTEND:20261110T113000
+LOCATION:1.05a
+DESCRIPTION:10/11-2026 10:30 til 11:30\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)\nLokale: 1.05a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480267311@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.05a - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261110T121000
+DTEND:20261110T131000
+LOCATION:1.05a
+DESCRIPTION:10/11-2026 12:10 til 13:10\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)\nLokale: 1.05a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270339@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261110T132000
+DTEND:20261110T142000
+LOCATION:0.05
+DESCRIPTION:10/11-2026 13:20 til 14:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05\n\nLektier:\nVi følger op på opgaverne fr
+ a sidst der omhandlede gibbs energi og forstætter med Van´t Hoffs lignin
+ g. Om torsdagen skal vi lave en øvelse der omhandler Van´t Hoffs ligning
+ \, så den taler vi også kort om. [...]\nBasisKemi A\, 48-54\ne-bog
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270532@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261110T143000
+DTEND:20261110T153000
+LOCATION:0.05
+DESCRIPTION:10/11-2026 14:30 til 15:30\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264651@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261111T081500
+DTEND:20261111T091500
+LOCATION:2.04
+DESCRIPTION:11/11-2026 08:15 til 09:15\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)\nLokale: 2.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264889@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - L3a Ih - Lene Thodsen (lt)
+DTSTART:20261111T092000
+DTEND:20261111T102000
+LOCATION:2.04
+DESCRIPTION:11/11-2026 09:20 til 10:20\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)\nLokale: 2.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263393@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.03a - L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261111T103000
+DTEND:20261111T113000
+LOCATION:1.03a
+DESCRIPTION:11/11-2026 10:30 til 11:30\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)\nLokale: 1.03a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263645@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.03a - L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261111T121000
+DTEND:20261111T131000
+LOCATION:1.03a
+DESCRIPTION:11/11-2026 12:10 til 13:10\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)\nLokale: 1.03a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480257562@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261111T132000
+DTEND:20261111T142000
+LOCATION:1.63a
+DESCRIPTION:11/11-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480257787@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261111T143000
+DTEND:20261111T153000
+LOCATION:1.63a
+DESCRIPTION:11/11-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927333243@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Lektiecafe Introforløb - Nicolai Bogø Hallundbæk Busch (nbs)
+DTSTART:20261111T153000
+DTEND:20261111T183000
+DESCRIPTION:Lektiecafe Introforløb\n11/11-2026 15:30 til 18:30\nHold: L In
+ tro Turbo + Kemi OL\nElever: Ayesha Riaz (L3b 03)\, Carl Dittmer Gormsen (
+ L3a 09)\, Carl Eickhoff Haarmark Nielsen (L2b2 03)\nLærer: Nicolai Bogø 
+ Hallundbæk Busch (nbs)\nLokaler: 2.03\, 2.05\n\nNote:\nDet er Bertil (bfj
+ )\, der vil være ansvarlig for lektiecaféen.
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480254948@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261112T092000
+DTEND:20261112T102000
+LOCATION:0.05
+DESCRIPTION:12/11-2026 09:20 til 10:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05\n\nLektier:\nVi skal lave øvelsen Van´t H
+ off ligning [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480255220@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261112T103000
+DTEND:20261112T113000
+LOCATION:0.05
+DESCRIPTION:12/11-2026 10:30 til 11:30\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927198681@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1. Runde - Prøve - *bfj\, laj
+DTSTART:20261112T143000
+DTEND:20261112T163000
+DESCRIPTION:Ændret!\n1. Runde - Prøve\n12/11-2026 14:30 til 16:30\nHold: 
+ L Intro Turbo + Kemi OL\nLærere: *bfj\, laj\nLokaler: 0.28\, 0.68
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481905@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Lektiecafé - erbc\, hfa\, lt
+DTSTART:20261112T143000
+DTEND:20261112T153000
+DESCRIPTION:Lektiecafé\n12/11-2026 14:30 til 15:30\nHold: Alle 1. HTX-elev
+ er (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: e
+ rbc\, hfa\, lt\nLokaler: 2.27\, 2.29
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480259266@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.09 - Bjælker - jævnt fordelt last - Kristian Høyland-Kroghsbo 
+ (khk)
+DTSTART:20261113T081500
+DTEND:20261113T091500
+LOCATION:1.09
+DESCRIPTION:Bjælker - jævnt fordelt last\n13/11-2026 08:15 til 09:15\nHol
+ d: L3g sty\nLærer: Kristian Høyland-Kroghsbo (khk)\nLokale: 1.09\n\nLekt
+ ier:\nValgfri lektie før eller efter [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480259513@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.09 - L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261113T092000
+DTEND:20261113T102000
+LOCATION:1.09
+DESCRIPTION:13/11-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)\nLokale: 1.09
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261633@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - Elektriske felter - Anja Lea Olsen (alo)
+DTSTART:20261113T103000
+DTEND:20261113T113000
+LOCATION:2.28
+DESCRIPTION:Elektriske felter\n13/11-2026 10:30 til 11:30\nHold: L3a FY\nL
+ ærer: Anja Lea Olsen (alo)\nLokale: 2.28\n\nØvrigt indhold:\nProgram [..
+ .]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261912@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261113T121000
+DTEND:20261113T131000
+LOCATION:2.28
+DESCRIPTION:13/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480265100@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.07 - L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261113T132000
+DTEND:20261113T142000
+LOCATION:1.07
+DESCRIPTION:13/11-2026 13:20 til 14:20\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)\nLokale: 1.07
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83301595222@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Skolefoto - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261113T143000
+DTEND:20261113T153000
+DESCRIPTION:Skolefoto\n13/11-2026 14:30 til 15:30\nHold: L3a st\nLærer: Em
+ ilie Rose Bang Brønnum-Carlsen (erbc)\nLokaler: 0.28\, X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261093@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261116T081500
+DTEND:20261116T091500
+LOCATION:1.63a
+DESCRIPTION:16/11-2026 08:15 til 09:15\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261432@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261116T092000
+DTEND:20261116T102000
+LOCATION:1.63a
+DESCRIPTION:16/11-2026 09:20 til 10:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480259878@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261116T103000
+DTEND:20261116T113000
+LOCATION:1.63a
+DESCRIPTION:16/11-2026 10:30 til 11:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260236@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261116T121000
+DTEND:20261116T131000
+LOCATION:1.63a
+DESCRIPTION:16/11-2026 12:10 til 13:10\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258620@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261116T132000
+DTEND:20261116T142000
+LOCATION:0.05
+DESCRIPTION:16/11-2026 13:20 til 14:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258968@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.05 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261116T143000
+DTEND:20261116T153000
+LOCATION:0.05
+DESCRIPTION:16/11-2026 14:30 til 15:30\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.05
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263974@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - E-feltet - Anja Lea Olsen (alo)
+DTSTART:20261117T103000
+DTEND:20261117T113000
+LOCATION:2.28
+DESCRIPTION:E-feltet\n17/11-2026 10:30 til 11:30\nHold: L3a FY\nLærer: Anj
+ a Lea Olsen (alo)\nLokale: 2.28\n\nØvrigt indhold:\nProgram [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264378@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261117T121000
+DTEND:20261117T131000
+LOCATION:2.28
+DESCRIPTION:17/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269852@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.04 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261118T081500
+DTEND:20261118T091500
+LOCATION:0.04
+DESCRIPTION:18/11-2026 08:15 til 09:15\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270144@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:0.04 - L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261118T092000
+DTEND:20261118T102000
+LOCATION:0.04
+DESCRIPTION:18/11-2026 09:20 til 10:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)\nLokale: 0.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262269@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - Kapacitor - Anja Lea Olsen (alo)
+DTSTART:20261118T103000
+DTEND:20261118T113000
+LOCATION:2.25
+DESCRIPTION:Kapacitor\n18/11-2026 10:30 til 11:30\nHold: L3a FY\nLærer: An
+ ja Lea Olsen (alo)\nLokale: 2.25\n\nØvrigt indhold:\nProgram [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262654@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.25 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261118T121000
+DTEND:20261118T131000
+LOCATION:2.25
+DESCRIPTION:18/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.25
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256508@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261118T132000
+DTEND:20261118T142000
+LOCATION:1.63a
+DESCRIPTION:18/11-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256810@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261118T143000
+DTEND:20261118T153000
+LOCATION:1.63a
+DESCRIPTION:18/11-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270793@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.03 - L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261119T121000
+DTEND:20261119T131000
+LOCATION:2.03
+DESCRIPTION:19/11-2026 12:10 til 13:10\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)\nLokale: 2.03
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480271105@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.03 - L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261119T132000
+DTEND:20261119T142000
+LOCATION:2.03
+DESCRIPTION:19/11-2026 13:20 til 14:20\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)\nLokale: 2.03
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS81927198684@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Opsamling - Lasse Johansen (laj)
+DTSTART:20261119T143000
+DTEND:20261119T163000
+DESCRIPTION:Opsamling\n19/11-2026 14:30 til 16:30\nHold: B Intro Turbo + Ke
+ mi OL\, F Intro Turbo + Kemi OL\, L Intro Turbo + Kemi OL\nLærer: Lasse J
+ ohansen (laj)\nLokaler: 0.28\, 0.68
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481922@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - ija\, kal\, sdb
+DTSTART:20261119T143000
+DTEND:20261119T153000
+LOCATION:X Forhal
+DESCRIPTION:Lektiecafé\n19/11-2026 14:30 til 15:30\nHold: Alle 1. HTX-elev
+ er (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: i
+ ja\, kal\, sdb\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480268773@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - Mestrings opgaver - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261120T081500
+DTEND:20261120T091500
+LOCATION:2.04
+DESCRIPTION:Mestrings opgaver\n20/11-2026 08:15 til 09:15\nHold: L3g sty\nL
+ ærer: Kristian Høyland-Kroghsbo (khk)\nLokale: 2.04\n\nLektier:\nValgfri
+  lektie før eller efter [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269115@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.04 - L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261120T092000
+DTEND:20261120T102000
+LOCATION:2.04
+DESCRIPTION:20/11-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)\nLokale: 2.04
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266332@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - Kapacitorer - Anja Lea Olsen (alo)
+DTSTART:20261120T103000
+DTEND:20261120T113000
+LOCATION:2.28
+DESCRIPTION:Kapacitorer\n20/11-2026 10:30 til 11:30\nHold: L3a FY\nLærer: 
+ Anja Lea Olsen (alo)\nLokale: 2.28\n\nØvrigt indhold:\nProgram [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266717@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261120T121000
+DTEND:20261120T131000
+LOCATION:2.28
+DESCRIPTION:20/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269377@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261123T081500
+DTEND:20261123T091500
+LOCATION:1.63a
+DESCRIPTION:23/11-2026 08:15 til 09:15\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269602@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261123T092000
+DTEND:20261123T102000
+LOCATION:1.63a
+DESCRIPTION:23/11-2026 09:20 til 10:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258063@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261123T103000
+DTEND:20261123T113000
+LOCATION:1.63a
+DESCRIPTION:23/11-2026 10:30 til 11:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480258334@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261123T121000
+DTEND:20261123T131000
+LOCATION:1.63a
+DESCRIPTION:23/11-2026 12:10 til 13:10\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480265555@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261123T132000
+DTEND:20261123T142000
+DESCRIPTION:23/11-2026 13:20 til 14:20\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480265799@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261123T143000
+DTEND:20261123T153000
+DESCRIPTION:23/11-2026 14:30 til 15:30\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260515@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Digital snitkraftkurve - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261124T081500
+DTEND:20261124T091500
+DESCRIPTION:Digital snitkraftkurve\n24/11-2026 08:15 til 09:15\nHold: L3g s
+ ty\nLærer: Kristian Høyland-Kroghsbo (khk)\n\nLektier:\nWinBeam [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260781@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261124T092000
+DTEND:20261124T102000
+DESCRIPTION:24/11-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480413759@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Fællessamling\, 3.g - Sabine Karin Clausen (skc)
+DTSTART:20261124T103000
+DTEND:20261124T113000
+DESCRIPTION:Fællessamling\, 3.g\n24/11-2026 10:30 til 11:30\nHold: Alle 3.
+  HTX-elever (Lyn)\nLærer: Sabine Karin Clausen (skc)\nLokaler: 0.28\, 0.6
+ 8\n\nNote:\nmedbring mobiltelefon/pc og mitID/unilogin
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480267314@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261124T121000
+DTEND:20261124T131000
+LOCATION:2.28
+DESCRIPTION:24/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270342@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261124T132000
+DTEND:20261124T142000
+DESCRIPTION:24/11-2026 13:20 til 14:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270535@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261124T143000
+DTEND:20261124T153000
+DESCRIPTION:24/11-2026 14:30 til 15:30\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264654@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261125T081500
+DTEND:20261125T091500
+DESCRIPTION:25/11-2026 08:15 til 09:15\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264892@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261125T092000
+DTEND:20261125T102000
+DESCRIPTION:25/11-2026 09:20 til 10:20\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83635297962@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Fjollebilleder - Lene Thodsen (lt)
+DTSTART:20261125T093000
+DTEND:20261125T094500
+LOCATION:X Forhal
+DESCRIPTION:Fjollebilleder\n25/11-2026 09:30 til 09:45\nHold: Alle L3a-elev
+ er\nLærer: Lene Thodsen (lt)\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263396@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261125T103000
+DTEND:20261125T113000
+DESCRIPTION:25/11-2026 10:30 til 11:30\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263648@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261125T121000
+DTEND:20261125T131000
+DESCRIPTION:25/11-2026 12:10 til 13:10\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83635330680@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Syge-/omfoto
+DTSTART:20261125T121500
+DTEND:20261125T140000
+LOCATION:X Forhal
+DESCRIPTION:Syge-/omfoto\n25/11-2026 12:15 til 14:00\nHold: Alle 1. HTX-ele
+ ver (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\, Alle Læ
+ rere (Lyn)\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480257565@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261125T132000
+DTEND:20261125T142000
+LOCATION:1.63a
+DESCRIPTION:25/11-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480257790@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261125T143000
+DTEND:20261125T153000
+LOCATION:1.63a
+DESCRIPTION:25/11-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480254951@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261126T092000
+DTEND:20261126T102000
+DESCRIPTION:26/11-2026 09:20 til 10:20\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480255223@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g KE - Kristian Krabbe Møller (kkm)
+DTSTART:20261126T103000
+DTEND:20261126T113000
+DESCRIPTION:26/11-2026 10:30 til 11:30\nHold: L3g KE\nLærer: Kristian Krab
+ be Møller (kkm)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481889@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - erbc\, hfa\, lt\, tpk
+DTSTART:20261126T143000
+DTEND:20261126T153000
+LOCATION:X Forhal
+DESCRIPTION:Ændret!\nLektiecafé\n26/11-2026 14:30 til 15:30\nHold: Alle 1
+ . HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\n
+ Lærere: erbc\, hfa\, lt\, tpk\nLokale: X Forhal\n\nLektier:\nMulighed for
+  at hjælp med: [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83499592279@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Juleklip
+DTSTART:20261127T081500
+DTEND:20261127T091500
+DESCRIPTION:Juleklip\n27/11-2026 08:15 til 09:15\nHold: L3a st
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83499592293@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Juleklip
+DTSTART:20261127T092000
+DTEND:20261127T102000
+DESCRIPTION:Juleklip\n27/11-2026 09:20 til 10:20\nHold: L3a st
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261636@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - Op- og afladning af kapacitor - Anja Lea Olsen (alo)
+DTSTART:20261127T103000
+DTEND:20261127T113000
+LOCATION:2.28
+DESCRIPTION:Op- og afladning af kapacitor\n27/11-2026 10:30 til 11:30\nHold
+ : L3a FY\nLærer: Anja Lea Olsen (alo)\nLokale: 2.28\n\nØvrigt indhold:\n
+ Program [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261915@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261127T121000
+DTEND:20261127T131000
+LOCATION:2.28
+DESCRIPTION:27/11-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481927@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - ija\, kal\, sdb\, tpk
+DTSTART:20261203T143000
+DTEND:20261203T153000
+LOCATION:X Forhal
+DESCRIPTION:Ændret!\nLektiecafé\n3/12-2026 14:30 til 15:30\nHold: Alle 1.
+  HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nL
+ ærere: ija\, kal\, sdb\, tpk\nLokale: X Forhal\n\nLektier:\nMulighed for 
+ at få hjælp med: [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481897@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - erbc\, hfa\, lt
+DTSTART:20261210T143000
+DTEND:20261210T153000
+LOCATION:X Forhal
+DESCRIPTION:Lektiecafé\n10/12-2026 14:30 til 15:30\nHold: Alle 1. HTX-elev
+ er (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\nLærere: e
+ rbc\, hfa\, lt\nLokale: X Forhal
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261099@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T081500
+DTEND:20261214T091500
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 08:15 til 09:15\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480261438@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T092000
+DTEND:20261214T102000
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 09:20 til 10:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480259884@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T103000
+DTEND:20261214T113000
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 10:30 til 11:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480260242@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T121000
+DTEND:20261214T131000
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 12:10 til 13:10\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83634737479@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T132000
+DTEND:20261214T142000
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83634737482@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261214T143000
+DTEND:20261214T153000
+LOCATION:1.63a
+DESCRIPTION:14/12-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480263980@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261215T103000
+DTEND:20261215T113000
+LOCATION:2.28
+DESCRIPTION:15/12-2026 10:30 til 11:30\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480264384@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261215T121000
+DTEND:20261215T131000
+LOCATION:2.28
+DESCRIPTION:15/12-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262275@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261216T103000
+DTEND:20261216T113000
+DESCRIPTION:16/12-2026 10:30 til 11:30\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480262660@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a Ih - Lene Thodsen (lt)
+DTSTART:20261216T121000
+DTEND:20261216T131000
+DESCRIPTION:16/12-2026 12:10 til 13:10\nHold: L3a Ih\nLærer: Lene Thodsen 
+ (lt)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256514@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261216T132000
+DTEND:20261216T142000
+LOCATION:1.63a
+DESCRIPTION:16/12-2026 13:20 til 14:20\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480256816@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:1.63a - LUP EL TK - Lasse Rønbøg Møholt (lrm)
+DTSTART:20261216T143000
+DTEND:20261216T153000
+LOCATION:1.63a
+DESCRIPTION:16/12-2026 14:30 til 15:30\nHold: LUP EL TK\nLærer: Lasse Røn
+ bøg Møholt (lrm)\nLokale: 1.63a
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480270799@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261217T121000
+DTEND:20261217T131000
+DESCRIPTION:17/12-2026 12:10 til 13:10\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480271111@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3a DA - Emilie Rose Bang Brønnum-Carlsen (erbc)
+DTSTART:20261217T132000
+DTEND:20261217T142000
+DESCRIPTION:17/12-2026 13:20 til 14:20\nHold: L3a DA\nLærer: Emilie Rose B
+ ang Brønnum-Carlsen (erbc)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83789481932@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:X Forhal - Lektiecafé - kal\, sdb\, tpk
+DTSTART:20261217T143000
+DTEND:20261217T153000
+LOCATION:X Forhal
+DESCRIPTION:Ændret!\nLektiecafé\n17/12-2026 14:30 til 15:30\nHold: Alle 1
+ . HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\n
+ Lærere: kal\, sdb\, tpk\nLokale: X Forhal\n\nLektier:\nMulighed for at f
+ å hjælp med: [...]
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480268779@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Genopfriskning + juleafslutnin - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261218T081500
+DTEND:20261218T091500
+DESCRIPTION:Genopfriskning + juleafslutnin\n18/12-2026 08:15 til 09:15\nHol
+ d: L3g sty\nLærer: Kristian Høyland-Kroghsbo (khk)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480269121@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:L3g sty - Kristian Høyland-Kroghsbo (khk)
+DTSTART:20261218T092000
+DTEND:20261218T102000
+DESCRIPTION:18/12-2026 09:20 til 10:20\nHold: L3g sty\nLærer: Kristian Hø
+ yland-Kroghsbo (khk)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266338@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261218T103000
+DTEND:20261218T113000
+LOCATION:2.28
+DESCRIPTION:18/12-2026 10:30 til 11:30\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83179072647@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Pop-up café - Sabine Karin Clausen (skc)
+DTSTART:20261218T113000
+DTEND:20261218T121000
+DESCRIPTION:Pop-up café\n18/12-2026 11:30 til 12:10\nHold: Alle 1. HTX-ele
+ ver (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\, Alle Læ
+ rere (Lyn)\nLærer: Sabine Karin Clausen (skc)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480266723@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:2.28 - L3a FY - Anja Lea Olsen (alo)
+DTSTART:20261218T121000
+DTEND:20261218T131000
+LOCATION:2.28
+DESCRIPTION:18/12-2026 12:10 til 13:10\nHold: L3a FY\nLærer: Anja Lea Olse
+ n (alo)\nLokale: 2.28
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480405913@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Juleafslutning
+DTSTART:20261218T132000
+DTEND:20261218T142000
+DESCRIPTION:Juleafslutning\n18/12-2026 13:20 til 14:20\nHold: Alle 1. HTX-e
+ lever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\, Alle L
+ ærere (Lyn)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83480405915@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Julecafé
+DTSTART:20261218T142000
+DTEND:20261218T190000
+DESCRIPTION:Julecafé\n18/12-2026 14:20 til 19:00\nHold: Alle 1. HTX-elever
+  (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\, Alle Lærer
+ e (Lyn)
+END:VEVENT
+BEGIN:VEVENT
+UID:ABS83179103906@lectio.dk
+DTSTAMP:20261105T195358Z
+SUMMARY:Pop-up café - Sabine Karin Clausen (skc)
+DTSTART:20270122T113000
+DTEND:20270122T121000
+DESCRIPTION:Ændret!\nPop-up café\n22/1-2027 11:30 til 12:10\nHold: Alle 1
+ . HTX-elever (Lyn)\, Alle 2. HTX-elever (Lyn)\, Alle 3. HTX-elever (Lyn)\,
+  Alle Lærere (Lyn)\nLærer: Sabine Karin Clausen (skc)
+END:VEVENT
+END:VCALENDAR
