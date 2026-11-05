@@ -41,10 +41,10 @@ class LectioFetchTests(unittest.TestCase):
         html = "<html><body><table id='m_Content_SkemaMedNavigation_skema_skematabel'></table></body></html>"
         gz = gzip.compress(html.encode("utf-8"))
 
-        def _fake_urlopen(req, timeout=30):
+        def _fake_open(session, req, timeout=30):
             return _FakeResponse(body=gz, headers=_FakeHeaders(content_encoding="gzip"))
 
-        with patch("lectio_sync.lectio_fetch.urlopen", _fake_urlopen):
+        with patch("lectio_sync.lectio_fetch.LectioSession.open", _fake_open):
             out = fetch_html(url="https://example.invalid/", cookie_header="a=b", timeout_seconds=5)
 
         self.assertIn("<table", out)
@@ -54,7 +54,8 @@ class LectioFetchTests(unittest.TestCase):
         html = "<html><body>ok</body></html>"
         captured = {"cookie": None, "accept_encoding": None}
 
-        def _fake_urlopen(req, timeout=30):
+        def _fake_open(session, req, timeout=30):
+            session.jar.add_cookie_header(req)
             # urllib's Request stores headers in a case-insensitive mapping,
             # but the exact key casing is not guaranteed.
             hdrs = {k.lower(): v for k, v in dict(req.header_items()).items()}
@@ -62,7 +63,7 @@ class LectioFetchTests(unittest.TestCase):
             captured["accept_encoding"] = hdrs.get("accept-encoding")
             return _FakeResponse(body=html.encode("utf-8"), headers=_FakeHeaders(content_encoding=None))
 
-        with patch("lectio_sync.lectio_fetch.urlopen", _fake_urlopen):
+        with patch("lectio_sync.lectio_fetch.LectioSession.open", _fake_open):
             out = fetch_html(url="https://example.invalid/", cookie_header="Cookie: a=b; c=d", timeout_seconds=5)
 
         self.assertEqual(out, html)

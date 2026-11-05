@@ -10,6 +10,8 @@ venv/
 
 # Local config (contains LECTIO_SCHEDULE_URL; never commit)
 .env.local
+**/session-cookies.json
+**/session-cookies.tmp
 
 # Local inputs
 *.html

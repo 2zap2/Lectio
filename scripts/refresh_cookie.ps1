@@ -18,9 +18,10 @@
 #
 # CREATE DESKTOP SHORTCUT
 # ------------------------
-# Right-click your desktop → New → Shortcut
-# Target:  powershell.exe -ExecutionPolicy Bypass -File "C:\Users\Arthu\Lectio\scripts\refresh_cookie.ps1"
-# Name:    Refresh Lectio Cookie
+# Run the helper script once to create the shortcut automatically:
+#       .\scripts\create_shortcut.ps1
+#
+# The helper uses the actual repo path at runtime so the shortcut is always correct.
 #
 # PARAMETERS (all optional)
 # -ScheduleUrl   Your Lectio Advanced Schedule URL. Defaults to LECTIO_SCHEDULE_URL env var
@@ -44,6 +45,12 @@ $ErrorActionPreference = "Stop"
 # ── Locate repo root ─────────────────────────────────────────────────────────
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $repoRoot
+$srcPath = Join-Path $repoRoot "src"
+$env:PYTHONPATH = if ($env:PYTHONPATH) {
+    "$srcPath$([IO.Path]::PathSeparator)$env:PYTHONPATH"
+} else {
+    $srcPath
+}
 
 # ── Load .env.local if present ───────────────────────────────────────────────
 $envLocal = Join-Path $repoRoot ".env.local"
@@ -119,4 +126,4 @@ if ($exitCode -eq 0) {
 }
 
 Write-Host ""
-Stop-Process -Id $PID
+exit $exitCode

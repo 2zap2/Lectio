@@ -1,8 +1,8 @@
 # register_scheduled_task.ps1
 #
-# Registers a Windows Scheduled Task that silently refreshes the Lectio
-# session cookie every 20 hours so the GitHub Actions workflow always has
-# a fresh cookie without any manual intervention.
+# Registers a Windows Scheduled Task that refreshes the Lectio session cookie
+# at Windows logon, after resume and every 30 minutes. The refresh stays hidden,
+# reuses saved Lectio/SSO login and reports exit 2 when manual login is needed.
 #
 # HOW TO USE (one-time setup)
 # ----------------------------
@@ -62,7 +62,9 @@ $triggerResume = $cimClass | New-CimInstance -ClientOnly -Property @{
 }
 
 # Both triggers are passed as an array to Register-ScheduledTask below.
-$triggers = @($triggerLogon, $triggerResume)
+$triggerPeriodic = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) `
+    -RepetitionInterval (New-TimeSpan -Minutes 30)
+$triggers = @($triggerLogon, $triggerResume, $triggerPeriodic)
 
 # ── Settings ──────────────────────────────────────────────────────────────
 $settings = New-ScheduledTaskSettingsSet `
@@ -71,6 +73,7 @@ $settings = New-ScheduledTaskSettingsSet `
     -RunOnlyIfNetworkAvailable `
     -AllowStartIfOnBatteries `
     -DontStopIfGoingOnBatteries `
+    -MultipleInstances IgnoreNew `
     -WakeToRun:$false
 
 # ── Remove pre-existing task with same name if present ────────────────────
@@ -88,12 +91,12 @@ Register-ScheduledTask `
     -Settings   $settings `
     -RunLevel   Limited `
     -Force `
-    -Description "Refreshes the Lectio session cookie every 20 hours using Playwright. Keeps the LECTIO_COOKIE_HEADER GitHub Secret current so the daily calendar sync never fails."
+    -Description "Refreshes Lectio cookies silently at logon, on resume and every 30 minutes. Manual login is only needed when Lectio/SSO requires it."
 
 Write-Host ""
 Write-Host "Task '$taskName' registered successfully." -ForegroundColor Green
-Write-Host "Task will run at next logon and on every resume from sleep."
+Write-Host "Task runs at logon, on resume and every 30 minutes while the PC is available."
 Write-Host ""
-Write-Host "To verify: open Task Scheduler, find '$taskName', and check the Triggers tab for two entries."
+Write-Host "To verify: open Task Scheduler, find '$taskName', and check the Triggers tab for three entries."
 Write-Host "To view the log after the first run:"
 Write-Host "  notepad `"$env:LOCALAPPDATA\lectio-sync\auto-refresh.log`""

@@ -281,15 +281,26 @@ Important:
 
 ## Automatic cookie refresh (Windows Scheduled Task)
 
-Lectio issues **fixed-expiry session cookies** (valid ~24 h). The GitHub Actions workflow
-that fetches the schedule daily therefore needs a fresh cookie on every run. Without
-automation you would have to log in manually every day.
+The HTTP fetcher now uses a cookie jar: renewed `Set-Cookie` values are used
+for subsequent weeks, assignments, rooms and the additional student's feed.
+The previous claim that every Lectio cookie has a fixed 24-hour lifetime was
+not established; server expiry, browser session cookies and SSO are distinct.
 
-The `scripts/auto_refresh_cookie.ps1` script and a Windows Scheduled Task solve this:
-Playwright reuses the persistent browser profile that already holds your Lectio session and
-silently captures a fresh cookie every 20 hours, pushing it to the GitHub Secret — all
-without displaying any browser window or requiring a MitID login (Lectio only forces a full
-MitID re-auth every few days, not daily).
+The refresher reuses a dedicated browser profile and explicitly saves/restores
+its session cookies (including SSO cookies). A persistent Chromium profile alone
+does not guarantee that session cookies survive closing the browser. Server-side
+expiry is still respected; no local expiry timestamps are extended. When the
+Lectio session expires, the refresher first visits the normal Lectio login
+endpoint so the identity provider can reuse its saved SSO login. An interactive
+login is only needed when Lectio or its identity provider requires it.
+
+Cookie values are kept inside `%LOCALAPPDATA%\lectio-sync\playwright-profile`,
+never in the repository. Only cookies matching the Lectio URL are sent to GitHub;
+SSO cookies stay in the local profile. Background runs never print cookies or open
+a login window. Exit code 2 means a manual refresh/login is required.
+
+See [the setup guide](docs/setup-student-calendar-and-session.md) for the new
+student feed and optional server-side cookie persistence in GitHub Actions.
 
 ### Prerequisites (one-time setup)
 
@@ -318,8 +329,9 @@ Run once from any PowerShell window (no Administrator required):
 .\scripts\register_scheduled_task.ps1
 ```
 
-The task (`LectioCookieRefresh`) runs every 20 hours using a hidden Chromium window. The
-first run fires ~1 minute after registration so you can verify it immediately.
+The task (`LectioCookieRefresh`) runs at logon, after resume and every 30 minutes
+while the computer and network are available. The first periodic run is one minute
+after registration. Re-run registration to update an existing task.
 
 ### Verify the task is registered
 
@@ -364,7 +376,7 @@ the browser profile has expired and Lectio is requiring a full MitID re-login.
 
 Fix: run `.\scripts\refresh_cookie.ps1` interactively (the visible browser will open and
 let you log in with MitID). After that succeeds, the profile holds a fresh session and
-headless runs will work again for several more days.
+headless runs can reuse that login until Lectio or SSO requires authentication again.
 
 ---
 

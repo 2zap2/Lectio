@@ -47,14 +47,14 @@ class FilterCookiesTests(unittest.TestCase):
         result = _filter_cookies_for_host(cookies, schedule_url)
         names = [c["name"] for c in result]
         self.assertIn("A", names)
-        self.assertIn("C", names)
+        self.assertNotIn("C", names)  # host-only lectio.dk does not cover www.lectio.dk
         self.assertNotIn("B", names)
 
-    def test_fallback_returns_all_when_no_match(self) -> None:
-        # If nothing matches the host, we return everything (better than nothing).
+    def test_no_match_returns_no_cookies(self) -> None:
+        # Unrelated cookies must never be sent to GitHub.
         cookies = [{"name": "X", "value": "v", "domain": ".other.com"}]
         result = _filter_cookies_for_host(cookies, "https://www.lectio.dk/lectio/1/Skema.aspx")
-        self.assertEqual(result, cookies)
+        self.assertEqual(result, [])
 
 
 class PageClassifierTests(unittest.TestCase):

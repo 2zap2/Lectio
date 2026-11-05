@@ -1,7 +1,8 @@
 # auto_refresh_cookie.ps1
 #
-# Silent cookie refresh for the Windows Scheduled Task.
-# Called automatically every ~20 hours; never prompts the user.
+# Automatic cookie refresh for the Windows Scheduled Task.
+# Reuses Lectio/SSO state headlessly. Exit 2 means a manual login is needed;
+# background runs never open a login window or log cookie values.
 # Output is logged to %LOCALAPPDATA%\lectio-sync\auto-refresh.log
 #
 # Prerequisites (one-time, manual):
@@ -15,6 +16,12 @@ $ErrorActionPreference = 'Continue'
 
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $repoRoot
+$srcPath = Join-Path $repoRoot "src"
+$env:PYTHONPATH = if ($env:PYTHONPATH) {
+    "$srcPath$([IO.Path]::PathSeparator)$env:PYTHONPATH"
+} else {
+    $srcPath
+}
 
 # ── Set up log file ───────────────────────────────────────────────────────
 $logDir = Join-Path $env:LOCALAPPDATA "lectio-sync"
@@ -55,6 +62,7 @@ $cmdArgs = @(
     "-m", "lectio_sync",
     "--refresh-cookie",
     "--headless",
+    "--unattended",
     "--schedule-url", $scheduleUrl
 )
 
