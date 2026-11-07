@@ -1,6 +1,5 @@
 from email.message import Message
 from io import BytesIO
-import json
 from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 from urllib.request import HTTPCookieProcessor, HTTPSHandler, Request, build_opener
@@ -13,6 +12,7 @@ from lectio_sync.cookie_refresh import (
     _restore_session_cookies, _save_session_cookies, _update_github_secret,
 )
 from lectio_sync.lectio_fetch import LectioSession, build_student_url, fetch_html_with_diagnostics
+from lectio_sync.cookie_store import load_session_cookies
 
 
 SCHEDULE_URL = "https://www.lectio.dk/lectio/681/SkemaAvanceret.aspx?studentsel=123"
@@ -90,7 +90,7 @@ def test_session_profile_restores_only_missing_session_cookies(tmp_path):
     context = MagicMock()
     context.cookies.return_value = [session_cookie, sso_cookie, persistent]
     _save_session_cookies(context, tmp_path)
-    saved = json.loads((tmp_path / "session-cookies.json").read_text())
+    saved = load_session_cookies(tmp_path)
     assert saved == [session_cookie, sso_cookie]
     context.cookies.return_value = [{**session_cookie, "value": "newer-in-profile"}]
     _restore_session_cookies(context, tmp_path)
@@ -115,9 +115,9 @@ def test_schedule_authentication_requires_more_than_a_public_table():
 
 def test_secret_is_supplied_on_stdin_and_never_printed_on_failure(capsys):
     with patch("lectio_sync.cookie_refresh.subprocess.run", return_value=SimpleNamespace(returncode=1, stderr="sensitive")) as run:
-        assert not _update_github_secret("LECTIO_COOKIE_HEADER", "sensitive", "2zap2/Lectio")
+        assert not _update_github_secret("LECTIO_COOKIE_HEADER", "ASP.NET_SessionId=sensitive", "2zap2/Lectio")
     assert "sensitive" not in " ".join(run.call_args.args[0])
-    assert run.call_args.kwargs["input"] == "sensitive"
+    assert run.call_args.kwargs["input"] == "ASP.NET_SessionId=sensitive"
     assert "sensitive" not in capsys.readouterr().err
 
 

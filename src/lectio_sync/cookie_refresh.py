@@ -19,14 +19,18 @@ or --no-gh is explicitly requested, including when a secret update fails.
 """
 from __future__ import annotations
 
-import json
 import os
 import re
 import subprocess
 import sys
 import time
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
+
+from bs4 import BeautifulSoup
+
+from .cookie_store import load_session_cookies, save_session_cookies
 
 
 # ---------------------------------------------------------------------------
@@ -43,6 +47,27 @@ def _default_profile_dir() -> Path:
         return Path(local_app) / "lectio-sync" / "playwright-profile"
     # macOS / Linux fallback
     return Path.home() / ".local" / "share" / "lectio-sync" / "playwright-profile"
+
+
+def _profile_user_agent(profile: Path) -> str | None:
+    """Keep the profile's browser identity consistent when running headlessly.
+
+    Lectio's remembered login worked in visible Chrome but not with the default
+    HeadlessChrome identity. A live one-variable check confirmed that using
+    normal Chrome's identity restores access. Chromium itself records its version
+    in the profile; do not hard-code the version or read the user's normal browser.
+    """
+    try:
+        version = (profile / "Last Version").read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeError):
+        return None
+    match = re.fullmatch(r"(\d+)\.\d+\.\d+\.\d+", version)
+    if not match:
+        return None
+    platform = {"win32": "Windows NT 10.0; Win64; x64",
+                "darwin": "Macintosh; Intel Mac OS X 10_15_7"}.get(sys.platform, "X11; Linux x86_64")
+    return (f"Mozilla/5.0 ({platform}) AppleWebKit/537.36 (KHTML, like Gecko) "
+            f"Chrome/{match[1]}.0.0.0 Safari/537.36")
 
 
 def _require_playwright():
@@ -96,6 +121,38 @@ def _school_login_url(schedule_url: str) -> str:
     return f"{parsed.scheme}://{parsed.netloc}{school.group(1)}login.aspx?{urlencode({'prevurl': relative})}"
 
 
+def _remembered_login_expiry(html: str, *, today: date | None = None) -> date | None:
+    """Only Lectio's unexpired current-device entry proves remembered login.
+
+    Cookie persistence alone is not evidence: Lectio also has persistent
+    anonymous cookies. The account Log page is the server's source of truth.
+    Expiry is at midnight, so an entry expiring today no longer qualifies.
+    """
+    if today is None:
+        try:
+            from zoneinfo import ZoneInfo
+            today = datetime.now(ZoneInfo("Europe/Copenhagen")).date()
+        except (ImportError, KeyError):
+            today = date.today()
+    soup = BeautifulSoup(html, "html.parser")
+    table = soup.find("table", id=re.compile(r"(?:^|_)ForblivLoggetIndGV$"))
+    if table is None:
+        return None
+    for row in table.find_all("tr"):
+        cells = row.find_all("td", recursive=False)
+        if len(cells) < 4 or not re.match(r"Denne\s+enhed\s*:", cells[3].get_text(" ", strip=True), re.I):
+            continue
+        match = re.fullmatch(r"(\d{1,2}/\d{1,2}-\d{4})(?:\s+00:00)?", cells[2].get_text(" ", strip=True))
+        if match:
+            try:
+                expiry = datetime.strptime(match[1], "%d/%m-%Y").date()
+            except ValueError:
+                continue
+            if expiry > today:
+                return expiry
+    return None
+
+
 def _cookies_to_header(cookies: list) -> str:
     """Convert a list of Playwright cookie dicts to a Cookie header value."""
     parts = [
@@ -104,6 +161,27 @@ def _cookies_to_header(cookies: list) -> str:
         if c.get("name") and c.get("value") is not None
     ]
     return "; ".join(parts)
+
+
+def _session_cookie_header(value: str) -> str:
+    """Allow only the short Lectio session and its session-only UI flags.
+
+    Keep remembered login, SSO, and newly introduced/unknown cookies local.
+    Apply this at the upload boundary too, including the calendar-fetch path.
+    """
+    allowed = {"ASP.NET_SessionId", "isloggedin3", "BaseSchoolUrl", "LastAuthenticatedPageLoad2"}
+    if not isinstance(value, str) or any(ord(c) < 32 or ord(c) == 127 for c in value):
+        return ""
+    selected = {}
+    for part in value.split(";"):
+        name, sep, cookie_value = part.strip().partition("=")
+        if name in allowed and sep:
+            if name in selected or not cookie_value:
+                return ""
+            selected[name] = cookie_value
+    if "ASP.NET_SessionId" not in selected:
+        return ""
+    return "; ".join(f"{name}={v}" for name, v in selected.items())
 
 
 def _filter_cookies_for_host(cookies: list, schedule_url: str) -> list:
@@ -132,7 +210,7 @@ def _cookie_matches_host(cookie: dict, hostname: str) -> bool:
 def _restore_session_cookies(context, profile: Path) -> None:
     """Chromium may discard session cookies on exit, even with a saved profile."""
     try:
-        saved = json.loads((profile / "session-cookies.json").read_text(encoding="utf-8"))
+        saved = load_session_cookies(profile)
     except FileNotFoundError:
         return
     except (ValueError, OSError):
@@ -153,17 +231,15 @@ def _restore_session_cookies(context, profile: Path) -> None:
 def _save_session_cookies(context, profile: Path) -> None:
     """Retain session cookies for Lectio and its SSO flow without changing expiry."""
     cookies = [c for c in context.cookies() if c.get("expires", -1) < 0]
-    target = profile / "session-cookies.json"
-    temporary = target.with_suffix(".tmp")
-    with temporary.open("w", encoding="utf-8") as stream:
-        if sys.platform != "win32":
-            os.chmod(temporary, 0o600)
-        json.dump(cookies, stream)
-    temporary.replace(target)
+    save_session_cookies(profile, cookies)
 
 
 def _update_github_secret(secret_name: str, value: str, repo: str | None) -> bool:
     """Shell out to ``gh secret set``.  Returns True on success."""
+    value = _session_cookie_header(value)
+    if not value:
+        print("ERROR: No valid short Lectio session to export; the GitHub secret was not changed.", file=sys.stderr)
+        return False
     cmd = ["gh", "secret", "set", secret_name]
     if repo:
         cmd += ["--repo", repo]
@@ -200,13 +276,16 @@ def refresh_cookie(
     headless: bool = False,
     no_gh: bool = False,
     interactive: bool = True,
+    require_remembered_login: bool = False,
 ) -> int:
     """Reuse Lectio/SSO state, capture renewed cookies, and update the secret.
 
     Session cookies are saved inside the dedicated browser profile, outside
     the repository. Their server-side validity and expiry are never extended
     locally. Only cookies matching the schedule URL are sent to GitHub.
-    An unattended run returns 2 when login is required; it never opens a window.
+    An unattended run never opens a window. Exit 2 means login is required,
+    3 means remembered login is missing, and 4 means STIL security verification.
+    The PowerShell scheduler can launch one visible recovery when needed.
     """
     parsed = urlparse(schedule_url)
     if parsed.scheme != "https" or not parsed.hostname or not (
@@ -232,6 +311,9 @@ def refresh_cookie(
     print(f"Browser profile: {resolved_profile}")
     headless = headless or not interactive
     cookie_header = ""
+    if require_remembered_login and interactive:
+        print('Choose "Forbliv logget ind" in Lectio after signing in. '
+              'The browser stays open until Lectio confirms this device and its expiry.')
 
     with sync_playwright() as p:
         while True:
@@ -239,8 +321,12 @@ def refresh_cookie(
                 str(resolved_profile), headless=headless,
                 args=[] if headless else ["--disable-blink-features=AutomationControlled"],
                 no_viewport=True,
+                user_agent=_profile_user_agent(resolved_profile),
             )
             needs_visible_login = False
+            missing_remembered_login = False
+            saw_authenticated_schedule = False
+            remember_setup_started = False
             try:
                 _restore_session_cookies(context, resolved_profile)
                 page = context.pages[0] if context.pages else context.new_page()
@@ -257,11 +343,44 @@ def refresh_cookie(
                     except Exception:
                         time.sleep(1)
                         continue
+                    page_url = page.url
+                    if isinstance(page_url, str) and urlparse(page_url).hostname == "security-check.stil.dk":
+                        if not interactive:
+                            print("STIL security check required; this does not prove the login expired.", file=sys.stderr)
+                            return 4
                     if _is_authenticated_schedule(html):
+                        saw_authenticated_schedule = True
+                        school_path = re.match(r"(/lectio/\d+/)", parsed.path, re.I).group(1)
+                        status_url = f"{parsed.scheme}://{parsed.netloc}{school_path}indstillinger/AdgangIndstillinger.aspx"
+                        page.goto(status_url, timeout=30_000)
+                        expiry = _remembered_login_expiry(page.content())
+                        if expiry:
+                            print(f"Remembered login confirmed for this device; expires {expiry.isoformat()} (Lectio).")
+                        elif require_remembered_login:
+                            missing_remembered_login = True
+                            if headless:
+                                needs_visible_login = True
+                                break
+                            if not remember_setup_started:
+                                print('No remembered login for this device yet. Sign in and choose "Forbliv logget ind".')
+                                page.goto(login_url, timeout=30_000)
+                                remember_setup_started = True
+                                login_started = True
+                                returned_to_schedule = False
+                            else:
+                                page.goto(schedule_url, timeout=30_000)
+                                time.sleep(5)
+                            continue
+                        else:
+                            print('WARNING: Only a short session is confirmed. Run scripts/refresh_cookie.ps1 '
+                                  'to set up "Forbliv logget ind".', file=sys.stderr)
+                        page.goto(schedule_url, timeout=30_000)
+                        # Confirm that the schedule is still authenticated after
+                        # the status-page round trip, before exporting cookies.
+                        if not _is_authenticated_schedule(page.content()):
+                            continue
                         relevant = _filter_cookies_for_host(context.cookies(), schedule_url)
-                        cookie_header = _cookies_to_header(relevant)
-                        if cookie_header:
-                            _save_session_cookies(context, resolved_profile)
+                        cookie_header = _session_cookie_header(_cookies_to_header(relevant))
                         break
                     if login_started and not returned_to_schedule and _is_logged_in_page(html):
                         # The identity provider may return to the front page.
@@ -281,16 +400,27 @@ def refresh_cookie(
                         break
                     time.sleep(1)
             finally:
-                context.close()
+                try:
+                    # Also retain rotations/deletions during an unsuccessful
+                    # login instead of restoring stale cookies on the next run.
+                    _save_session_cookies(context, resolved_profile)
+                finally:
+                    context.close()
             if cookie_header:
                 break
             if needs_visible_login:
                 if not interactive:
+                    if missing_remembered_login:
+                        print('Remembered login missing. Run scripts/refresh_cookie.ps1 and choose "Forbliv logget ind".', file=sys.stderr)
+                        return 3
                     print("Login required. Run scripts/refresh_cookie.ps1 once to sign in.", file=sys.stderr)
                     return 2
                 print("Saved login could not be renewed silently. Opening Chromium for login.")
                 headless = False
                 continue
+            if require_remembered_login and saw_authenticated_schedule:
+                print('Remembered login was not confirmed before timeout; setup is incomplete.', file=sys.stderr)
+                return 3
             print("ERROR: No authenticated schedule detected before the login timeout.", file=sys.stderr)
             return 1
 

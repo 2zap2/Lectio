@@ -145,7 +145,8 @@ def test_expired_lectio_session_reuses_sso_before_prompting(mock_mkdir, mock_gh)
     mock_sp, chromium = _make_mock_playwright(SCHEDULE_HTML)
     page = chromium.launch_persistent_context.return_value.pages[0]
     public_schedule = SCHEDULE_HTML.replace("Initialize(true", "Initialize(false")
-    page.content.side_effect = [public_schedule, '<a href="logout.aspx">Log ud</a>', SCHEDULE_HTML]
+    page.content.side_effect = [public_schedule, '<a href="logout.aspx">Log ud</a>', SCHEDULE_HTML,
+                                '<html>No remembered entry</html>', SCHEDULE_HTML]
     with patch("lectio_sync.cookie_refresh._require_playwright", return_value=mock_sp):
         result = refresh_cookie(schedule_url=SCHEDULE_URL, interactive=False)
     assert result == 0

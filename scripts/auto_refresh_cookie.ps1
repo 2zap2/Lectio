@@ -1,8 +1,9 @@
 # auto_refresh_cookie.ps1
 #
 # Automatic cookie refresh for the Windows Scheduled Task.
-# Reuses Lectio/SSO state headlessly. Exit 2 means a manual login is needed;
-# background runs never open a login window or log cookie values.
+# Reuses Lectio's remembered login headlessly. When login/setup needs attention,
+# opens a visible recovery window at most once per day until access is restored.
+# Network failures do not open login windows. Cookie values are never logged.
 # Output is logged to %LOCALAPPDATA%\lectio-sync\auto-refresh.log
 #
 # Prerequisites (one-time, manual):
@@ -27,6 +28,19 @@ $env:PYTHONPATH = if ($env:PYTHONPATH) {
 $logDir = Join-Path $env:LOCALAPPDATA "lectio-sync"
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir | Out-Null }
 $logFile = Join-Path $logDir "auto-refresh.log"
+$recoveryNotice = Join-Path $logDir "login-recovery-notified.txt"
+
+# Preserve the former mixed UTF-8/UTF-16 log before switching to UTF-8 history.
+if (Test-Path -LiteralPath $logFile) {
+    $previousBytes = [IO.File]::ReadAllBytes($logFile)
+    if (($previousBytes -contains 0) -or $previousBytes.Length -gt 2MB) {
+        Move-Item -LiteralPath $logFile -Destination ($logFile + "." + (Get-Date -Format 'yyyyMMdd-HHmmss') + ".bak")
+    }
+}
+function Write-RefreshLog([string] $Text) {
+    [IO.File]::AppendAllText($logFile, $Text + [Environment]::NewLine, [Text.UTF8Encoding]::new($false))
+    Write-Output $Text
+}
 
 # ── Load .env.local ───────────────────────────────────────────────────────
 $envLocal = Join-Path $repoRoot ".env.local"
@@ -49,7 +63,7 @@ if (Test-Path $envLocal) {
 $scheduleUrl = $env:LECTIO_SCHEDULE_URL
 if (-not $scheduleUrl) {
     "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] ERROR: LECTIO_SCHEDULE_URL is not set. " +
-    "Add it to .env.local or set the environment variable." | Tee-Object -FilePath $logFile
+    "Add it to .env.local or set the environment variable." | ForEach-Object { Write-RefreshLog $_ }
     exit 1
 }
 
@@ -63,26 +77,50 @@ $cmdArgs = @(
     "--refresh-cookie",
     "--headless",
     "--unattended",
+    "--require-remembered-login",
     "--schedule-url", $scheduleUrl
 )
 
 # ── Run and capture output ────────────────────────────────────────────────
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-"[$timestamp] Starting auto cookie refresh..." | Set-Content -Path $logFile
+Write-RefreshLog "[$timestamp] Starting auto cookie refresh..."
 
 try {
-    & $python @cmdArgs 2>&1 | Tee-Object -FilePath $logFile -Append
+    & $python @cmdArgs 2>&1 | ForEach-Object { Write-RefreshLog $_.ToString() }
     $exitCode = $LASTEXITCODE
 } catch {
-    "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] EXCEPTION: $_" | Add-Content -Path $logFile
+    Write-RefreshLog "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] EXCEPTION during cookie refresh."
     $exitCode = 1
 }
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 if ($exitCode -eq 0) {
-    "[$timestamp] Auto refresh completed successfully (exit 0)." | Add-Content -Path $logFile
+    Write-RefreshLog "[$timestamp] Auto refresh completed successfully (exit 0)."
+    if (Test-Path -LiteralPath $recoveryNotice) { Remove-Item -LiteralPath $recoveryNotice }
 } else {
-    "[$timestamp] Auto refresh FAILED (exit $exitCode). Check log above." | Add-Content -Path $logFile
+    Write-RefreshLog "[$timestamp] Auto refresh FAILED (exit $exitCode). Check log above."
+    if ($exitCode -in @(2, 3, 4)) {
+        $showRecovery = $true
+        if (Test-Path -LiteralPath $recoveryNotice) {
+            $lastNotice = (Get-Item -LiteralPath $recoveryNotice).LastWriteTimeUtc
+            $showRecovery = ([DateTime]::UtcNow - $lastNotice).TotalHours -ge 24
+        }
+        if ($showRecovery) {
+            $refreshScript = Join-Path $PSScriptRoot 'refresh_cookie.ps1'
+            Write-RefreshLog "[$timestamp] Opening visible login recovery. Choose Forbliv logget ind."
+            try {
+                Start-Process -FilePath 'powershell.exe' -WindowStyle Normal -ArgumentList @(
+                    '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ('"' + $refreshScript + '"'),
+                    '-LoginTimeout', '600'
+                ) -ErrorAction Stop
+                [IO.File]::WriteAllText($recoveryNotice, [DateTime]::UtcNow.ToString('o'))
+            } catch {
+                Write-RefreshLog "[$timestamp] Could not open login recovery; retry on the next scheduled run."
+            }
+        } else {
+            Write-RefreshLog "[$timestamp] Login recovery already offered; suppressing repeated windows for 24 hours."
+        }
+    }
 }
 
 exit $exitCode

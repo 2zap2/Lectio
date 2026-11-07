@@ -281,6 +281,11 @@ def main() -> int:
         help="Skip `gh secret set`; print the cookie value instead (useful for manual update).",
     )
     parser.add_argument(
+        "--require-remembered-login",
+        action="store_true",
+        help='Require Lectio to confirm "Forbliv logget ind" for this browser before completing setup.',
+    )
+    parser.add_argument(
         "--unattended",
         action="store_true",
         help="Refresh invisibly; return exit code 2 if interactive login is needed.",
@@ -307,6 +312,8 @@ def main() -> int:
         parser.error("Student selection and cookie persistence require --fetch")
     if args.unattended and not args.refresh_cookie:
         parser.error("--unattended requires --refresh-cookie")
+    if args.require_remembered_login and not args.refresh_cookie:
+        parser.error("--require-remembered-login requires --refresh-cookie")
 
     # ------------------------------------------------------------------
     # Cookie refresh mode — completely separate from fetch/parse.
@@ -331,6 +338,7 @@ def main() -> int:
             headless=args.headless,
             no_gh=args.no_gh,
             interactive=not args.unattended,
+            require_remembered_login=args.require_remembered_login,
         )
 
     if args.fetch:

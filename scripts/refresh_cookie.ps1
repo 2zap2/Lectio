@@ -102,6 +102,7 @@ $python = if (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { "pyt
 $cmdArgs = @(
     "-m", "lectio_sync",
     "--refresh-cookie",
+    "--require-remembered-login",
     "--schedule-url", $ScheduleUrl,
     "--cookie-login-timeout", $LoginTimeout
 )
@@ -120,7 +121,7 @@ $exitCode = $LASTEXITCODE
 
 Write-Host ""
 if ($exitCode -eq 0) {
-    Write-Host "Done!  Cookie updated successfully." -ForegroundColor Green
+    Write-Host "Done! Remembered login confirmed and cookie updated successfully." -ForegroundColor Green
 } else {
     Write-Host "Something went wrong (exit code $exitCode). See details above." -ForegroundColor Red
 }
