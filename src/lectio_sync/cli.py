@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from copy import copy
 import os
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -86,7 +87,11 @@ def _filter_events(events: list) -> list:
 
 
 def main() -> int:
+    if "--local-sync" in sys.argv[1:]:
+        from .local_sync import main as local_sync_main
+        return local_sync_main([arg for arg in sys.argv[1:] if arg != "--local-sync"])
     parser = argparse.ArgumentParser(description="Convert Lectio Advanced Schedule HTML to .ics")
+    parser.epilog = "Automatic local browser sync: python -m lectio_sync --local-sync --help"
     parser.add_argument("--html", type=Path, help="Path to Lectio HTML file (overrides LECTIO_HTML_PATH)")
     parser.add_argument("--out", type=Path, help="Output .ics path (overrides OUTPUT_ICS_PATH)")
     parser.add_argument("--tz", type=str, help="Timezone (overrides LECTIO_TIMEZONE)")

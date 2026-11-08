@@ -24,6 +24,7 @@ dependencies = [
 
 [project.scripts]
 lectio-ics = "lectio_sync.cli:main"
+lectio-local-sync = "lectio_sync.local_sync:main"
 
 [project.urls]
 Homepage = "https://github.com/2zap2/Lectio"

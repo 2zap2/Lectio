@@ -1,5 +1,12 @@
 # Lectio “Advanced Schedule” HTML → iCal (.ics) Feed
 
+**Automatic updates run locally through the saved browser login.** The PC builds
+and checks all four calendars, then publishes them together to the existing Pages
+URLs. It catches up after logon/resume and no longer uploads cookies to GitHub.
+See [local sync setup and recovery](docs/local-sync.md).
+
+The original file conversion mode is described below.
+
 A small daily sync tool that:
 1) reads a **Lectio “Avanceret skema / Advanced Schedule” HTML** file, and
 2) converts every schedule entry into a **valid iCalendar (.ics)** file.

@@ -317,12 +317,8 @@ def refresh_cookie(
 
     with sync_playwright() as p:
         while True:
-            context = p.chromium.launch_persistent_context(
-                str(resolved_profile), headless=headless,
-                args=[] if headless else ["--disable-blink-features=AutomationControlled"],
-                no_viewport=True,
-                user_agent=_profile_user_agent(resolved_profile),
-            )
+            from .browser_session import launch_context
+            context = launch_context(p, resolved_profile, headless=headless)
             needs_visible_login = False
             missing_remembered_login = False
             saw_authenticated_schedule = False
